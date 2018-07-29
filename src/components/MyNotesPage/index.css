@@ -1,0 +1,31 @@
+.container {
+  height: calc(100vh - var(--nav-height));
+  width: 80%;
+  margin: 0px auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.lastNote {
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  /* position: absolute; */
+  /* bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%); */
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    height: calc(100vh - var(--nav-height-660px));
+    width: 80%;
+    /* margin: var(--nav-height-660px) auto 0px; */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    padding-bottom: 50px;
+  }
+}
