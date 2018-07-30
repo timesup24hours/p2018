@@ -49,6 +49,7 @@ class AppNavBar extends Component {
             <Route path="/p2018/my_notes" component={MyNotes} />
             <Route path="/p2018/css_effects" component={CssEffects} />
             <Route path="/p2018/contact_info" component={ContactInfo} />
+            <Route path="*" component={() => <div>404</div>} />
             <Redirect from="/" to="/p2018/home" />
           </div>
         </div>
