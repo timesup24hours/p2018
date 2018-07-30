@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { notes } from '../../actions';
 
 import Note from '../Note';
 import Loading from '../Loading';
 
 import styles from './index.css';
-
-import fakeData from './fakeDate';
-
-function sleep(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
 
 class MyNotes extends Component {
   state = {
@@ -23,7 +20,8 @@ class MyNotes extends Component {
 
   componentDidMount() {
     this.mounted = true;
-    if (this.state.notes.length === 0 && this.mounted) this.getNotes(0);
+    if (this.props.notes && this.props.notes.length === 0 && this.mounted)
+      this.getNotes({ start: 0, loadAmount: 20 });
   }
 
   componentWillUnmount() {
@@ -33,22 +31,12 @@ class MyNotes extends Component {
     this.fetching = null;
   }
 
-  getNotes = start => {
+  action = (type, value) => () => this.props.dispatch({ type, value });
+
+  getNotes = data => {
     this.setState({ fetchLoading: true });
-    const buffer = fakeData.slice(start, start + this.state.loadAmount);
-    this.fetching = sleep(2000).then(() => {
-      if (this.mounted) {
-        this.setState({
-          notes: this.state.notes.concat(buffer),
-          loading: false,
-          fetchLoading: false,
-          hasMoreNotesToLoad: buffer.length === this.state.loadAmount
-        });
-        this.setState({
-          cursor: this.state.notes.length - 1
-        });
-      }
-    });
+
+    this.props.notesFetchRequested(data);
   };
 
   loadingBottomArea = (range, div) =>
@@ -58,17 +46,26 @@ class MyNotes extends Component {
     if (this.scrollerDiv) {
       if (
         this.loadingBottomArea(100, this.scrollerDiv) &&
-        this.state.hasMoreNotesToLoad
+        this.props.hasMoreNotesToLoad
       ) {
-        if (!this.state.fetchLoading) {
-          this.getNotes(this.state.cursor);
+        if (!this.props.fetchLoading) {
+          this.getNotes({
+            start: this.props.cursor,
+            loadAmount: this.props.loadAmount
+          });
         }
       }
     }
   };
 
   render() {
-    const { notes, loading } = this.state;
+    const {
+      notes,
+      hasMoreNotesToLoad,
+      loading,
+      fetchLoading
+      // message
+    } = this.props;
 
     return loading ? (
       <div className="center">
@@ -83,16 +80,34 @@ class MyNotes extends Component {
         }}
       >
         {notes.map((note, i) => <Note key={i} note={note} />)}
-        {this.state.fetchLoading ? (
+        {fetchLoading ? (
           <div>
             <Loading />
           </div>
         ) : null}
-        {this.state.hasMoreNotesToLoad ? null : (
+        {hasMoreNotesToLoad ? null : (
           <div className={styles.lastNote}>Last Note</div>
         )}
       </div>
     );
   }
 }
-export default MyNotes;
+
+const mapStateToProps = state => ({
+  notes: state.notes.notes,
+  cursor: state.notes.cursor,
+  loading: state.notes.loading,
+  hasMoreNotesToLoad: state.notes.hasMoreNotesToLoad,
+  fetchLoading: state.notes.fetchLoading,
+  message: state.notes.message,
+  loadAmount: state.notes.loadAmount
+});
+
+const mapDispatchToProps = dispatch => ({
+  notesFetchRequested: data => dispatch(notes.notesFetchRequested(data))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyNotes);
