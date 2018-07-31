@@ -4,3 +4,9 @@
   border: 1px solid grey;
   position: relative;
 }
+
+@media screen and (max-width: 660px) {
+  .container {
+    width: 100%;
+  }
+}

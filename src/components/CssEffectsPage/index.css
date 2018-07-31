@@ -11,3 +11,14 @@
   overflow-y: auto;
   height: 100vh;
 }
+
+@media screen and (max-width: 660px) {
+  .container {
+    height: calc(100vh - var(--nav-height-660px));
+    width: 100%;
+    /* margin: var(--nav-height-660px) auto 0px; */
+    overflow-y: auto;
+    display: flex;
+    /* border: 1px solid red; */
+  }
+}
