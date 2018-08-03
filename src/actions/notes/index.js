@@ -13,15 +13,21 @@ export const notesFetchFailed = payload => ({
   payload
 });
 
+export const notesFetchCancelled = () => ({
+  type: types.NOTES_FETCH_CANCELLED
+});
+
 export const types = {
   NOTES_FETCH_REQUESTED: 'NOTES_FETCH_REQUESTED',
   NOTES_FETCH_SUCCEEDED: 'NOTES_FETCH_SUCCEEDED',
-  NOTES_FETCH_FAILED: 'NOTES_FETCH_FAILED'
+  NOTES_FETCH_FAILED: 'NOTES_FETCH_FAILED',
+  NOTES_FETCH_CANCELLED: 'NOTES_FETCH_CANCELLED'
 };
 
 export default {
   notesFetchRequested,
   notesFetchSucceeded,
   notesFetchFailed,
+  notesFetchCancelled,
   types
 };

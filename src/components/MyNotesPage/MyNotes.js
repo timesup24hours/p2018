@@ -9,15 +9,6 @@ import Loading from '../Loading';
 import styles from './index.css';
 
 class MyNotes extends Component {
-  state = {
-    notes: [],
-    hasMoreNotesToLoad: true,
-    cursor: 0,
-    loadAmount: 20,
-    loading: true,
-    fetchLoading: false
-  };
-
   componentDidMount() {
     this.mounted = true;
     if (this.props.notes && this.props.notes.length === 0 && this.mounted)
@@ -25,17 +16,12 @@ class MyNotes extends Component {
   }
 
   componentWillUnmount() {
-    if (this.fetching) clearTimeout(this.fetching);
     this.mounted = false;
     this.getNotes = null;
-    this.fetching = null;
+    this.props.notesFetchCancelled();
   }
 
-  action = (type, value) => () => this.props.dispatch({ type, value });
-
   getNotes = data => {
-    this.setState({ fetchLoading: true });
-
     this.props.notesFetchRequested(data);
   };
 
@@ -49,6 +35,7 @@ class MyNotes extends Component {
         this.props.hasMoreNotesToLoad
       ) {
         if (!this.props.fetchLoading) {
+          console.log('bottom fetch');
           this.getNotes({
             start: this.props.cursor,
             loadAmount: this.props.loadAmount
@@ -104,7 +91,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  notesFetchRequested: data => dispatch(notes.notesFetchRequested(data))
+  notesFetchRequested: data => dispatch(notes.notesFetchRequested(data)),
+  notesFetchCancelled: () => dispatch(notes.notesFetchCancelled())
 });
 
 export default connect(

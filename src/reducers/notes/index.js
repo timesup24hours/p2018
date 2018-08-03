@@ -32,7 +32,14 @@ const notesReducer = (state = initialState, action) => {
       return {
         ...state,
         message: action.payload,
-        loading: false
+        loading: false,
+        fetchLoading: false
+      };
+    case notes.types.NOTES_FETCH_CANCELLED:
+      return {
+        ...state,
+        fetchLoading: false
+        // loading: true
       };
     default:
       return state;

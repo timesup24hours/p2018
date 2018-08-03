@@ -1,3 +1,7 @@
-import notesSaga from './notesSaga';
+import { all, fork } from 'redux-saga/effects';
 
-export default notesSaga;
+import * as notesSaga from './notesSaga';
+
+export default function* rootSaga() {
+  yield all([...Object.values(notesSaga)].map(fork));
+}

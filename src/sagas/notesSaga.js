@@ -1,11 +1,24 @@
 import {
   call,
   put,
-  takeEvery
-  // takeLatest
+  select,
+  takeEvery,
+  takeLatest,
+  take,
+  cancel,
+  cancelled
 } from 'redux-saga/effects';
 import { notes } from '../actions';
 import apis from '../apis';
+
+function* watchAndLog() {
+  yield takeEvery('*', function* logger(action) {
+    const state = yield select();
+
+    console.log('action', action);
+    console.log('state after', state);
+  });
+}
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchNotes(action) {
@@ -14,6 +27,10 @@ function* fetchNotes(action) {
     yield put(notes.notesFetchSucceeded(data));
   } catch (e) {
     yield put(notes.notesFetchFailed(e.message));
+  } finally {
+    if (yield cancelled()) {
+      // yield put(notes.notesFetchFailed('request cancelled'));
+    }
   }
 }
 
@@ -22,7 +39,12 @@ function* fetchNotes(action) {
   Allows concurrent fetches of user.
 */
 function* notesFetchRequested() {
-  yield takeEvery('NOTES_FETCH_REQUESTED', fetchNotes);
+  while (true) {
+    const fetchTask = yield takeLatest('NOTES_FETCH_REQUESTED', fetchNotes);
+    const cancelAction = yield take(notes.types.NOTES_FETCH_CANCELLED);
+    if (cancelAction.type === notes.types.NOTES_FETCH_CANCELLED)
+      yield cancel(fetchTask);
+  }
 }
 
 /*
@@ -36,4 +58,4 @@ function* notesFetchRequested() {
 //   yield takeLatest('USER_FETCH_REQUESTED', fetchNotes);
 // }
 
-export default notesFetchRequested;
+export { notesFetchRequested, watchAndLog };
