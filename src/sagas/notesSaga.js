@@ -1,8 +1,8 @@
 import {
   call,
   put,
-  select,
-  takeEvery,
+  // select,
+  // takeEvery,
   takeLatest,
   take,
   cancel,
@@ -11,14 +11,14 @@ import {
 import { notes } from '../actions';
 import apis from '../apis';
 
-function* watchAndLog() {
-  yield takeEvery('*', function* logger(action) {
-    const state = yield select();
+// function* watchAndLog() {
+//   yield takeEvery('*', function* logger(action) {
+//     const state = yield select();
 
-    console.log('action', action);
-    console.log('state after', state);
-  });
-}
+//     console.log('action', action);
+//     console.log('state after', state);
+//   });
+// }
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchNotes(action) {
@@ -58,4 +58,7 @@ function* notesFetchRequested() {
 //   yield takeLatest('USER_FETCH_REQUESTED', fetchNotes);
 // }
 
-export { notesFetchRequested, watchAndLog };
+export {
+  notesFetchRequested
+  // , watchAndLog
+};

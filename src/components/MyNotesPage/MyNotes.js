@@ -35,7 +35,6 @@ class MyNotes extends Component {
         this.props.hasMoreNotesToLoad
       ) {
         if (!this.props.fetchLoading) {
-          console.log('bottom fetch');
           this.getNotes({
             start: this.props.cursor,
             loadAmount: this.props.loadAmount
