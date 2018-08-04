@@ -46,11 +46,11 @@ class AppNavBar extends Component {
           </nav>
           <div>
             <Switch>
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route path="/my_notes" component={MyNotes} />
               <Route path="/css_effects" component={CssEffects} />
               <Route path="/contact_info" component={ContactInfo} />
-              <Redirect from="/" to="/home" />
+              {/* <Redirect from="/" to="/home" /> */}
               {/* <Route path="*" component={() => <div>404</div>} /> */}
             </Switch>
           </div>
