@@ -1,0 +1,10 @@
+.scollLine {
+  height: 6px;
+  margin-bottom: -2px;
+  background: lightskyblue;
+  width: 0%;
+  /* border: 1px solid red */
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+}
