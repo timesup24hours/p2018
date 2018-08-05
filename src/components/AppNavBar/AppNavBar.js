@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
+  NavLink as Link,
   Redirect
 } from 'react-router-dom';
 
@@ -31,16 +31,41 @@ class AppNavBar extends Component {
           <nav className={styles.nav}>
             <ul className={styles.nav_ul}>
               <li className={styles.nav_ul_li_1}>
-                <Link to="/">HOME</Link>
+                <Link
+                  exact
+                  className={styles.a}
+                  activeClassName={styles.active}
+                  to="/"
+                >
+                  HOME
+                </Link>
               </li>
               <li className={styles.nav_ul_li_2}>
-                <Link to="/my_notes">NOTES</Link>
+                <Link
+                  className={styles.a}
+                  activeClassName={styles.active}
+                  to="/my_notes"
+                >
+                  NOTES
+                </Link>
               </li>
               <li className={styles.nav_ul_li_3}>
-                <Link to="/css_effects">CSS</Link>
+                <Link
+                  className={styles.a}
+                  activeClassName={styles.active}
+                  to="/css_effects"
+                >
+                  CSS
+                </Link>
               </li>
               <li className={styles.nav_ul_li_4}>
-                <Link to="/contact_info">CONTACT</Link>
+                <Link
+                  className={styles.a}
+                  activeClassName={styles.active}
+                  to="/contact_info"
+                >
+                  CONTACT
+                </Link>
               </li>
             </ul>
           </nav>

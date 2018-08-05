@@ -28,7 +28,7 @@
   display: block;
 }
 
-.nav_ul li a {
+.a {
   color: black;
   text-decoration-line: none;
   display: block;
@@ -36,11 +36,18 @@
   width: 100%;
   text-align: center;
   line-height: calc(var(--nav-height));
+  transition: 0.5s;
 }
+
 .nav_ul li a:visited {
   color: none;
   text-decoration: none;
-  decoration: none;
+}
+.active {
+  /* box-shadow: 0 1px 30px 1px rgba(0, 0, 0, 0.3); */
+  /* color: blueviolet; */
+  color: #75489f;
+  /* text-decoration: underline; */
 }
 
 .nav_ul_li_1 {

@@ -30,7 +30,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+:global(.selected) {
+  color: black;
+}
 @media screen and (max-width: 660px) {
   :global(.container) {
     height: calc(100vh - var(--nav-height-660px));
