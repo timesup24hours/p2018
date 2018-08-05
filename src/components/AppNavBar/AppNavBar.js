@@ -3,8 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect
+  Link
+  // Redirect
 } from 'react-router-dom';
 
 import styles from './index.css';
@@ -28,23 +28,23 @@ class AppNavBar extends Component {
     return (
       <Router>
         <div>
-          <nav>
+          <nav className={styles.nav}>
             <ul className={styles.nav_ul}>
               <li className={styles.nav_ul_li_1}>
-                <Link to="/home">Home</Link>
+                <Link to="/">HOME</Link>
               </li>
               <li className={styles.nav_ul_li_2}>
-                <Link to="/my_notes">My notes</Link>
+                <Link to="/my_notes">NOTES</Link>
               </li>
               <li className={styles.nav_ul_li_3}>
-                <Link to="/css_effects">css effect</Link>
+                <Link to="/css_effects">CSS</Link>
               </li>
               <li className={styles.nav_ul_li_4}>
-                <Link to="/contact_info">contact info</Link>
+                <Link to="/contact_info">CONTACT</Link>
               </li>
             </ul>
           </nav>
-          <div>
+          <div className={styles.pageWrapper}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/my_notes" component={MyNotes} />

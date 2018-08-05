@@ -1,6 +1,10 @@
 .container {
   width: 100%;
   margin: 0 auto;
+  position: relative;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
 }
 
 .wave {
@@ -8,6 +12,7 @@
   min-height: 500px;
   position: relative;
   background: linear-gradient(90deg, #f0027f, #75489f);
+  /* transition: 0.5s; */
   /* background: #ffc728; */
 }
 .wave:after {
@@ -28,7 +33,9 @@
   width: 100%;
   min-height: 500px;
   position: relative;
-  top: 300px;
+  margin-bottom: 100px;
+  background: #ffc728;
+  /* border: 1px solid red; */
 }
 .wave1:after {
   position: absolute;
@@ -41,6 +48,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  transform-origin: top right;
+  transform-origin: left top;
   transform: skewY(-4deg);
 }

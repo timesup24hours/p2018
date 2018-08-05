@@ -5,10 +5,16 @@ import { notes } from '../../actions';
 
 import Note from '../Note';
 import Loading from '../Loading';
+import ScrollIndicator from '../ScrollIndicator';
 
 import styles from './index.css';
 
 class MyNotes extends Component {
+  state = {
+    scrolled: 0,
+    scrollHeight: 0
+  };
+
   componentDidMount() {
     this.mounted = true;
     if (this.props.notes && this.props.notes.length === 0 && this.mounted)
@@ -21,6 +27,15 @@ class MyNotes extends Component {
     this.props.notesFetchCancelled();
   }
 
+  componentDidUpdate(prevProps, prevStates) {
+    if (
+      this.scrollerDiv &&
+      this.scrollerDiv.scrollHeight !== prevStates.scrollHeight
+    ) {
+      this.setScrolled();
+    }
+  }
+
   getNotes = data => {
     this.props.notesFetchRequested(data);
   };
@@ -28,7 +43,18 @@ class MyNotes extends Component {
   loadingBottomArea = (range, div) =>
     div.scrollTop + div.clientHeight >= div.scrollHeight - range;
 
+  setScrolled = e => {
+    this.setState({
+      scrolled:
+        (this.scrollerDiv.scrollTop /
+          (this.scrollerDiv.scrollHeight - window.innerHeight)) *
+        100
+    });
+    this.setState({ scrollHeight: this.scrollerDiv.scrollHeight });
+  };
+
   handleScroll = e => {
+    this.setScrolled();
     if (this.scrollerDiv) {
       if (
         this.loadingBottomArea(100, this.scrollerDiv) &&
@@ -52,6 +78,7 @@ class MyNotes extends Component {
       fetchLoading
       // message
     } = this.props;
+    const { scrolled } = this.state;
 
     return loading ? (
       <div className="center">
@@ -65,6 +92,7 @@ class MyNotes extends Component {
           this.scrollerDiv = scrollerDiv;
         }}
       >
+        {scrolled ? <ScrollIndicator scrolled={scrolled} /> : null}
         {notes.map((note, i) => <Note key={i} note={note} />)}
         {fetchLoading ? (
           <div>
