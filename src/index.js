@@ -9,6 +9,8 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers';
 import rootSagas from './sagas';
 
+import registerServiceWorker from './registerServiceWorker';
+
 // import registerServiceWorker from './registerServiceWorker';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware();
@@ -19,10 +21,24 @@ const store = createStore(
 
 sagaMiddleware.run(rootSagas);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+const render = Component => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
+};
 // registerServiceWorker();
+// Do this once
+registerServiceWorker();
+
+// Render once
+render(App);
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(App);
+  });
+}
