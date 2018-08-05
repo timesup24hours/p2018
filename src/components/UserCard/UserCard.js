@@ -11,7 +11,7 @@ export default () => {
             <i className="fas fa-user" />
           </div>
           <h2>
-            Huanlin Huang <br />
+            <div className={styles.name}>Huanlin Huang </div>
             <span>Web Developer</span>
           </h2>
           <p>

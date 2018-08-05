@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './index.css';
 import WavyBackground from '../WavyBackground';
+import Footer from '../Footer';
 
 export default () => (
   <div className={styles.container}>
@@ -13,5 +14,6 @@ export default () => (
         <div>NodeJS, MonogoDB</div>
       </div>
     </WavyBackground>
+    <Footer />
   </div>
 );

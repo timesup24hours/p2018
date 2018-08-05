@@ -4,6 +4,7 @@ import styles from './index.css';
 import DayNightModeSwitchToggle from '../DayNightModeSwitchToggle';
 import BriefInfo from '../BriefInfo';
 import UserCard from '../UserCard';
+import Wavy2Content from '../Wavy2Content';
 
 export default ({ children }) => {
   return (
@@ -15,6 +16,7 @@ export default ({ children }) => {
       <BriefInfo />
       <section className={styles.wave1}>
         <UserCard />
+        <Wavy2Content />
       </section>
     </div>
   );
