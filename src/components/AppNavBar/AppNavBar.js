@@ -44,16 +44,16 @@ class AppNavBar extends Component {
               </li>
             </ul>
           </nav>
-          <div className={styles.pageWrapper}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/my_notes" component={MyNotes} />
-              <Route path="/css_effects" component={CssEffects} />
-              <Route path="/contact_info" component={ContactInfo} />
-              <Redirect from="/" to="/" />
-              {/* <Route path="*" component={() => <div>404</div>} /> */}
-            </Switch>
-          </div>
+          {/* <div> */}
+          <Switch className={styles.pageWrapper}>
+            <Route exact path="/" component={Home} />
+            <Route path="/my_notes" component={MyNotes} />
+            <Route path="/css_effects" component={CssEffects} />
+            <Route path="/contact_info" component={ContactInfo} />
+            <Redirect from="/" to="/" />
+            {/* <Route path="*" component={() => <div>404</div>} /> */}
+          </Switch>
+          {/* </div> */}
         </div>
       </Router>
     );
