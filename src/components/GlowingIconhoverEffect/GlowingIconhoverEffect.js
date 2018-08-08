@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink as Link } from 'react-router-dom';
 import styles from './index.css';
 
 export default () => {
@@ -7,19 +7,19 @@ export default () => {
     <div className={styles.container}>
       <ul className={styles.ul}>
         <li className={styles.li}>
-          <a href="">
+          <Link href="/css_effects">
             <i className="fas fa-archway" />
-          </a>
+          </Link>
         </li>
         <li className={styles.li}>
-          <a href="">
+          <Link href="/css_effects">
             <i className="fas fa-award" />
-          </a>
+          </Link>
         </li>
         <li className={styles.li}>
-          <a href="">
+          <Link href="/css_effects">
             <i className="fas fa-apple-alt" />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

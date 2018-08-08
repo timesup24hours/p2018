@@ -43,3 +43,9 @@
 .font {
   color: white;
 }
+
+@media screen and (max-width: 660px) {
+  .container {
+    right: 30%;
+  }
+}
