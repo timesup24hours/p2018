@@ -95,7 +95,7 @@ class MyNotes extends Component {
         {scrolled ? <ScrollIndicator scrolled={scrolled} /> : null}
         {notes.map((note, i) => <Note key={i} note={note} />)}
         {fetchLoading ? (
-          <div>
+          <div className={styles.loading}>
             <Loading />
           </div>
         ) : null}

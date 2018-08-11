@@ -7,12 +7,46 @@ import {
   Redirect
 } from 'react-router-dom';
 
-import styles from './index.css';
+import Loadable from 'react-loadable';
 
-import Home from '../HomePage';
-import MyNotes from '../MyNotesPage';
-import CssEffects from '../CssEffectsPage';
-import ContactInfo from '../ContactInfoPage';
+import styles from './index.css';
+import Loading from '../Loading';
+
+const MyLoadingComponent = ({ isLoading, error }) => {
+  // Handle the loading state
+  if (isLoading) {
+    return (
+      <div className="center">
+        <Loading />
+      </div>
+    );
+  }
+  // Handle the error state
+  else if (error) {
+    return <div>Sorry, there was a problem loading the page.</div>;
+  } else {
+    return null;
+  }
+};
+
+const Home = Loadable({
+  loader: () => import('../HomePage'),
+  loading: MyLoadingComponent
+});
+
+const MyNotesPage = Loadable({
+  loader: () => import('../MyNotesPage'),
+  loading: MyLoadingComponent
+});
+
+const CssEffectsPage = Loadable({
+  loader: () => import('../CssEffectsPage'),
+  loading: MyLoadingComponent
+});
+const ContactInfoPage = Loadable({
+  loader: () => import('../ContactInfoPage'),
+  loading: MyLoadingComponent
+});
 
 class AppNavBar extends Component {
   state = {
@@ -72,9 +106,9 @@ class AppNavBar extends Component {
           <div className={styles.pageWrapper}>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/my_notes" component={MyNotes} />
-              <Route path="/css_effects" component={CssEffects} />
-              <Route path="/contact_info" component={ContactInfo} />
+              <Route path="/my_notes" component={MyNotesPage} />
+              <Route path="/css_effects" component={CssEffectsPage} />
+              <Route path="/contact_info" component={ContactInfoPage} />
               <Redirect from="/" to="/" />
               <Route path="*" component={Home} />
             </Switch>

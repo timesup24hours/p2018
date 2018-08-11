@@ -1,6 +1,10 @@
 .container {
   overflow-y: auto;
   height: calc(100vh - var(--nav-height));
+  position: relative;
+  top: var(--nav-height);
+  /* display: flex;
+  flex-direction: column; */
 }
 .content {
   z-index: 100;

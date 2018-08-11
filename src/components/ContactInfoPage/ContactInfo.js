@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './index.css';
 
 export default () => (
-  <div className="container">
+  <div className={`${styles.container}`}>
     <div>
       <div>Name: Huanlin Huang</div>
       <div>Phone: 415-361-9522</div>

@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--nav-height));
+  position: relative;
+  top: var(--nav-height);
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    height: calc(100vh - var(--nav-height-660px));
+    top: var(--nav-height-660px);
+    /* border: 1px solid red; */
+  }
+}
