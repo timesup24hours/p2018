@@ -14,6 +14,8 @@ export default () => (
       <CSS3HamburgerMenuIconTransition />,
       <GlowingIconhoverEffect />,
       <CSS3CubeShape />
-    ].map((c, i) => <CssEffect key={i}>{c}</CssEffect>)}
+    ].map((c, i) => (
+      <CssEffect key={i}>{c}</CssEffect>
+    ))}
   </div>
 );

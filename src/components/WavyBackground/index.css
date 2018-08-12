@@ -1,8 +1,6 @@
 .container {
   width: 100%;
-  margin: 0 auto;
   position: relative;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
@@ -14,6 +12,9 @@
   background: linear-gradient(90deg, #f0027f, #75489f);
   /* transition: 0.5s; */
   /* background: #ffc728; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .wave:after {
   position: absolute;

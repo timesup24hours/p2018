@@ -1,5 +1,3 @@
-
-
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
@@ -335,5 +333,10 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
+  },
+  devServer: {
+    compress: true
+    // host: '0.0.0.0',
+    // disableHostCheck: true // That solved it
   }
 };

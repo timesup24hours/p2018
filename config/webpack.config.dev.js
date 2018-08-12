@@ -255,5 +255,10 @@ module.exports = {
   // cumbersome.
   performance: {
     hints: false
+  },
+  devServer: {
+    compress: true
+    // host: '0.0.0.0',
+    // disableHostCheck: true // That solved it
   }
 };
