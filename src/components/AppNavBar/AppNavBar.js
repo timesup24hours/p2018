@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router, // for production
+  HashRouter as Router, // for github free host hard reload
   Switch,
   Route,
   NavLink as Link,
