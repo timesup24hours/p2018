@@ -7,7 +7,7 @@ import {
 
 import styles from './index.css';
 
-import { MobileMenuButton } from '../MobileMenuButton';
+import MobileMenuButton from './MobileMenuButton';
 import Nav from './Nav';
 import Routes from './Routes';
 
