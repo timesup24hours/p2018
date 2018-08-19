@@ -4,11 +4,11 @@
   grid-template-areas: 'div div';
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 2px; */
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: flex-start;
   flex-wrap: wrap;
-  overflow-y: auto;
   height: calc(100vh - var(--nav-height));
   position: relative;
   top: var(--nav-height);
@@ -17,8 +17,10 @@
 
 @media screen and (max-width: 660px) {
   .container {
-    height: calc(100vh - var(--nav-height-660px));
-    top: var(--nav-height-660px);
+    /* height: calc(100vh - var(--nav-height-660px));
+    top: var(--nav-height-660px); */
+    height: 100vh;
+    top: 0;
     width: 100%;
     /* margin: var(--nav-height-660px) auto 0px; */
     overflow-y: auto;

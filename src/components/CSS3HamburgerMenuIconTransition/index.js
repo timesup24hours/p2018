@@ -1,4 +1,5 @@
 // import React from 'react';
 import CSS3HamburgerMenuIconTransition from './CSS3HamburgerMenuIconTransition';
+import HamburgerMenuButton from './HamburgerMenuButton';
 
-export default CSS3HamburgerMenuIconTransition;
+export { CSS3HamburgerMenuIconTransition, HamburgerMenuButton };

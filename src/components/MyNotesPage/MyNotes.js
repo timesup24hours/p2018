@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import { notes } from '../../actions';
 
-import Note from '../Note';
+import styles from './index.css';
+
 import Loading from '../Loading';
 import ScrollIndicator from '../ScrollIndicator';
-
-import styles from './index.css';
+import Note from '../Note';
 
 class MyNotes extends Component {
   state = {
@@ -93,7 +93,9 @@ class MyNotes extends Component {
         }}
       >
         {scrolled ? <ScrollIndicator scrolled={scrolled} /> : null}
-        {notes.map((note, i) => <Note key={i} note={note} />)}
+        {notes.map((note, i) => (
+          <Note key={i} note={note} />
+        ))}
         {fetchLoading ? (
           <div className={styles.loading}>
             <Loading />

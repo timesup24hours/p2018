@@ -1,11 +1,11 @@
 .nav {
   /* border: 1px solid black; */
-  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 900;
   position: fixed;
   width: 100%;
   background: white;
   opacity: 0.9;
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
 }
 .nav_ul {
   display: grid;
@@ -25,21 +25,28 @@
 }
 
 .nav_ul li {
-  /* border: 1px solid red; */
   list-style: none;
   height: 100%;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .a {
   color: black;
+  margin: 0 auto;
   text-decoration-line: none;
   display: block;
   height: 100%;
   width: 100%;
   text-align: center;
+
   line-height: calc(var(--nav-height));
-  transition: 0.5s;
+
+  /* transition: 0.5s; */
+}
+.a.active span {
+  border-bottom: 2px solid rgba(117, 72, 159, 0.5);
 }
 
 .nav_ul li a:visited {
@@ -47,10 +54,22 @@
   text-decoration: none;
 }
 .active {
-  /* box-shadow: 0 1px 30px 1px rgba(0, 0, 0, 0.3); */
   /* color: blueviolet; */
   color: #75489f;
-  /* text-decoration: underline; */
+  /* border-bottom: 2px solid rgba(117, 72, 159, 0.5); */
+  /* text-decoration: underline;
+  text-decoration-color: #75489f; */
+}
+
+.navActive {
+  display: block;
+}
+
+.menuButton {
+  display: none;
+}
+.menuButton:hover {
+  cursor: pointer;
 }
 
 .nav_ul_li_1 {
@@ -67,6 +86,10 @@
 } */
 
 @media screen and (max-width: 660px) {
+  .nav {
+    display: none;
+    opacity: 80%;
+  }
   .nav_ul {
     display: grid;
     grid-template-columns: 100%;
@@ -77,10 +100,43 @@
       'nav_ul_li_4';
     height: var(--nav-height-660px);
     grid-gap: 2px;
-    /* border: 1px solid red; */
     width: 100%;
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
+  }
+  /* .nav_ul {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'nav_ul_li_1'
+      'nav_ul_li_2'
+      'nav_ul_li_3'
+      'nav_ul_li_4';
+    height: var(--nav-height-660px);
+    grid-gap: 2px;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    top: 0;
+    left: 90%;
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
+  } */
+  .menuButton {
+    display: block;
+    z-index: 10000;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 6px;
+    left: 6px;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
+    border-radius: 4px;
+  }
+  .navActive {
+    display: block;
   }
 }

@@ -6,9 +6,9 @@ function sleep(time) {
 
 export default payload =>
   sleep(2000).then(async () => {
-    let response = await fetch('http://localhost/api/item/all');
-    let data = await response.json();
-    console.log(data);
+    // let response = await fetch('http://localhost/api/item/all');
+    // let data = await response.json();
+    // console.log(data);
     const buffer = fakeData.slice(
       payload.start,
       payload.start + payload.loadAmount

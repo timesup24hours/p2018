@@ -11,24 +11,9 @@ import {
 import Loadable from 'react-loadable';
 
 import styles from './index.css';
-import Loading from '../Loading';
 
-const MyLoadingComponent = ({ isLoading, error }) => {
-  // Handle the loading state
-  if (isLoading) {
-    return (
-      <div className="center">
-        <Loading />
-      </div>
-    );
-  }
-  // Handle the error state
-  else if (error) {
-    return <div>Sorry, there was a problem loading the page.</div>;
-  } else {
-    return null;
-  }
-};
+import { MaterialDesignBurgerMenu } from '../MaterialDesignBurgerMenu';
+import MyLoadingComponent from './MyLoadingComponent';
 
 const Home = Loadable({
   loader: () => import('../HomePage'),
@@ -51,28 +36,55 @@ const ContactInfoPage = Loadable({
 
 class AppNavBar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    isMobile: false
   };
+
+  componentDidMount() {
+    // console.log(window.innerHeight < 700);
+    let testExp = new RegExp(
+      'Android|webOS|iPhone|iPad|' +
+        'BlackBerry|Windows Phone|' +
+        'Opera Mini|IEMobile|Mobile',
+      'i'
+    );
+    this.setState({ isMobile: testExp.test(navigator.userAgent) });
+  }
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   };
 
+  CustomhandleOnClick = e => {
+    this.refNav.classList.toggle(styles.navActive);
+    this.toggle();
+  };
+
   render() {
     return (
       <Router>
         <div>
-          <nav className={styles.nav}>
+          <div
+            className={styles.menuButton}
+            ref={ref => (this.refMenuButton = ref)}
+          >
+            <MaterialDesignBurgerMenu
+              CustomhandleOnClick={this.CustomhandleOnClick}
+              open={this.state.isOpen}
+            />
+          </div>
+          <nav className={styles.nav} ref={ref => (this.refNav = ref)}>
             <ul className={styles.nav_ul}>
               <li className={styles.nav_ul_li_1}>
                 <Link
                   exact
                   className={styles.a}
                   activeClassName={styles.active}
+                  onClick={this.CustomhandleOnClick}
                   to="/"
                 >
-                  HOME
+                  <span>HOME</span>
                 </Link>
               </li>
               <li className={styles.nav_ul_li_2}>
@@ -80,8 +92,9 @@ class AppNavBar extends Component {
                   className={styles.a}
                   activeClassName={styles.active}
                   to="/my_notes"
+                  onClick={this.CustomhandleOnClick}
                 >
-                  NOTES
+                  <span>NOTES</span>
                 </Link>
               </li>
               <li className={styles.nav_ul_li_3}>
@@ -89,8 +102,9 @@ class AppNavBar extends Component {
                   className={styles.a}
                   activeClassName={styles.active}
                   to="/css_effects"
+                  onClick={this.CustomhandleOnClick}
                 >
-                  CSS
+                  <span>CSS</span>
                 </Link>
               </li>
               <li className={styles.nav_ul_li_4}>
@@ -98,12 +112,14 @@ class AppNavBar extends Component {
                   className={styles.a}
                   activeClassName={styles.active}
                   to="/contact_info"
+                  onClick={this.CustomhandleOnClick}
                 >
-                  CONTACT
+                  <span>CONTACT</span>
                 </Link>
               </li>
             </ul>
           </nav>
+
           <div className={styles.pageWrapper}>
             <Switch>
               <Route exact path="/" component={Home} />

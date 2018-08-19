@@ -1,5 +1,6 @@
 .container {
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   height: calc(100vh - var(--nav-height));
   position: relative;
   top: var(--nav-height);
@@ -18,7 +19,7 @@
 
 @media screen and (max-width: 660px) {
   .container {
-    height: calc(100vh - var(--nav-height-660px));
-    top: var(--nav-height-660px);
+    height: 100vh;
+    top: 0;
   }
 }

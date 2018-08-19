@@ -1,5 +1,9 @@
 .container {
   background: #131731;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -46,6 +50,9 @@
   opacity: 0;
 }
 .cube:hover span:after {
+  opacity: 1;
+}
+.cube.hover span:after {
   opacity: 1;
 }
 .cube span:nth-child(1) {
@@ -101,5 +108,11 @@
     height: 100%;
     width: 100%;
     transform: scale(0.5);
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .wrapper {
+    transform: scale(0.4);
   }
 }

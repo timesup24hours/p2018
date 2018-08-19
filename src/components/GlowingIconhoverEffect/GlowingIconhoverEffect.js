@@ -8,7 +8,7 @@ export default () => {
       <ul className={styles.ul}>
         <li className={styles.li}>
           <Link to="/css_effects">
-            <i className="fas fa-archway" />
+            <i className="fas fa-birthday-cake" />
           </Link>
         </li>
         <li className={styles.li}>
@@ -18,7 +18,7 @@ export default () => {
         </li>
         <li className={styles.li}>
           <Link to="/css_effects">
-            <i className="fas fa-apple-alt" />
+            <i className="fas fa-bug" />
           </Link>
         </li>
       </ul>

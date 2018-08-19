@@ -1,0 +1,70 @@
+.container {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: white; */
+  /* border-radius: 4px; */
+  /* padding-bottom: 4px; */
+  /* border: 1px solid black; */
+}
+.spanWrapper {
+  height: 80%;
+  width: 80%;
+  position: relative;
+
+  /* border: 1px solid darkgreen; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stick,
+.stick:before,
+.stick:after {
+  width: 100%;
+  height: 4px;
+  /* margin: 0 auto; */
+  background: #75489f;
+  position: absolute;
+  transition: all 0.6s;
+  /* transform-origin: 50% 50%; */
+}
+
+.stick:before {
+  content: '';
+  top: -13px;
+  left: 0;
+  position: absolute;
+}
+
+.stick:after {
+  content: '';
+  top: 13px;
+  left: 0;
+  position: absolute;
+}
+
+.stick.trigger {
+  transform: rotate(180deg);
+}
+
+.stick.trigger:after {
+  transform-origin: 100% 50%;
+  transform: translateY(-14px) rotate(-45deg) scaleX(0.7);
+}
+
+.stick.trigger:before {
+  transform-origin: 100% 50%;
+  transform: translateY(14px) rotate(45deg) scaleX(0.7);
+}

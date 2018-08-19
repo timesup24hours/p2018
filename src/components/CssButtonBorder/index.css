@@ -1,8 +1,16 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 .a {
   position: absolute;
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   width: 160px;
   height: 60px;
   text-align: center;
@@ -14,8 +22,14 @@
   transition: 0.5s;
   font-size: 24px;
   overflow: hidden;
+  z-index: 0;
 }
 .a:hover {
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+.a.hover {
   color: black;
   cursor: pointer;
   font-weight: bold;
@@ -33,6 +47,10 @@
   box-sizing: border-box;
 }
 .a:hover:before {
+  top: calc(100% - 2px);
+  background: black;
+}
+.a.hover:before {
   top: calc(100% - 2px);
   background: black;
 }
@@ -54,6 +72,10 @@
   left: 0;
   transition-delay: 0.5s;
 }
+.a.hover:after {
+  left: 0;
+  transition-delay: 0.5s;
+}
 .span {
   position: absolute;
   top: 0;
@@ -68,6 +90,10 @@
   transition: 0.5s;
 }
 .a:hover span {
+  transform: scaleY(1);
+  transition-delay: 1s;
+}
+.a.hover span {
   transform: scaleY(1);
   transition-delay: 1s;
 }

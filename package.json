@@ -2,9 +2,9 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://timesup24hours.github.io/p2018",
+  "homepage": "./",
   "comments": [
-    "below url is for github free static webpage host",
+    "below url is for github free static webpage host, but not for 'yarn build'",
     "https://timesup24hours.github.io/p2018"
   ],
   "dependencies": {
