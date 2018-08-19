@@ -55,7 +55,7 @@ class AppNavBar extends Component {
   };
 
   CustomhandleOnClick = e => {
-    this.refNav.classList.toggle(styles.navActive);
+    this.refNav.current.classList.toggle(styles.navActive);
     this.toggle();
   };
 
