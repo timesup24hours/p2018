@@ -18,12 +18,24 @@ import styles from './index.css';
 // };
 
 export default class MaterialDesignBurgerMenu extends React.Component {
-  state = {};
+  state = {
+    open: false
+  };
 
   handleOnClick = e => {
     if (this.props.CustomhandleOnClick) this.props.CustomhandleOnClick(e);
     this.spanRef.classList.toggle(styles.trigger);
   };
+
+  static getDerivedStateFromProps(props, state) {
+    // console.log(props, ' ', state);
+    if (props.open !== state.open) {
+      return {
+        open: props.open
+      };
+    }
+    return null;
+  }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (!this.props.open && this.spanRef.classList.contains(styles.trigger)) {

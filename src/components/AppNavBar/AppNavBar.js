@@ -1,55 +1,53 @@
 import React, { Component } from 'react';
 import {
   // BrowserRouter as Router, // for production
-  HashRouter as Router, // for github free host hard reload
-  Switch,
-  Route,
-  NavLink as Link,
-  Redirect
+  HashRouter as Router // for github free host hard reload
 } from 'react-router-dom';
-
-import Loadable from 'react-loadable';
+// import styled from 'styled-components';
 
 import styles from './index.css';
 
-import { MaterialDesignBurgerMenu } from '../MaterialDesignBurgerMenu';
-import MyLoadingComponent from './MyLoadingComponent';
+import { MobileMenuButton } from '../MobileMenuButton';
+import Nav from './Nav';
+import Routes from './Routes';
 
-const Home = Loadable({
-  loader: () => import('../HomePage'),
-  loading: MyLoadingComponent
-});
+// const MenuButtonContainer = styled.div`
+//   display: none;
 
-const MyNotesPage = Loadable({
-  loader: () => import('../MyNotesPage'),
-  loading: MyLoadingComponent
-});
+//   &:hover {
+//     cursor: pointer;
+//   }
 
-const CssEffectsPage = Loadable({
-  loader: () => import('../CssEffectsPage'),
-  loading: MyLoadingComponent
-});
-const ContactInfoPage = Loadable({
-  loader: () => import('../ContactInfoPage'),
-  loading: MyLoadingComponent
-});
+//   @media (max-width: 600px) {
+//     display: block;
+//     z-index: 10000;
+//     height: 50px;
+//     width: 50px;
+//     position: fixed;
+//     top: 6px;
+//     left: 6px;
+//     border-radius: 4px;
+//   }
+// `;
 
 class AppNavBar extends Component {
   state = {
-    isOpen: false,
-    isMobile: false
+    isOpen: false
+    // isMobile: false
   };
+  refNav = React.createRef();
 
-  componentDidMount() {
-    // console.log(window.innerHeight < 700);
-    let testExp = new RegExp(
-      'Android|webOS|iPhone|iPad|' +
-        'BlackBerry|Windows Phone|' +
-        'Opera Mini|IEMobile|Mobile',
-      'i'
-    );
-    this.setState({ isMobile: testExp.test(navigator.userAgent) });
-  }
+  // componentDidMount() {
+  //   // console.log(window.innerHeight < 700);
+  //   let testExp = new RegExp(
+  //     'Android|webOS|iPhone|iPad|' +
+  //       'BlackBerry|Windows Phone|' +
+  //       'Opera Mini|IEMobile|Mobile',
+  //     'i'
+  //   );
+  //   this.setState({ isMobile: testExp.test(navigator.userAgent) });
+  // }
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -62,74 +60,19 @@ class AppNavBar extends Component {
   };
 
   render() {
+    const { isOpen } = this.state;
     return (
       <Router>
         <div>
-          <div
-            className={styles.menuButton}
-            ref={ref => (this.refMenuButton = ref)}
-          >
-            <MaterialDesignBurgerMenu
-              CustomhandleOnClick={this.CustomhandleOnClick}
-              open={this.state.isOpen}
-            />
-          </div>
-          <nav className={styles.nav} ref={ref => (this.refNav = ref)}>
-            <ul className={styles.nav_ul}>
-              <li className={styles.nav_ul_li_1}>
-                <Link
-                  exact
-                  className={styles.a}
-                  activeClassName={styles.active}
-                  onClick={this.CustomhandleOnClick}
-                  to="/"
-                >
-                  <span>HOME</span>
-                </Link>
-              </li>
-              <li className={styles.nav_ul_li_2}>
-                <Link
-                  className={styles.a}
-                  activeClassName={styles.active}
-                  to="/my_notes"
-                  onClick={this.CustomhandleOnClick}
-                >
-                  <span>NOTES</span>
-                </Link>
-              </li>
-              <li className={styles.nav_ul_li_3}>
-                <Link
-                  className={styles.a}
-                  activeClassName={styles.active}
-                  to="/css_effects"
-                  onClick={this.CustomhandleOnClick}
-                >
-                  <span>CSS</span>
-                </Link>
-              </li>
-              <li className={styles.nav_ul_li_4}>
-                <Link
-                  className={styles.a}
-                  activeClassName={styles.active}
-                  to="/contact_info"
-                  onClick={this.CustomhandleOnClick}
-                >
-                  <span>CONTACT</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          <div className={styles.pageWrapper}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/my_notes" component={MyNotesPage} />
-              <Route path="/css_effects" component={CssEffectsPage} />
-              <Route path="/contact_info" component={ContactInfoPage} />
-              <Redirect from="/" to="/" />
-              <Route path="*" component={Home} />
-            </Switch>
-          </div>
+          <MobileMenuButton
+            open={isOpen}
+            CustomhandleOnClick={this.CustomhandleOnClick}
+          />
+          <Nav
+            CustomhandleOnClick={this.CustomhandleOnClick}
+            ref={this.refNav}
+          />
+          <Routes />
         </div>
       </Router>
     );
