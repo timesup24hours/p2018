@@ -1,4 +1,4 @@
 // import React from 'react';
-import MyNotes from './MyNotes';
+import MyNotesContainer from './MyNotesContainer';
 
-export default MyNotes;
+export default MyNotesContainer;

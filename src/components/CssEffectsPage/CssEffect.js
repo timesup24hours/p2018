@@ -6,6 +6,7 @@ import CssButtonBorder from '../CssButtonBorder';
 import { CSS3HamburgerMenuIconTransition } from '../CSS3HamburgerMenuIconTransition';
 import GlowingIconhoverEffect from '../GlowingIconhoverEffect';
 import CSS3CubeShape from '../CSS3CubeShape';
+import FormWrapper from '../FormikForm';
 
 export default () => (
   <div className={`${styles.container}`}>
@@ -13,7 +14,8 @@ export default () => (
       <CssButtonBorder />,
       <CSS3HamburgerMenuIconTransition />,
       <GlowingIconhoverEffect />,
-      <CSS3CubeShape />
+      <CSS3CubeShape />,
+      <FormWrapper />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  // BrowserRouter as Router, // for production
+  // BrowserRouter as Router // for production
   HashRouter as Router // for github free host hard reload
 } from 'react-router-dom';
 // import styled from 'styled-components';
