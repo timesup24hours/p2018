@@ -19,7 +19,7 @@
   margin: 0 auto;
   padding-left: 60%;
   padding-right: 2%;
-  font-weight: bold;
+  /* font-weight: bold; */
 
   /* position: fixed; */
   /* z-index: 1000; */
@@ -69,6 +69,9 @@
 .menuButton {
   display: none;
   z-index: 10000;
+  border-radius: 50%;
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(117, 72, 159, 0.8);
 }
 .menuButton:hover {
   cursor: pointer;
@@ -132,9 +135,12 @@
     height: 50px;
     width: 50px;
     position: fixed;
-    top: 6px;
-    left: 6px;
-    border-radius: 4px;
+    top: 8px;
+    left: 8px;
+    /* border-radius: 4px; */
+  }
+  .menuButton div {
+    transform: scale(0.8);
   }
   .navActive {
     display: block;
