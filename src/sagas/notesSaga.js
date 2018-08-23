@@ -20,7 +20,7 @@ import apis from '../apis';
 //   });
 // }
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
+// worker Saga: will be fired on api call, get notes
 function* fetchNotes(action) {
   try {
     const data = yield call(apis.fetchNotes, action.payload);
@@ -35,30 +35,53 @@ function* fetchNotes(action) {
 }
 
 /*
-  Starts fetchNotes on each dispatched `USER_FETCH_REQUESTED` action.
-  Allows concurrent fetches of user.
+  Starts fetchNotes on each dispatched `NOTES_FETCH_REQUESTED` action.
+  Take the takeLatest fetches of notes.
 */
 function* notesFetchRequested() {
   while (true) {
-    const fetchTask = yield takeLatest('NOTES_FETCH_REQUESTED', fetchNotes);
+    const fetchTask = yield takeLatest(
+      notes.types.NOTES_FETCH_REQUESTED,
+      fetchNotes
+    );
     const cancelAction = yield take(notes.types.NOTES_FETCH_CANCELLED);
     if (cancelAction.type === notes.types.NOTES_FETCH_CANCELLED)
       yield cancel(fetchTask);
   }
 }
 
-/*
-  Alternatively you may use takeLatest.
+// worker Saga: will be fired on api call, get one note
+function* fetchNote(action) {
+  try {
+    const data = yield call(apis.fetchNote, action.payload);
+    yield put(notes.noteFetchSucceeded(data));
+  } catch (e) {
+    yield put(notes.noteFetchFailed(e.message));
+  } finally {
+    if (yield cancelled()) {
+      // yield put(notes.noteFetchFailed('request cancelled'));
+    }
+  }
+}
 
-  Does not allow concurrent fetches of user. If "USER_FETCH_REQUESTED" gets
-  dispatched while a fetch is already pending, that pending fetch is cancelled
-  and only the latest one will be run.
+/*
+  Starts fetchNote on each dispatched `NOTES_FETCH_REQUESTED` action.
+  Take the takeLatest fetches of notes.
 */
-// function* mySaga() {
-//   yield takeLatest('USER_FETCH_REQUESTED', fetchNotes);
-// }
+function* noteFetchRequested() {
+  while (true) {
+    const fetchTask = yield takeLatest(
+      notes.types.NOTE_FETCH_REQUESTED,
+      fetchNote
+    );
+    const cancelAction = yield take(notes.types.NOTE_FETCH_CANCELLED);
+    if (cancelAction.type === notes.types.NOTE_FETCH_CANCELLED)
+      yield cancel(fetchTask);
+  }
+}
 
 export {
-  notesFetchRequested
+  notesFetchRequested,
+  noteFetchRequested
   // , watchAndLog
 };

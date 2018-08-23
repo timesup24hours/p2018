@@ -1,14 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './index.css';
 
 export default ({ note }) => {
   return (
-    <div className={styles.container}>
+    <Link
+      to={{
+        hash: note.id,
+        pathname: `/my_notes/${note.title}`
+      }}
+      className={styles.container}
+    >
       <div className={styles.wrapper}>
         <h1>{note.title}</h1>
-        <div>{note.content}</div>
+        <div>{note.subTitle}</div>
       </div>
-    </div>
+    </Link>
   );
 };

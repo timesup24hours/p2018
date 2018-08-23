@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './index.css';
 import { MaterialDesignBurgerMenu } from '../MaterialDesignBurgerMenu';
 
-export default ({ open, CustomhandleOnClick }) => (
-  <div className={styles.menuButton}>
+export default React.forwardRef((props, ref) => (
+  <div className={styles.menuButton} ref={ref}>
     <MaterialDesignBurgerMenu
-      CustomhandleOnClick={CustomhandleOnClick}
-      open={open}
+      CustomhandleOnClick={props.CustomhandleOnClick}
+      open={props.open}
     />
   </div>
-);
+));

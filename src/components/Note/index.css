@@ -1,12 +1,17 @@
 .container {
   width: 80%;
   padding-left: 30px;
-
   border-left: 14px solid white;
   transition: 0.2s;
   padding-bottom: 20px;
   background: white;
   margin-bottom: 8px;
+  text-decoration: none;
+  color: black;
+}
+.container:visited {
+  color: none;
+  text-decoration: none;
 }
 
 .wrapper {

@@ -15,6 +15,11 @@ const MyNotesPage = Loadable({
   loading: MyLoadingComponent
 });
 
+const MyNotesDetailPage = Loadable({
+  loader: () => import('../NoteDetailPage'),
+  loading: MyLoadingComponent
+});
+
 const CssEffectsPage = Loadable({
   loader: () => import('../CssEffectsPage'),
   loading: MyLoadingComponent
@@ -28,7 +33,8 @@ export default () => (
   <div className={styles.pageWrapper}>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/my_notes" component={MyNotesPage} />
+      <Route exact path="/my_notes" component={MyNotesPage} />
+      <Route exact path="/my_notes/:title" component={MyNotesDetailPage} />
       <Route path="/css_effects" component={CssEffectsPage} />
       <Route path="/contact_info" component={ContactInfoPage} />
       <Redirect from="/" to="/" />

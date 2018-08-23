@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* font-family: 'Gill Sans', sans-serif; */
-  font-family: Lucida Console, Courier, monospace;
+  /* font-family: Lucida Console, Courier, monospace; */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 :root {
   --nav-height: 50px;
   --nav-height-660px: 206px;
+  --light-grey-background-color: rgba(169, 169, 169, 0.1);
+  --primary-purple-color: rgba(138, 43, 226, 0.8);
+  --border-left-grey: #dedede;
 }
 
 :global(.container) {

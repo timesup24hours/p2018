@@ -1,10 +1,13 @@
 import faker from 'faker';
+import uuid from 'uuid';
 
-export default [...new Array(91)]
+export default [...new Array(41)]
   .map(() => {
     return {
+      id: uuid(),
       title: faker.lorem.slug(),
-      content: faker.lorem.words(),
+      subTitle: faker.lorem.words(),
+      content: faker.lorem.paragraphs(15),
       createdAt: new Date(faker.date.past()).toISOString()
     };
   })

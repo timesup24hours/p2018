@@ -36,6 +36,7 @@ class AppNavBar extends Component {
     // isMobile: false
   };
   refNav = React.createRef();
+  MobileMenuButton = React.createRef();
 
   // componentDidMount() {
   //   // console.log(window.innerHeight < 700);
@@ -55,8 +56,10 @@ class AppNavBar extends Component {
   };
 
   CustomhandleOnClick = e => {
-    this.refNav.current.classList.toggle(styles.navActive);
-    this.toggle();
+    if (getComputedStyle(this.MobileMenuButton.current).display === 'block') {
+      this.refNav.current.classList.toggle(styles.navActive);
+      this.toggle();
+    }
   };
 
   render() {
@@ -67,6 +70,7 @@ class AppNavBar extends Component {
           <MobileMenuButton
             open={isOpen}
             CustomhandleOnClick={this.CustomhandleOnClick}
+            ref={this.MobileMenuButton}
           />
           <Nav
             CustomhandleOnClick={this.CustomhandleOnClick}

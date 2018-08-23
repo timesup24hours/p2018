@@ -17,7 +17,7 @@ import styles from './index.css';
 //   );
 // };
 
-export default class MaterialDesignBurgerMenu extends React.Component {
+export default class MaterialDesignBurgerMenu extends React.PureComponent {
   state = {
     open: false
   };
@@ -27,25 +27,30 @@ export default class MaterialDesignBurgerMenu extends React.Component {
     this.spanRef.classList.toggle(styles.trigger);
   };
 
-  static getDerivedStateFromProps(props, state) {
-    // console.log(props, ' ', state);
-    if (props.open !== state.open) {
-      return {
-        open: props.open
-      };
-    }
-    return null;
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log(props, ' ', state);
+  //   if (props.open !== state.open) {
+  //     return {
+  //       open: props.open
+  //     };
+  //   }
+  //   return null;
+  // }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (!this.props.open && this.spanRef.classList.contains(styles.trigger)) {
-      this.spanRef.classList.remove(styles.trigger);
-    } else if (
-      this.props.open &&
-      !this.spanRef.classList.contains(styles.trigger)
-    ) {
+    if (this.props.open) {
       this.spanRef.classList.add(styles.trigger);
+    } else {
+      this.spanRef.classList.remove(styles.trigger);
     }
+    // if (!this.props.open && this.spanRef.classList.contains(styles.trigger)) {
+    //   this.spanRef.classList.remove(styles.trigger);
+    // } else if (
+    //   this.props.open &&
+    //   !this.spanRef.classList.contains(styles.trigger)
+    // ) {
+    //   this.spanRef.classList.add(styles.trigger);
+    // }
   }
 
   render() {

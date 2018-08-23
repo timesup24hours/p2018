@@ -7,6 +7,8 @@ import { CSS3HamburgerMenuIconTransition } from '../CSS3HamburgerMenuIconTransit
 import GlowingIconhoverEffect from '../GlowingIconhoverEffect';
 import CSS3CubeShape from '../CSS3CubeShape';
 import FormWrapper from '../FormikForm';
+import GlowingLoaderRing from '../GlowingLoaderRing';
+import ForgetPasswordForm from '../ForgetPasswordForm';
 
 export default () => (
   <div className={`${styles.container}`}>
@@ -15,7 +17,9 @@ export default () => (
       <CSS3HamburgerMenuIconTransition />,
       <GlowingIconhoverEffect />,
       <CSS3CubeShape />,
-      <FormWrapper />
+      <GlowingLoaderRing />,
+      <FormWrapper />,
+      <ForgetPasswordForm />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}
