@@ -1,0 +1,30 @@
+.container {
+  background: rgb(248, 192, 192);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  height: 70%;
+  width: 70%;
+}
+
+@keyframes rectAnimate {
+  0% {
+    y: calc(var(--y) * 2);
+  }
+  100% {
+    y: var(--y);
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+}

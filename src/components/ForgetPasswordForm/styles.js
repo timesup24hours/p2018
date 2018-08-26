@@ -7,8 +7,8 @@ export default {
     // width: '406px',
     borderRadius: '4px',
     background: '#fff',
-    height: '178px',
-    minHeight: '178px',
+    height: '190px',
+    minHeight: '190px',
     width: '282px',
     minWidth: '282px',
     padding: '18px 16px',
@@ -26,7 +26,7 @@ export default {
   },
   bottom: {
     // border: '1px solid black',
-    flex: '1.1',
+    flex: '.9',
     width: '100%',
     justifyContent: 'flex-end'
   },
@@ -47,8 +47,8 @@ export default {
     color: 'grey'
   },
   field: {
+    // border: '1px solid black',
     flex: '1'
-    // border: '1px solid black'
   },
   error: {
     color: 'red',
@@ -62,11 +62,22 @@ export default {
     paddingRight: '1px'
   },
   header: {
+    // border: '1px solid black',
+    flex: '1.3',
+    width: '100%'
+  },
+  headerFlexh1: {
+    // border: '1px solid black',
     flex: '1.2',
     width: '100%'
-    // border: '1px solid black'
+  },
+  headerFlexSpan: {
+    // border: '1px solid red',
+    flex: '.8',
+    width: '100%'
   },
   h1: {
+    // border: '1px solid black',
     fontSize: '18px',
     lineHeight: '18px',
     textAlign: 'center',
@@ -79,15 +90,5 @@ export default {
     borderBottom: '1px solid lightgrey',
     margin: '0 auto'
     // paddingTop: '10px'
-  },
-  headerFlexh1: {
-    // border: '1px solid black',
-    flex: '1',
-    width: '100%'
-  },
-  headerFlexSpan: {
-    // border: '1px solid red',
-    flex: '.8',
-    width: '100%'
   }
 };

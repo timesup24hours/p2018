@@ -35,9 +35,31 @@
   background: #00151f;
   border-radius: 50%;
   transition: 0.5s;
+  user-select: none;
 }
 .toggle.active:before {
   left: 21px;
+  user-select: none;
+}
+.toggle:focus,
+.toggle:active,
+.toggle.active,
+.toggle:active:focus,
+.toggle.active:focus {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+  user-select: none;
+}
+.container:focus,
+.container:active,
+.container.active,
+.container:active:focus,
+.container.active:focus {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+  user-select: none;
 }
 
 .night {
