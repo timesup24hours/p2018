@@ -2,8 +2,13 @@ import React from 'react';
 
 import styles from './index.css';
 
-export default () => {
+export default ({ onClick }) => {
   const handler = e => {
+    if (onClick) {
+      e.target.classList.toggle(`${styles.active}`);
+      onClick(e);
+      return;
+    }
     e.target.classList.toggle(`${styles.active}`);
     e.target.parentNode.parentNode.classList.toggle(`${styles.night}`);
     e.target.parentNode.parentNode.parentNode.classList.toggle(

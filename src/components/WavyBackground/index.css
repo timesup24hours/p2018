@@ -60,10 +60,11 @@
 .starts_container {
   height: 50vh;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  /* overflow: hidden; */
+  overflow: hidden;
 
   width: 100%;
   min-height: 500px;
+  max-height: 500px;
   position: relative;
   background: linear-gradient(90deg, #f0027f, #75489f);
   /* transition: 0.5s; */
@@ -72,6 +73,13 @@
   align-items: center;
   justify-content: center;
   user-select: none;
+}
+
+.backgroundColorPurple {
+  background: linear-gradient(90deg, #f0027f, #75489f);
+}
+.backgroundColorNight {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
 .stars {
