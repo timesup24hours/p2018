@@ -44,7 +44,9 @@ const templateData = [
 export default () => {
   useEffect(() => {
     const targets = document.querySelectorAll('#block_info');
-    targets.forEach(ele => intersectionObserver(ele, 'blockContentAnimation'));
+    targets.forEach(ele =>
+      intersectionObserver(ele, 'blockContentAnimation', true)
+    );
   }, []);
   return (
     <div className={styles.container}>

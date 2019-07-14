@@ -1,20 +1,11 @@
 import React from 'react';
-import FormWrapper from './FormikFormContainer';
+import FormikFormContainer from './FormikFormContainer';
 
-const styles = {
-  container: {
-    background: 'rgb(230, 242, 255)',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%'
-  }
-};
+import styles from './index.css';
 
 export default () => (
-  <div style={styles.container}>
-    <FormWrapper />
+  <div className={styles.container}>
+    <div className={styles.formText}>UI only no ajax request</div>
+    <FormikFormContainer />
   </div>
 );

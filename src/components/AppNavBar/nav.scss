@@ -1,3 +1,6 @@
+:root {
+  --nav-line-top: 0;
+}
 .nav {
   /* border: 1px solid black; */
   z-index: 9000;
@@ -47,12 +50,8 @@
 
   /* transition: 0.5s; */
 }
-.a span {
-  pointer-events: none;
-}
 .a.active span {
   border-bottom: 2px solid rgba(117, 72, 159, 0.5);
-  pointer-events: none;
 }
 
 .nav_ul li a:visited {
@@ -151,13 +150,13 @@
     display: block;
   }
 }
-.line {
+.nav_line {
   display: inline-block;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   position: absolute;
-  background-color: #75489f;
+  background-color: black;
   width: 20px;
   height: 4px;
-  top: 37px;
-  left: 0;
+  top: 20px;
+  left: var(--nav-line-top);
 }

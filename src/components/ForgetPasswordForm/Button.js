@@ -6,6 +6,8 @@ export default ({ styles, cssStyle, isSubmitting }) => (
     className={`${cssStyle.btn} ${isSubmitting ? `${cssStyle.disabled}` : ''}`}
     type="submit"
     disabled={isSubmitting}
+    tabIndex={0}
+    aria-label="Send forget password email button"
   >
     {isSubmitting ? 'Sending' : 'Send'}
   </button>

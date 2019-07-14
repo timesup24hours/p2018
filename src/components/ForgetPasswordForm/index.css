@@ -16,8 +16,6 @@
 }
 
 .btn {
-  outline: 0;
-  outline-offset: 0;
   padding: 6px;
   border: 0;
   border-radius: 2px;
@@ -47,8 +45,6 @@
 .btn.active,
 .btn:active:focus,
 .btn.active:focus {
-  outline: 0;
-  outline-offset: 0;
   box-shadow: none;
 }
 
@@ -69,4 +65,26 @@
 
 .disabledSelect {
   user-select: none;
+}
+
+.formText {
+  transition: all 1s linear;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+  opacity: 0;
+}
+.container:hover .formText {
+  opacity: 1;
+}
+
+.container {
+  background: rgb(230, 242, 255);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }

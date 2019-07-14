@@ -9,10 +9,15 @@ import Wavy2Content from '../Wavy2Content';
 export default ({ children }) => {
   return (
     <div className={styles.container}>
-      <section className={styles.wave}>
+      <StarSky>
         {children}
         <DayNightModeSwitchToggle />
-      </section>
+      </StarSky>
+      {/* <section className={styles.wave}>
+        {children}
+        <DayNightModeSwitchToggle />
+      </section> */}
+
       <BriefInfo />
       <section className={styles.wave1}>
         <UserCard />
@@ -21,3 +26,12 @@ export default ({ children }) => {
     </div>
   );
 };
+
+const StarSky = ({ children }) => (
+  <div className={styles.starts_container}>
+    <div className={styles.stars} />
+    <div className={styles.stars2} />
+    <div className={styles.stars3} />
+    {children}
+  </div>
+);
