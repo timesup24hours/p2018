@@ -4,10 +4,10 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1.5fr;
   grid-template-areas:
     '....... ....... title title'
-    'content content content content';
+    '....... ....... content content';
   font-family: sans-serif;
 }
 
@@ -19,13 +19,13 @@
   grid-column: 3 / span 2; /* start-position / span to N  */
   text-transform: capitalize;
   color: white;
-  padding: 40px 30px 40px 0px;
+  padding: 10px 30px 40px 0px;
 }
 
 .content {
   /* border: 1px solid black; */
   grid-area: content;
-  padding: 0 60px 50px;
+  padding-left: 20px;
 }
 
 @media screen and (max-width: 780px) {

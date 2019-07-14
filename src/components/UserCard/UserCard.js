@@ -8,40 +8,43 @@ export default () => {
       <div className={styles.card}>
         <div className={styles.box}>
           <div className={styles.img}>
-            <i className="fas fa-user" />
+            <img
+              src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/11885312_933409170050854_7994195451447625344_n.jpg?_nc_cat=104&_nc_oc=AQlMKlZHoqUMtYI59PfKcT5J7jf2JCGEntLcuPO-mtMG3VwrGCpI__EvPV4SdcCGI9OfgkP3ZeWYcxunQTIMawfQ&_nc_ht=scontent-sjc3-1.xx&oh=76860530bb5a10e1f9535446764bb8fa&oe=5DBDC123"
+              alt=""
+            />
+            {/* <i className="fas fa-user" /> */}
           </div>
           <h2>
             <div className={styles.name}>Huanlin Huang </div>
-            <span>Web Developer</span>
+            <span>Vim user</span>
           </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, addem dolore facere
-            voluptatum, rerum quibusdam placeat?
-          </p>
+          <p>I am a self-taugth full-stack developer, since 2017</p>
           <ul>
             <li>
-              <a href="">
+              <a
+                href="https://www.facebook.com/huanlin.huang"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-facebook-f" />
               </a>
             </li>
             <li>
-              <a href="">
-                <i className="fab fa-twitter" />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i className="fab fa-google-plus-g" />
-              </a>
-            </li>
-            <li>
-              <a href="">
+              <a
+                href="https://www.linkedin.com/in/huanlin-huang-4b7b9b183"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin-in" />
               </a>
             </li>
             <li>
-              <a href="">
-                <i className="fab fa-instagram" />
+              <a
+                href="https://github.com/timesup24hours"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github" />
               </a>
             </li>
           </ul>

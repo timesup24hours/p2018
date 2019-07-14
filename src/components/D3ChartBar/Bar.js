@@ -37,7 +37,7 @@ export default props => {
         >
           <style jsx="true">{barStyle}</style>
         </rect>
-        <Text xScale={xScale} height={height} value={d.value} />
+        {/* <Text xScale={xScale} height={height} value={d.value} /> */}
       </g>
     );
   });
