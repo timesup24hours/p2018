@@ -1,5 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
+
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 
 import styles from './index.css';
 import Loading from '../Loading';
@@ -35,10 +41,12 @@ class NoteDetailPage extends React.Component {
       </div>
     ) : (
       <div className={styles.container}>
-        <div className={styles.title}>{title}</div>
         {currentNote
           ? [
-              <div key="title" className={styles.subTitle}>
+              <div key="title" className={styles.title}>
+                {currentNote.title}
+              </div>,
+              <div key="sub-title" className={styles.subTitle}>
                 {currentNote.subTitle}
               </div>,
               <article key="content" className={styles.content}>
@@ -46,6 +54,11 @@ class NoteDetailPage extends React.Component {
               </article>
             ]
           : null}
+        {currentNote && currentNote.code && (
+          <div style={{ width: 'auto' }}>
+            {currentNote && <Component data={currentNote.code} />}
+          </div>
+        )}
       </div>
     );
   }
@@ -66,3 +79,19 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(NoteDetailPage);
+
+const Component = ({ data }) => {
+  return (
+    <SyntaxHighlighter
+      customStyle={{ width: '100%' }}
+      language="javascript"
+      // style={docco}
+      style={prism}
+      // style={dark}
+      showLineNumbers={true}
+      wrapLines={true}
+    >
+      {data}
+    </SyntaxHighlighter>
+  );
+};

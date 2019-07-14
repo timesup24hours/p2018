@@ -1,18 +1,89 @@
+const initialCodeString = `export const intersectionObserver = (target, className) => {
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        if (!entry.target.classList.contains(className))
+          entry.target.classList.add(className);
+      } else {
+        if (entry.target.classList.contains(className))
+          entry.target.classList.remove(className);
+      }
+    });
+  });
+
+  io.observe(target);
+};
+`;
+
 export default [
   {
     id: '8bc545f5-c240-4bfd-9927-4be53ec0ab70',
-    title: 'est-consequatur-rem',
-    subTitle: 'laboriosam voluptatem nostrum',
-    content:
-      'Qui perferendis qui asperiores. Delectus animi ut dolores nihil dolor. Velit qui earum. Fugit delectus nulla accusamus inventore similique illo et labore. Repellendus occaecati minima cupiditate facere minima occaecati. Inventore sapiente numquam omnis aut ab voluptas.\n \rNemo minus dolorum suscipit. Ratione animi autem beatae. Necessitatibus facilis fugit. Aperiam quia vitae perspiciatis rerum earum. Nihil a perspiciatis ut repudiandae quae corrupti. Et occaecati ducimus unde voluptas debitis.\n \rLaboriosam nemo voluptatem eligendi inventore. Est et ab dolores distinctio vel rerum corporis et. Neque quisquam ullam et et. Perferendis dolorum quia dolores delectus ut et deleniti. Rem harum sunt reiciendis dicta magni quia. Aperiam voluptatem natus reiciendis omnis omnis quam.\n \rEt corrupti eligendi dolor voluptatem eos omnis nemo quae. Culpa iure accusamus est iusto qui. Id qui tempore blanditiis odit aliquam blanditiis. Reprehenderit pariatur repudiandae et recusandae voluptatem voluptatum sapiente. Perferendis eum sed.\n \rDucimus dolore qui et qui magnam sit laudantium. Quaerat vel hic dolores officia blanditiis ut. Sapiente deserunt dolorem. Iure at rerum.\n \rDolores totam dolor a in magnam. Qui explicabo aliquam voluptatum. Recusandae non nostrum provident aut at velit. Nihil a autem. Est quod ducimus quaerat nam corrupti earum et doloremque. Et officiis voluptas veritatis quasi voluptatem provident consequatur aut et.\n \rDolorem non pariatur exercitationem minus. Est necessitatibus eveniet beatae omnis. Enim eum et magni impedit earum nobis sint deleniti nobis. Ducimus temporibus velit ipsa itaque minus est. In fugit eligendi. Labore commodi laborum eveniet.\n \rEligendi dolorem aut est provident molestiae aut. Odit voluptatem dolorum nisi quae. Necessitatibus aliquid error. Aut porro ullam sunt labore architecto praesentium dignissimos qui. Voluptatibus eum eos molestias incidunt a. Occaecati minima nemo culpa nesciunt beatae occaecati.\n \rEa rerum et qui iure tenetur excepturi. Deleniti iure quia eius architecto ut omnis. Quidem tempore non ratione officiis assumenda qui quo quia et.\n \rLaboriosam distinctio rerum laborum autem saepe praesentium quam ea. Consequatur omnis velit vel ad. Rerum error facere libero dolores officia recusandae sed nostrum voluptas.\n \rSapiente saepe omnis fugiat vel occaecati. Dolor aut cupiditate fugiat ut perferendis ea harum. Molestias quaerat modi qui delectus nobis qui eum velit aut. Earum amet reiciendis nulla quasi. Dolorem nihil mollitia quia harum reprehenderit blanditiis quaerat aut id. Sed et autem vitae error enim dolorum eaque magnam.\n \rNon nesciunt quo nihil quo reiciendis rerum maiores voluptatum est. Magnam corporis consectetur ab ullam ab illo ea. Est harum quo est. Neque debitis earum sequi ut est distinctio. Nisi esse quia aliquid est ut consequatur ea porro error. Animi sed dolor consequuntur ipsum aspernatur velit nihil ullam saepe.\n \rEt eligendi voluptas ut ratione. Neque provident doloribus sunt officiis dolores repellat dolorum consequuntur. Aliquam repellendus corrupti reprehenderit inventore ab. Tenetur magnam laboriosam ut beatae neque. Ea et et ea sequi veritatis nihil ea dolores. Illum ea sed exercitationem et aut et.\n \rInventore voluptatem qui sint eum in et dignissimos illum. Vel fugiat ipsum amet odio libero tempora. Itaque soluta ut quas ipsum omnis vero.\n \rCorporis sint error qui. Labore eaque eveniet neque ut sit. Sed incidunt in ut qui aliquam quis fuga libero. Libero iure quibusdam molestiae voluptatem voluptatum quisquam vel autem non.',
+    title: 'Intersection Observer API',
+    subTitle: '',
+    content: 'Observering target element intersection into the screen',
+    code: initialCodeString,
     createdAt: '2017-09-20T19:25:09.623Z'
   },
   {
     id: '00feae1f-b6e4-4e23-ae95-61c486da151e',
-    title: 'dolores-sint-ipsum',
-    subTitle: 'voluptatem id earum',
-    content:
-      'Sapiente saepe unde. Aut dolore debitis maxime reiciendis esse ut explicabo enim. Quo aliquam quaerat sit.\n \rQuibusdam ex id officiis ullam mollitia omnis magnam ipsa qui. Possimus ut dolores commodi. Quis voluptatem enim quisquam similique excepturi velit magni et necessitatibus. Optio dolore ut earum. Voluptatem sit cum nam quis in facilis.\n \rOfficia consequatur quos quis. Velit dolorum distinctio culpa omnis. Aut accusantium quidem ut nostrum laboriosam porro odio. Iusto voluptatibus dolore.\n \rDeleniti beatae repellendus maxime. Expedita nihil quidem quis et. Eaque non omnis quidem est natus perspiciatis ut laborum. Sequi sed voluptas deserunt ex vero laudantium illo. Repudiandae magnam consequatur dolor ut nam saepe sint maxime. Sequi dolorem sed sint nostrum non nulla et sint vel.\n \rFugit nihil optio est enim perspiciatis vel. Molestias repellendus consequatur soluta rerum libero. Iusto doloremque minus sit enim quam. Et voluptates excepturi ratione qui laborum. Et eum pariatur minima.\n \rIn molestiae dolores numquam quas ea officia. Architecto in esse ab. Dolores minima vel sequi a. Qui totam ducimus laudantium numquam magni minus quis praesentium optio.\n \rAliquid consectetur maxime. Id et ut molestiae placeat qui voluptas. Officia nemo aut ut suscipit occaecati. Architecto id saepe.\n \rAut exercitationem expedita a suscipit blanditiis qui quaerat. Sunt et libero omnis voluptatem quaerat qui debitis soluta et. Animi et qui placeat commodi. Animi exercitationem quisquam itaque amet pariatur. Maxime est animi vero. Voluptate et delectus ut.\n \rQuas dolor illo sequi voluptatem qui aut aliquam nam. Laboriosam ex alias ea. Provident ut alias. Incidunt dolor expedita necessitatibus nisi. Ut labore qui aut laborum est. Dignissimos numquam ratione ratione cupiditate placeat consequatur.\n \rMinima accusamus asperiores dolores sed magnam. Minus molestiae vero velit. Accusantium non maiores omnis et vero et qui itaque. Vero non quas quod voluptatem laudantium molestiae alias id.\n \rOfficia quaerat odit nemo cupiditate non. Impedit quisquam voluptatem temporibus. Et quo neque sunt id autem sint autem.\n \rTempora repellat et reiciendis placeat minus nisi laudantium. Amet quam illum est dolores. Maxime aut neque ut rem quo. Doloribus voluptas voluptatum omnis vel nihil quas. Ipsa modi vitae.\n \rAut a saepe earum porro perferendis aut labore in quaerat. Voluptatem ipsum magni exercitationem. Officiis quos sequi id consequatur ipsam.\n \rQuibusdam ducimus dolores officiis nam dicta quos delectus. Similique eos voluptatibus commodi aspernatur. Aperiam ex qui expedita delectus et eligendi.\n \rUt dolorum labore est assumenda adipisci et aspernatur exercitationem corrupti. Doloremque natus quas. Qui placeat quasi molestiae ut qui. Eum omnis exercitationem consequatur. Earum sit odit in ex autem ad.',
+    title: 'Resume',
+    subTitle: '',
+    content: '',
+    code: `Huanlin Huang
+					
+Hayward, CA				
+huanlinhuang@gmail.com					
+4153619522
+				
+Work Experience
+					
+React JS Developer
+KloudOne Inc. - Santa Clara, CA January 2019 to Present
+• Using ReactJS/CSS to write reusable component 
+• Integrating REST/Restful API 
+• Redux for global state management 
+• Git/GitHub for version control 
+• D3/Recharts for data visualization 
+• End-to-end testing with Puppeteer and Jest 
+• Unit test using 'react-testing-library', enzyme, Jest 
+• Using React Hook for reusability 
+• Continual learning of emerging technologies/industry trends — React Lazy, Suspense, etc. 
+• Write maintainable and testable code 
+• Work cross functionally with engineers, designers, and product managers 
+• Work with team to design, build, and support new features for the platform 
+• Communicate technical decisions through design docs, tech talks 
+• Understand the business and the business impact of the code
+
+Projects - (self-taught projects - learning since 2017)
+https://github.com/timesup24hours/p2018
+Tech Stack - React/Redux/Redux-saga, D3.js - (cancel ajax, take latest request when race condition)
+
+https://github.com/timesup24hours/porfolio_react_redux
+Tech Stack - Docker/Docker compose/Nginx/Express.js/Node.js/Passport.js/Tape.js/Mongoose/React/Redux/Strip
+
+https://github.com/timesup24hours/song
+Tech Stack - Vue.js/Vue-apollo/GraphQL/Express.js/GraphQl-server-/express/Sequlize
+
+https://github.com/timesup24hours/post_react_redux
+MERN - passport-facebook/passport-google-oauth/passport-jwt/passport-local/socket.io
+
+Skills
+• Vim user  - VS Code - ESlint - Prettier
+• Building Websites Full Stack: ReatJS / Redux / CSS / SCSS / NodeJS / ExpressJS / Docker / MongoDB / WebSocket / WebRTC / JWT
+• Javascript ES5 prototypal inheritance and ES6 syntax
+• React - Render Props / High Order Component / React Hooks
+• JS - Closure / Event Loop / Currying / IIFE / Intersection Observer API / Dom API / Pure Function
+• Building Restful /CRUD API using NodeJS/ExpressJS/Swagger
+• Building schema using MongoDB/Mongoose
+• Computer science fundamentals and Data structures, MVC, OOP
+• Semantic HTML HTML5/Accessibility/Screen Reader/Keyboard user friendly
+• CSS SASS/SCSS /CSS3 Animation/Mobile/Multi screen sizes friendly
+• Experience consuming data from REST API / Asynchronous request handling, partial page updates, and AJAX
+				
+Links - GitHub
+https://github.com/timesup24hours 
+
+      `,
     createdAt: '2017-09-27T08:39:25.207Z'
   },
   {

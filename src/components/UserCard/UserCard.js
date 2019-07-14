@@ -24,7 +24,7 @@ export default () => {
             <div className={styles.name}>Huanlin Huang </div>
             <span>Vim user</span>
           </h2>
-          <p>I am a self-taugth full-stack developer, since 2017</p>
+          <p>I am a self-taught full-stack developer, since 2017</p>
           <ul>
             <li>
               <a
