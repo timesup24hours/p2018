@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import styles from './index.css';
+
+import { intersectionObserver } from '../../util';
 
 const templateData = [
   {
@@ -9,7 +11,8 @@ const templateData = [
   },
   {
     title: 'Redux',
-    desc: 'Redux for global state management, Immutable'
+    desc:
+      'Redux for global state management, Immutable, Redux-thunk or Redux-saga'
   },
   {
     title: 'Javascript',
@@ -22,7 +25,7 @@ const templateData = [
   },
   {
     title: 'MongoDB',
-    desc: 'Building schema using MongoDB/Mongoose'
+    desc: 'Building schema using MongoDB/Mongoose, Validator Joi'
   },
   {
     title: 'HTML',
@@ -38,24 +41,26 @@ const templateData = [
     desc: 'Computer science fundamentals and Data structures, MVC, OOP'
   }
 ];
-export default class BriefInfo extends React.PureComponent {
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.title}>My Tech Stack</div>
-        <div className={styles.blockWrapper}>
-          {templateData.map((data, i) => (
-            <BlockInfo key={i} data={data} />
-          ))}
-        </div>
+export default () => {
+  useEffect(() => {
+    const targets = document.querySelectorAll('#block_info');
+    targets.forEach(ele => intersectionObserver(ele, 'blockContentAnimation'));
+  }, []);
+  return (
+    <div className={styles.container}>
+      <div className={styles.title}>My Tech Stack</div>
+      <div className={styles.blockWrapper}>
+        {templateData.map((data, i) => (
+          <BlockInfo key={i} data={data} />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 const BlockInfo = ({ data }) => {
   return (
-    <div className={styles.block}>
+    <div id="block_info" className={styles.block}>
       <div className={styles.blockTitle}>{data.title}</div>
       <div className={styles.blockContent}>{data.desc}</div>
     </div>

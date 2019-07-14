@@ -1,4 +1,5 @@
 .container {
+  transition: all 0.3s ease-in-out;
   color: black;
   /* border: 1px solid red; */
   /* background: rgba(224, 194, 194, 0.3); */
@@ -20,6 +21,7 @@
   grid-row-gap: 100px;
 }
 .block {
+  transition: all 0.3s ease-in-out;
   height: 200px;
   display: flex;
   flex-direction: column;

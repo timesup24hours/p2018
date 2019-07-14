@@ -2,6 +2,8 @@
   /* transform: scale(0.8); */
 }
 .card {
+  opacity: 0;
+  transform: translateX(-80%);
   position: absolute;
   top: -40%;
   left: 10%;

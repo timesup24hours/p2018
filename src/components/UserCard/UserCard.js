@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import styles from './index.css';
 
+import { intersectionObserver } from '../../util';
+
 export default () => {
+  useEffect(() => {
+    const targets = document.querySelectorAll('#user-card');
+    targets.forEach(ele => intersectionObserver(ele, 'userCardAnimation'));
+  }, []);
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
+      <div className={styles.card} id="user-card">
         <div className={styles.box}>
           <div className={styles.img}>
             <img
