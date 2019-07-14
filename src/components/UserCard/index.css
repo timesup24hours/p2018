@@ -13,7 +13,7 @@
   background: white;
   box-shadow: 0 2px 50px 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  transition: 0.5s;
+  transition: all 2s ease-in-out;
 }
 .card:hover {
   box-shadow: 0 2px 50px 10px rgba(0, 0, 0, 0.5);
