@@ -67,7 +67,7 @@ export const genStars = id => {
 
   function getPreviousDot(id, stepback) {
     if (id == 0 || id - stepback < 0) return false;
-    if (typeof dots[id - stepback] != 'undefined') return dots[id - stepback];
+    if (typeof dots[id - stepback] !== 'undefined') return dots[id - stepback];
     else return false; //getPreviousDot(id - stepback);
   }
 
@@ -114,26 +114,26 @@ export const genStars = id => {
       backgroundSpeed: 0
     };
   console.log('canvas :', canvas);
-  var gui;
-  gui = new dat.GUI();
-  gui
-    .add(params, 'maxDistFromCursor')
-    .min(0)
-    .max(100)
-    .step(10)
-    .name('Size');
-  gui
-    .add(params, 'dotsSpeed')
-    .min(0)
-    .max(100)
-    .step(0.5)
-    .name('Speed');
-  gui
-    .add(params, 'backgroundSpeed')
-    .min(0)
-    .max(150)
-    .step(1)
-    .name('Sky speed');
+  // var gui;
+  // gui = new dat.GUI();
+  // gui
+  //   .add(params, 'maxDistFromCursor')
+  //   .min(0)
+  //   .max(100)
+  //   .step(10)
+  //   .name('Size');
+  // gui
+  //   .add(params, 'dotsSpeed')
+  //   .min(0)
+  //   .max(100)
+  //   .step(0.5)
+  //   .name('Speed');
+  // gui
+  //   .add(params, 'backgroundSpeed')
+  //   .min(0)
+  //   .max(150)
+  //   .step(1)
+  //   .name('Sky speed');
 
   // gui.open();
 
@@ -224,7 +224,7 @@ export const genStars = id => {
     return deg * (Math.PI / 180);
   }
 
-  gui.open();
+  // gui.open();
   setCanvasSize();
   init();
 };

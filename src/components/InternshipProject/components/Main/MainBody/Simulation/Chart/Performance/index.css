@@ -1,4 +1,4 @@
-:global(.mainBody_chart_performance) {
+.mainBody_chart_performance {
   color: rgba(124, 121, 121, 0.7);
   font-size: 12px;
   font-weight: 500;
@@ -6,17 +6,17 @@
   padding-bottom: 20px;
 }
 
-:global(.mainBody_chart_performance_header) {
+.mainBody_chart_performance_header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-:global(.mainBody_chart_performance_header_year) {
+.mainBody_chart_performance_header_year {
   color: black;
 }
 
-:global(.mainBody_chart_performance_number) {
+.mainBody_chart_performance_number {
   margin-top: 4px;
   font-size: 22px;
   color: var(--main-header-blue-color);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './index.css';
+import styles from './index.module.css';
 import DayNightModeSwitchToggle from '../DayNightModeSwitchToggle';
 import BriefInfo from '../BriefInfo';
 import UserCard from '../UserCard';

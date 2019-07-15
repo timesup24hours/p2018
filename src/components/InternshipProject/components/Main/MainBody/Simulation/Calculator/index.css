@@ -1,11 +1,11 @@
-:global(.mainBody_calculator) {
+.mainBody_calculator {
   grid-area: calculator;
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 20px;
 }
 
-:global(.mainBody_calculator_body) {
+.mainBody_calculator_body {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 0.1px 0.1px 0.5px var(--main-outline-grey-color);
@@ -15,13 +15,13 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  :global(.mainBody_calculator_body) {
+  .mainBody_calculator_body {
     width: 100%;
   }
 }
 
 @media only screen and (min-height: 800px) {
-  :global(.mainBody_calculator_body) {
+  .mainBody_calculator_body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

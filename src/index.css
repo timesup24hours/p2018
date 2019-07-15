@@ -69,7 +69,7 @@
   }
 }
 
-:global(.userCardAnimation) {
+.userCardAnimation {
   animation: user-card 2s forwards;
 }
 

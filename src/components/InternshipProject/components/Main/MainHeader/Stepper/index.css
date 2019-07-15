@@ -1,7 +1,7 @@
-:global(.stepper_pointer:hover) {
+.stepper_pointer:hover {
   cursor: pointer;
 }
-:global(.main_header_stepper) {
+.main_header_stepper {
   grid-area: 'stepper';
   background-color: var(--main-bg-color);
   height: 100%;
@@ -12,7 +12,7 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  :global(.main_header_stepper) {
+  .main_header_stepper {
     margin: 30px 0px;
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-:global(.profile_container) {
+.profile_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7,20 +7,20 @@
   white-space: nowrap;
 }
 
-:global(.profile_avatar) {
+.profile_avatar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-:global(.profile_avatar i) {
+.profile_avatar i {
   font-size: 26px;
   color: var(--main-header-grid-grey-color);
 }
-:global(.profile_avatar i) {
+.profile_avatar i {
   cursor: pointer;
 }
 
-:global(.profile_name) {
+.profile_name {
   font-size: 13px;
   font-weight: 500;
   margin: 10px;
@@ -29,7 +29,7 @@
   align-items: center;
 }
 
-:global(.profile_dropown_menu) {
+.profile_dropown_menu {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -37,6 +37,6 @@
   border-top: 10px solid var(--main-header-grid-grey-color);
   transform: scale(0.6);
 }
-:global(.profile_dropown_menu) {
+.profile_dropown_menu {
   cursor: pointer;
 }

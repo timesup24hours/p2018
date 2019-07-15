@@ -1,4 +1,4 @@
-:global(.mainBody_container) {
+.mainBody_container {
   height: 86%;
   width: 100%;
   display: grid;
@@ -11,7 +11,7 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  :global(.mainBody_container) {
+  .mainBody_container {
     /* border: 1px solid red; */
     height: 86%;
     width: 100%;

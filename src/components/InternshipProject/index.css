@@ -1,14 +1,12 @@
-:global(*) {
+* {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   -webkit-font-smoothing: antialiased;
+  /* white-space: nowrap; */
 }
 
-:global(.InternshipProject_App) {
-  position: fixed;
-  width: 100%;
-  height: 100%;
+.InternshipProject_App {
   display: grid;
   grid-template-columns: 80px auto;
   grid-template-rows: 80px auto;
@@ -18,10 +16,10 @@
     'menu main main main';
 }
 
-:global(.InternshipProject_header) {
+.InternshipProject_header {
   grid-area: header;
 }
-:global(.InternshipProject_menu) {
+.InternshipProject_menu {
   grid-area: menu;
   background-color: white;
   width: 100%;
@@ -30,7 +28,7 @@
   max-height: 100vh;
   border-right: 1px solid var(--main-outline-grey-color);
 }
-:global(.InternshipProject_main) {
+.InternshipProject_main {
   grid-area: main;
   background-color: var(--main-bg-color);
   height: 100%;
@@ -38,7 +36,7 @@
   padding: 2.4rem 4.8rem;
 }
 
-:global(:root) {
+:root {
   --main-bg-color: #f5f6fa;
   --main-outline-grey-color: rgba(128, 128, 128, 0.2);
   --main-header-blue-color: rgb(93, 134, 255);
@@ -50,26 +48,26 @@
   --main-continue-button-arrow-blue-color: rgb(53, 100, 241);
 }
 
-:global(.flex_center) {
+.flex_center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-:global(.flex_row_center) {
+.flex_row_center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
-:global(.grey_font) {
+.grey_font {
   color: rgba(124, 121, 121, 0.8);
   font-size: 12px;
   font-weight: 500;
 }
 
-:global(.noselect) {
+.noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */

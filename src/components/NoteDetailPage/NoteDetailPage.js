@@ -7,7 +7,7 @@ import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
 
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 
-import styles from './index.css';
+import styles from './index.module.css';
 import Loading from '../Loading';
 import { noteGetOne, noteFetchRequested } from '../../actions/notes';
 

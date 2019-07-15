@@ -1,10 +1,10 @@
-:global(.mainBody_chart) {
+.mainBody_chart {
   grid-area: chart;
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 20px;
 }
-:global(.mainBody_chart_container) {
+.mainBody_chart_container {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 0.1px 0.1px 0.5px var(--main-outline-grey-color);
@@ -15,14 +15,14 @@
 }
 
 /* left container */
-:global(.mainBody_chart_left) {
+.mainBody_chart_left {
   width: 70%;
   display: flex;
   flex-direction: column;
 }
 
 /* right container */
-:global(.mainBody_chart_right) {
+.mainBody_chart_right {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -32,14 +32,14 @@
 }
 
 /* left header */
-:global(.mainBody_chart_left_header) {
+.mainBody_chart_left_header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100px;
 }
-:global(.mainBody_chart_left_header div) {
+.mainBody_chart_left_header div {
   padding: 10px 8px;
   margin: 10px 14px;
   color: rgba(124, 121, 121, 0.7);
@@ -47,18 +47,18 @@
   font-weight: 500;
   user-select: none;
 }
-:global(.mainBody_chart_left_header div:hover) {
+.mainBody_chart_left_header div:hover {
   color: black;
   cursor: pointer;
 }
-:global(.mainBody_chart_left_header .chart_left_active) {
+.mainBody_chart_left_header .chart_left_active {
   color: black;
   border-bottom: 2px solid var(--main-header-blue-color);
 }
 /* end left header */
 
 /* right header */
-:global(.mainBody_chart_history) {
+.mainBody_chart_history {
   color: rgba(124, 121, 121, 0.9);
   font-size: 11px;
   font-weight: 700;
@@ -72,11 +72,11 @@
 /* end right header */
 
 /* left body */
-:global(.mainBody_chart_manifest) {
+.mainBody_chart_manifest {
   flex-grow: 1;
 }
 /* right body */
-:global(.mainBody_chart_info) {
+.mainBody_chart_info {
   flex-grow: 1;
   /* height: 100%; */
   display: flex;
@@ -84,15 +84,15 @@
   justify-content: space-between;
 }
 /* left footer */
-:global(.mainBody_chart_years) {
+.mainBody_chart_years {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90px;
 }
 
-:global(.mainBody_chart_year_left),
-:global(.mainBody_chart_year_right) {
+.mainBody_chart_year_left,
+.mainBody_chart_year_right {
   color: rgba(31, 30, 30, 0.7);
   font-size: 10px;
   font-weight: 600;
@@ -106,23 +106,23 @@
   justify-content: center;
   align-items: center;
 }
-:global(.mainBody_chart_year_left) {
+.mainBody_chart_year_left {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
   border-left: 1px solid rgba(220, 220, 220, 0.8);
 }
-:global(.mainBody_chart_year_left.year_active) {
+.mainBody_chart_year_left.year_active {
   background-color: white;
   border-right: 1px solid rgba(220, 220, 220, 0.8);
   box-shadow: 0px 0.2px 2px 0.2px rgba(220, 220, 220, 0.9);
 }
-:global(.mainBody_chart_year_right.year_active) {
+.mainBody_chart_year_right.year_active {
   background-color: white;
   border-left: 1px solid rgba(220, 220, 220, 0.8);
   box-shadow: 0px 0.2px 2px 0.2px rgba(220, 220, 220, 0.9);
 }
 
-:global(.mainBody_chart_year_right) {
+.mainBody_chart_year_right {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   border-right: 1px solid rgba(220, 220, 220, 0.8);
@@ -130,13 +130,13 @@
 /* end left footer */
 
 /* right footer */
-:global(.mainBody_chart_moreView) {
+.mainBody_chart_moreView {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90px;
 }
-:global(.mainBody_chart_moreView div) {
+.mainBody_chart_moreView div {
   color: rgba(31, 30, 30, 0.7);
   font-size: 11px;
   font-weight: 600;
@@ -154,20 +154,20 @@
 /* end right footer */
 
 @media only screen and (min-height: 800px) {
-  :global(.mainBody_chart) {
+  .mainBody_chart {
     max-height: 600px;
   }
-  :global(.mainBody_chart_right) {
+  .mainBody_chart_right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  :global(.mainBody_chart_info) {
+  .mainBody_chart_info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  :global(.mainBody_chart_moreView) {
+  .mainBody_chart_moreView {
     margin-top: 40px;
   }
 }

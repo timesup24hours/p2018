@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './index.css';
+import styles from './index.module.css';
 import CssEffect from '../CssEffect';
 import CssButtonBorder from '../CssButtonBorder';
 import { CSS3HamburgerMenuIconTransition } from '../CSS3HamburgerMenuIconTransition';

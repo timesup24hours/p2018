@@ -1,7 +1,7 @@
 import React from 'react';
 import FormWrapper from './FormikFormContainer';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 export default () => (
   <div className={styles.container}>

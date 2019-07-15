@@ -1,7 +1,7 @@
 import React from 'react';
 import { max, scaleBand, scaleLinear, select, axisBottom } from 'd3';
 
-import styles from './index.css';
+import styles from './index.module.css';
 import Bar from './Bar';
 
 export default class D3ChartBar extends React.Component {

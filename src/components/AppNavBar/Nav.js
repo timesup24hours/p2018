@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 
-import styles from './index.css';
+import styles from './index.module.css';
 import './nav.scss';
 
 export default React.forwardRef((props, ref) => {

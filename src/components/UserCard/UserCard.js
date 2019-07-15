@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 import { intersectionObserver } from '../../util';
 

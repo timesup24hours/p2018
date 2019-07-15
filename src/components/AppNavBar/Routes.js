@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import MyLoadingComponent from './MyLoadingComponent';
-import styles from './index.css';
+import styles from './index.module.css';
 
 const Home = Loadable({
   loader: () => import('../HomePage'),

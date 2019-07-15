@@ -1,4 +1,4 @@
-:global(.header_container) {
+.header_container {
   background-color: white;
   min-height: 80px;
   width: 100%;
@@ -9,12 +9,12 @@
   border-bottom: 1px solid var(--main-outline-grey-color);
 }
 
-:global(.header_item_left) {
+.header_item_left {
   grid-area: header_left;
 }
-:global(.header_item_center) {
+.header_item_center {
   grid-area: header_center;
 }
-:global(.header_item_right) {
+.header_item_right {
   grid-area: header_right;
 }

@@ -3,7 +3,7 @@ import './styles.css';
 
 export default () => {
   return (
-    <menu className="menu">
+    <menu className="InternshipProject_menu">
       <div className="menu_switch">
         <i className="fas fa-bars" />
       </div>

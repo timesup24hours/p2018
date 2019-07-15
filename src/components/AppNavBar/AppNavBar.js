@@ -6,7 +6,7 @@ import {
 // import styled from 'styled-components';
 import { withRouter } from 'react-router';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 import MobileMenuButton from './MobileMenuButton';
 import Nav from './Nav';

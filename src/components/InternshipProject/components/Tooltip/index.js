@@ -1,8 +1,8 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
 export default ({ stepNumber, headerName }) => (
-  <div className="container">
+  <div className="Tooltip_container">
     <div className="up-arrow" href="#">
       <div className="content">
         <span className="stepNumber">{stepNumber}</span>

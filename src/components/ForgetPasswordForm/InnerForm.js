@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'formik';
 
-import cssStyle from './index.css';
+import cssStyle from './index.module.css';
 import InputField from './InputField';
 import FormHeader from './FormHeader';
 import FormFooter from './FormFooter';

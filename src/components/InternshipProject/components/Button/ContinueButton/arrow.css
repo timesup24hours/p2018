@@ -1,4 +1,4 @@
-:global(.arrow) {
+.arrow {
   position: absolute;
   background: whitesmoke;
   /* width: 1em; */
@@ -8,13 +8,14 @@
   /* border-radius: 1em; */
   transform-origin: right center;
 }
-:global(.arrow:before) {
+.arrow:before {
   transform: rotate(-35deg);
 }
-:global(.arrow:after) {
+.arrow:after {
   transform: rotate(35deg);
 }
-:global(.arrow:before, .arrow:after) {
+.arrow:before,
+.arrow:after {
   display: block;
   content: '';
   position: absolute;
@@ -29,13 +30,14 @@
   /* border-radius: 0.5em; */
 }
 
-:global(.arrow:before, .arrow:after) {
+.arrow:before,
+.arrow:after {
   /* left: 1em; */
   left: 10px;
 }
-:global(.arrow:before) {
+.arrow:before {
   transform: rotate(140deg);
 }
-:global(.arrow:after) {
+.arrow:after {
   transform: rotate(-140deg);
 }

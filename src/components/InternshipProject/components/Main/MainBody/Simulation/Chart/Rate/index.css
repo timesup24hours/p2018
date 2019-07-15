@@ -1,7 +1,7 @@
 .chart_performance_rate_container {
 }
 
-:global(.chart_performance_rate_header) {
+.chart_performance_rate_header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,11 +15,11 @@
 .chart_performance_rate_name {
 }
 
-:global(.chart_performance_rate_percent) {
+.chart_performance_rate_percent {
   color: black;
 }
 
-:global(.chart_performance_rate) {
+.chart_performance_rate {
   background-color: #eeeeee;
   border-radius: 13px;
   /* (height of inner div) / 2 + padding */
@@ -27,7 +27,7 @@
   transition: left 0.3s ease-out, width 0.3s ease-out;
 }
 
-:global(.chart_performance_rate > div) {
+.chart_performance_rate > div {
   background-color: var(--main-header-blue-color);
   height: 0.3rem;
   z-index: 100;

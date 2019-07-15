@@ -1,4 +1,4 @@
-:global(.input-range__slider) {
+.input-range__slider {
   appearance: none;
   background: var(--main-header-light-blue-color);
   border: 1px solid var(--main-header-light-blue-color);
@@ -22,7 +22,7 @@
   /* outline: solid 6px #888; */
 }
 
-:global(.input-range__slider:active::before) {
+.input-range__slider:active::before {
   content: '';
   opacity: 0.5;
   position: absolute;
@@ -39,21 +39,21 @@
     0 0 0 12px rgba(29, 58, 223, 0.8);
 } */
 
-:global(.input-range__slider:focus) {
+.input-range__slider:focus {
   box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2);
 }
-:global(.input-range--disabled .input-range__slider) {
+.input-range--disabled .input-range__slider {
   background: #cccccc;
   border: 1px solid #cccccc;
   box-shadow: none;
   transform: none;
 }
 
-:global(.input-range__slider-container) {
+.input-range__slider-container {
   transition: left 0.3s ease-out;
 }
 
-:global(.input-range__label) {
+.input-range__label {
   color: #aaaaaa;
   font-family: 'Helvetica Neue', san-serif;
   font-size: 0.8rem;
@@ -61,36 +61,37 @@
   white-space: nowrap;
 }
 
-:global(.input-range__label--min, .input-range__label--max) {
+.input-range__label--min,
+.input-range__label--max {
   bottom: -1.4rem;
   position: absolute;
 }
 
-:global(.input-range__label--min) {
+.input-range__label--min {
   left: 0;
   visibility: hidden;
 }
 
-:global(.input-range__label--max) {
+.input-range__label--max {
   right: 0;
   visibility: hidden;
 }
 
-:global(.input-range__label--value) {
+.input-range__label--value {
   position: absolute;
   top: -1.8rem;
   visibility: hidden;
 }
 
-:global(.input-range__label-container) {
+.input-range__label-container {
   left: -50%;
   position: relative;
 }
-:global(.input-range__label--max .input-range__label-container) {
+.input-range__label--max .input-range__label-container {
   left: 50%;
 }
 
-:global(.input-range__track) {
+.input-range__track {
   background: #eeeeee;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -99,11 +100,11 @@
   position: relative;
   transition: left 0.3s ease-out, width 0.3s ease-out;
 }
-:global(.input-range--disabled .input-range__track) {
+.input-range--disabled .input-range__track {
   background: #eeeeee;
 }
 
-:global(.input-range__track--background) {
+.input-range__track--background {
   left: 0;
   margin-top: -0.15rem;
   position: absolute;
@@ -111,11 +112,11 @@
   top: 50%;
 }
 
-:global(.input-range__track--active) {
+.input-range__track--active {
   background: var(--main-header-blue-color);
 }
 
-:global(.input-range) {
+.input-range {
   height: 1rem;
   position: relative;
   width: 100%;

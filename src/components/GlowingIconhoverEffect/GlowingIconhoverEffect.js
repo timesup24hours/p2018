@@ -1,27 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './index.css';
+import styles from './index.module.css';
 
 export default () => {
   return (
     <div className={styles.container}>
       <ul className={styles.ul}>
         <li className={styles.li}>
-          <Link to="/css_effects">
+          <Link to="/stars_interactive">
             <i className="fas fa-birthday-cake" />
           </Link>
         </li>
         <li className={styles.li}>
-          <Link to="/css_effects">
+          <Link to="/stars_interactive">
             <i className="fas fa-award" />
           </Link>
         </li>
         <li className={styles.li}>
-          <Link to="/css_effects">
+          <Link to="/stars_interactive">
             <i className="fas fa-bug" />
           </Link>
         </li>
       </ul>
+      <div className={styles.desc}>
+        any of three buttons above would take you to other project
+      </div>
     </div>
   );
 };

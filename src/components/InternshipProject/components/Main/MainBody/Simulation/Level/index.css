@@ -1,11 +1,11 @@
-:global(.mainBody_level) {
+.mainBody_level {
   grid-area: level;
   justify-content: flex-start;
   padding-top: 20px;
   /* align-items: flex-start; */
   user-select: none;
 }
-:global(.mainBody_level_body) {
+.mainBody_level_body {
   background-color: var(--main-bg-color);
   border: 1px solid var(--main-outline-grey-color);
   /* box-shadow: 0px 0.1px 0.1px 0.5px var(--main-outline-grey-color); */
@@ -19,24 +19,24 @@
   padding: 0px 80px;
 }
 
-:global(.mainBody_level_body_items) {
+.mainBody_level_body_items {
   width: 20%;
   height: 78%;
 }
-:global(.mainBody_level_body_items:hover) {
+.mainBody_level_body_items:hover {
   cursor: pointer;
   background: var(--main-bg-color);
   border-radius: 3px;
   box-shadow: 0px 0.1px 1px 1px var(--main-outline-grey-color);
 }
-:global(.mainBody_level_body_items.active) {
+.mainBody_level_body_items.active {
   cursor: pointer;
   background: white;
   border-radius: 3px;
   box-shadow: 0px 0.1px 1px 1px var(--main-outline-grey-color);
 }
 
-:global(.mainBody_level_body_items:nth-of-type(1) div) {
+.mainBody_level_body_items:nth-of-type(1) div {
   height: 9px;
   width: 9px;
   background-color: rgba(175, 170, 170, 0.8);
@@ -44,7 +44,7 @@
   margin-right: 8px;
 }
 
-:global(.mainBody_level_body_items:nth-of-type(2) div) {
+.mainBody_level_body_items:nth-of-type(2) div {
   height: 12px;
   width: 12px;
   border: 3.8px solid var(--main-header-blue-color);
@@ -54,7 +54,7 @@
   /* box-shadow: 0px 2px 10px 2px rgba(93, 134, 255, 0.3); */
 }
 
-:global(.mainBody_level_body_items:nth-of-type(3) div) {
+.mainBody_level_body_items:nth-of-type(3) div {
   height: 9px;
   width: 9px;
   background-color: rgba(255, 207, 51, 0.993);
@@ -62,7 +62,7 @@
   margin-right: 8px;
 }
 
-:global(.mainBody_level_body_items:nth-of-type(4) div) {
+.mainBody_level_body_items:nth-of-type(4) div {
   height: 9px;
   width: 9px;
   background-color: rgba(255, 109, 51, 0.993);
@@ -71,14 +71,14 @@
   /* box-shadow: 0px 2px 10px 2px rgba(93, 134, 255, 0.3); */
 }
 
-:global(.main_body_black_font) {
+.main_body_black_font {
   color: rgba(8, 8, 8, 0.7);
   font-size: 11px;
   font-weight: 600;
 }
 
 @media only screen and (max-width: 1200px) {
-  :global(.mainBody_level_body) {
+  .mainBody_level_body {
     height: 100px;
     padding: 0px 80px;
   }

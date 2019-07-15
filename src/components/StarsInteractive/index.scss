@@ -1,11 +1,24 @@
 .StarsInteractive {
   margin: 0;
+  padding: 0;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   // cursor: none;
   background: black;
   background: linear-gradient(to bottom, #000000 0%, #5788fe 100%);
+  ::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #ff0000;
+  }
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
 
   .filter {
     width: 100%;
@@ -31,6 +44,7 @@
 
   .landscape {
     position: absolute;
+    top: 0px;
     bottom: 0px;
     left: 0;
     width: 100%;

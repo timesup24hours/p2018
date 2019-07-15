@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 export default withRouter(({ history }) => {
   const handleOnClick = e => {
