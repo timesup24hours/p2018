@@ -204,10 +204,10 @@ module.exports = {
           // sass support
           {
             test: /\.scss$/,
-            use: [
-              'style-loader', // creates style nodes from JS strings
-              'css-loader', // translates CSS into CommonJS
-              'sass-loader' // compiles Sass to CSS, using Node Sass by default
+            loaders: [
+              require.resolve('style-loader'),
+              require.resolve('css-loader'),
+              require.resolve('sass-loader')
             ]
           }
         ]

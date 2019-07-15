@@ -19,6 +19,7 @@
     "chart.js": "^2.8.0",
     "css-loader": "0.28.7",
     "d3": "^5.6.0",
+    "dat.gui": "^0.7.6",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "4.10.0",
@@ -118,5 +119,11 @@
     "gh-pages": "^1.2.0",
     "object-assign": "^4.1.1",
     "whatwg-fetch": "^2.0.3"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

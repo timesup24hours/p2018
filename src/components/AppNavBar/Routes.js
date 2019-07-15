@@ -32,6 +32,10 @@ const InternshipProject = Loadable({
   loader: () => import('../InternshipProject'),
   loading: MyLoadingComponent
 });
+const StarsInteractive = Loadable({
+  loader: () => import('../StarsInteractive'),
+  loading: MyLoadingComponent
+});
 
 export default () => (
   <div className={styles.pageWrapper}>
@@ -42,6 +46,7 @@ export default () => (
       <Route exact path="/my_notes/:title" component={MyNotesDetailPage} />
       <Route path="/css_effects" component={CssEffectsPage} />
       <Route path="/contact_info" component={ContactInfoPage} />
+      <Route path="/stars_interactive" component={StarsInteractive} />
       <Redirect from="/" to="/" />
       <Route path="*" component={Home} />
     </Switch>
