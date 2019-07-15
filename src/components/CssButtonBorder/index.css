@@ -97,3 +97,9 @@
   transform: scaleY(1);
   transition-delay: 1s;
 }
+.desc {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}

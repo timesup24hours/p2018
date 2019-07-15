@@ -27,7 +27,7 @@ const InnerForm = ({ values, errors, touched, isSubmitting }) => {
             touched={touched}
             errors={errors}
             type="email"
-            name="email"
+            name="login"
             placeholder="your email"
           />
           <FormFooter

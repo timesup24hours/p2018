@@ -1,0 +1,20 @@
+:global(.header_container) {
+  background-color: white;
+  min-height: 80px;
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: 80px auto; */
+  grid-template-columns: 360px auto 360px;
+  grid-template-areas: 'header_left header_center header_right';
+  border-bottom: 1px solid var(--main-outline-grey-color);
+}
+
+:global(.header_item_left) {
+  grid-area: header_left;
+}
+:global(.header_item_center) {
+  grid-area: header_center;
+}
+:global(.header_item_right) {
+  grid-area: header_right;
+}

@@ -21,7 +21,6 @@ export default React.forwardRef((props, ref) => {
   });
   const handleNavOnClick = (event: React.MouseEvent) => {
     const ele: Element = event.target;
-    console.log('ele: ', ele);
     if (!ele.classList.contains(styles.a)) return;
     const rect = getRect(ele.children[0]);
     setStyle(rect);
@@ -68,7 +67,7 @@ export default React.forwardRef((props, ref) => {
               handleNavOnClick(event);
             }}
           >
-            <span>CSS</span>
+            <span>UI</span>
           </Link>
         </li>
         <li className={styles.nav_ul_li_4}>

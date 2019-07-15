@@ -17,9 +17,9 @@ export default ({
       name={name}
       id={name}
       placeholder={placeholder}
-      ariaInvalid={errors[name] ? true : false}
-      ariaDescribedBy={`${name}-error`}
-      ariaRequired={true}
+      aria-invalid={errors[name] ? true : false}
+      aria-describedby={`${name}-error`}
+      aria-required={true}
     />
     {touched[name] && errors[name] && (
       <p

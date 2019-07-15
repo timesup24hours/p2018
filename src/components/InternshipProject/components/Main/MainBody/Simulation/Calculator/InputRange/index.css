@@ -1,0 +1,31 @@
+@import './inputRange.css';
+@import './slider.css';
+
+:global(.inputrange_container) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+:global(.inputrange_header) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+:global(.inputrange_name) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+:global(.inputrange_number) {
+  color: rgba(124, 121, 121, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+:global(.inputrange_body) {
+  padding-top: 8px;
+}

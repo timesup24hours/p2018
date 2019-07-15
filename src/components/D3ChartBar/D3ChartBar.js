@@ -136,6 +136,9 @@ export default class D3ChartBar extends React.Component {
             ) : null}
           </svg>
         </div>
+        <div className={styles.desc}>
+          interacted D3.js chart (click the above bars)
+        </div>
       </div>
     );
   }

@@ -1,0 +1,51 @@
+:global(.center_container) {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+:global(.center_state) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+:global(.center_state_span) {
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--main-header-blue-color);
+  background-color: var(--main-header-light-blue-color);
+}
+
+:global(.center_house_status) {
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+:global(.center_house_grid) {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
+:global(.center_icon) {
+  color: var(--main-header-grid-grey-color);
+}

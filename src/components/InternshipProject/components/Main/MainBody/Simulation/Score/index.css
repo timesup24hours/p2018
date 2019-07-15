@@ -1,0 +1,35 @@
+:global(.mainBody_score) {
+  grid-area: score;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+:global(.mainBody_score div) {
+  /* border: 1px solid var(--main-outline-grey-color); */
+  box-shadow: 0px 0.1px 0.1px 0.5px var(--main-outline-grey-color);
+  border-radius: 3px;
+  background-color: white;
+  height: 80%;
+  width: 90%;
+}
+
+:global(.mainBody_score div i) {
+  color: var(--main-outline-grey-color);
+}
+:global(.mainBody_score_body span) {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  :global(.mainBody_score) {
+    grid-area: score;
+    justify-content: flex-start;
+    height: 100px;
+  }
+  :global(.mainBody_score div) {
+    box-shadow: 0px 0.1px 0.1px 0.5px var(--main-outline-grey-color);
+    border-radius: 3px;
+    background-color: white;
+    height: 80%;
+    width: 100%;
+  }
+}

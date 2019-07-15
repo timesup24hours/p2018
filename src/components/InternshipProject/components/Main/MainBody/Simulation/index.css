@@ -1,0 +1,28 @@
+:global(.mainBody_container) {
+  height: 86%;
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: 1.5fr 3fr 1fr; */
+  grid-template-columns: 1.5fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    'score level'
+    'calculator chart';
+}
+
+@media only screen and (max-width: 1200px) {
+  :global(.mainBody_container) {
+    /* border: 1px solid red; */
+    height: 86%;
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: 1.5fr 3fr 1fr; */
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'score '
+      'level'
+      'calculator '
+      'chart';
+  }
+}

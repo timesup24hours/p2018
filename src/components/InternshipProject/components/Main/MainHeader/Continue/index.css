@@ -1,0 +1,7 @@
+:global(.main_header_continue_container) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  grid-area: continue;
+}

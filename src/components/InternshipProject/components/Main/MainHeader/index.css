@@ -1,0 +1,26 @@
+:global(.main_header) {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 1fr;
+  grid-template-areas: 'headerName stepper continue';
+}
+
+:global(.main_header_name) {
+  grid-area: headerName;
+}
+:global(.main_header_stepper) {
+  grid-area: stepper;
+}
+:global(.main_header_continue) {
+  grid-area: continue;
+}
+
+@media only screen and (max-width: 1200px) {
+  :global(.main_header) {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+      'headerName continue'
+      'stepper stepper';
+  }
+}

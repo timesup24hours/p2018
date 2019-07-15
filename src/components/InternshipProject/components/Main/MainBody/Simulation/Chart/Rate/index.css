@@ -1,0 +1,36 @@
+.chart_performance_rate_container {
+}
+
+:global(.chart_performance_rate_header) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  user-select: none;
+  padding-bottom: 16px;
+  color: rgba(124, 121, 121, 0.7);
+}
+
+.chart_performance_rate_name {
+}
+
+:global(.chart_performance_rate_percent) {
+  color: black;
+}
+
+:global(.chart_performance_rate) {
+  background-color: #eeeeee;
+  border-radius: 13px;
+  /* (height of inner div) / 2 + padding */
+  height: 0.3rem;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+:global(.chart_performance_rate > div) {
+  background-color: var(--main-header-blue-color);
+  height: 0.3rem;
+  z-index: 100;
+  border-radius: 10px;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}

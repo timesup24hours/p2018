@@ -1,0 +1,29 @@
+:global(.header_right_container) {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+:global(.header_right_notification) {
+  border-left: 1px solid var(--main-outline-grey-color);
+  border-right: 1px solid var(--main-outline-grey-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+:global(.header_right_notification i) {
+  font-size: 24px;
+  color: var(--main-header-grid-grey-color);
+}
+:global(.header_right_notification:hover) {
+  cursor: pointer;
+}
+
+:global(.header_right_profile) {
+  width: 70%;
+}

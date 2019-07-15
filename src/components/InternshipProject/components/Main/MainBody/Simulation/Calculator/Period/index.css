@@ -1,0 +1,38 @@
+:global(.mainBody_calculator_period) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.mainBody_calculator_name {
+}
+
+:global(.mainBody_calculator_years) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  width: 50%;
+}
+:global(.mainBody_calculator_font) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+:global(.mainBody_calculator_font_year) {
+  color: var(--main-header-blue-color);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+:global(.mainBody_calculator_font_year_function) {
+  color: rgba(124, 121, 121, 0.6);
+  font-size: 19px;
+  line-height: 19px;
+  font-weight: 500;
+}
+:global(.mainBody_calculator_font_year_function:hover) {
+  cursor: pointer;
+}

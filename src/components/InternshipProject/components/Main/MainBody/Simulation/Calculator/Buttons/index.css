@@ -1,0 +1,30 @@
+:global(.mainBody_calculator_buttons) {
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+:global(.mainBody_calculator_buttons_cancel) {
+  color: rgba(124, 121, 121, 0.7);
+  font-size: 12px;
+  font-weight: 500;
+  user-select: none;
+}
+:global(.mainBody_calculator_buttons_cancel:hover) {
+  cursor: pointer;
+}
+
+:global(.mainBody_calculator_buttons_default) {
+  color: rgba(31, 30, 30, 0.8);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(220, 220, 220, 0.8);
+  border-radius: 2px;
+  background-color: white;
+  height: 40px;
+  width: 100px;
+  box-shadow: 0px 0.2px 2px 0.2px rgba(220, 220, 220, 0.9);
+  user-select: none;
+}
+:global(.mainBody_calculator_buttons_default:hover) {
+  cursor: pointer;
+}

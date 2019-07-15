@@ -28,12 +28,17 @@ const ContactInfoPage = Loadable({
   loader: () => import('../ContactInfoPage'),
   loading: MyLoadingComponent
 });
+const InternshipProject = Loadable({
+  loader: () => import('../InternshipProject'),
+  loading: MyLoadingComponent
+});
 
 export default () => (
   <div className={styles.pageWrapper}>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/my_notes" component={MyNotesPage} />
+      <Route exact path="/dashboard_ui" component={InternshipProject} />
       <Route exact path="/my_notes/:title" component={MyNotesDetailPage} />
       <Route path="/css_effects" component={CssEffectsPage} />
       <Route path="/contact_info" component={ContactInfoPage} />

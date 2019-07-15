@@ -4,6 +4,7 @@ import {
   HashRouter as Router // for github free host hard reload
 } from 'react-router-dom';
 // import styled from 'styled-components';
+import { withRouter } from 'react-router';
 
 import styles from './index.css';
 
