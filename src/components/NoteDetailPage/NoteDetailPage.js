@@ -28,32 +28,42 @@ class NoteDetailPage extends React.Component {
     }
   }
 
-  getComponentOnType = ({ key, data }) => {
+  getComponentOnType = ({ key, data, index }) => {
     switch (key) {
       case 'title':
         return (
-          <div key="title" className={styles.title}>
+          <div key={index} className={styles.title}>
             {data.title}
           </div>
         );
 
       case 'subTitle':
         return (
-          <div key="subTitle" className={styles.subTitle}>
+          <div key={index} className={styles.subTitle}>
             {data.subTitle}
           </div>
         );
 
       case 'content':
         return (
-          <div key="subTitle" className={styles.content}>
+          <div key={index} className={styles.content}>
             {data.content}
           </div>
         );
 
+      case 'text':
+        return (
+          <div key={index} className={styles.text}>
+            {data.text}
+          </div>
+        );
+
+      case 'html':
+        return data.html;
+
       case 'code':
         return (
-          <div style={{ width: 'auto' }}>
+          <div key={index} className={styles.code}>
             <Component data={data.code} />
           </div>
         );
@@ -75,10 +85,11 @@ class NoteDetailPage extends React.Component {
         currentNote.hasOwnProperty('article') &&
         currentNote.article &&
         Array.isArray(currentNote.article)
-          ? currentNote.article.map(data => {
+          ? currentNote.article.map((data, index) => {
               return this.getComponentOnType({
                 key: Object.keys(data)[0],
-                data
+                data,
+                index
               });
             })
           : null}
@@ -93,7 +104,7 @@ class NoteDetailPage extends React.Component {
             <article key="content" className={styles.content}>
               {currentNote.content}
             </article>,
-            <div key="code" style={{ width: 'auto' }}>
+            <div key="code" className={styles.code}>
               {currentNote && currentNote.code && (
                 <Component data={currentNote.code} />
               )}

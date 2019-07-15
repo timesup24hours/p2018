@@ -42,6 +42,18 @@
 .content:hover {
   border-left: 6px solid var(--primary-purple-color);
 }
+.text {
+  /* border: 1px solid red; */
+  word-wrap: break-word;
+  /* line-break: auto; */
+  width: 70%;
+  padding: 10px 30px;
+  text-indent: 2rem;
+}
+.code {
+  min-width: 70%;
+  width: auto;
+}
 
 @media screen and (max-width: 660px) {
   .container {
@@ -61,6 +73,12 @@
     width: 100%;
     border-top: 6px solid var(--border-left-grey);
     border-left: 0px solid var(--border-left-grey);
+  }
+  .text {
+    width: 100%;
+  }
+  .code {
+    min-width: 100%;
   }
   .content:hover {
     border-top: 6px solid var(--primary-purple-color);

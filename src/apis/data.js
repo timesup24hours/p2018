@@ -1,17 +1,11 @@
 import article1 from '../data/001';
 import article2 from '../data/002';
+import article3 from '../data/003';
 
 export default [
   article1,
   article2,
-  {
-    id: '6ddc944b-1bae-42a2-b710-c4a64f6f7bd4',
-    title: 'aliquid-nam-voluptatem',
-    subTitle: 'quod ex voluptas',
-    content:
-      'Modi corrupti rerum vero sit qui. Officia est ut perspiciatis asperiores provident sint. Labore libero qui totam deserunt asperiores quaerat mollitia. Et maxime deserunt. Atque atque officiis perspiciatis iure ab aspernatur quia ducimus quasi.\n \rQuia amet vel non consequatur. Sequi aliquid dolores fuga. Labore iusto accusamus quos libero. Aut dolores est quos voluptas labore autem sit qui sapiente. Cupiditate provident sunt consequatur aut recusandae autem et. Corrupti esse repudiandae.\n \rQuam similique delectus quia doloremque quis et nihil optio non. Consectetur quis provident necessitatibus molestiae non qui et quis. Fugiat voluptas nihil voluptas doloribus eaque magnam.\n \rIure aliquam repudiandae nisi dolorem saepe dolores non. Tenetur saepe esse et optio dolorem. Voluptas magni et voluptate vero.\n \rQuod dolores sunt dolorum omnis quia iure aut nobis mollitia. Repudiandae molestias consequatur eius eligendi qui. Earum dolores deleniti numquam qui impedit mollitia aspernatur sint.\n \rAccusamus vero temporibus optio debitis molestiae explicabo nihil error. Est non est in commodi iure dignissimos est. Quia adipisci voluptas assumenda sunt dicta. Consequatur officia iusto quaerat sit. Est perspiciatis magni laborum. Doloremque consequatur sit consequatur.\n \rQuis aperiam temporibus rerum quidem. Optio at nobis expedita sint consectetur expedita ut suscipit ab. Sit corrupti quia ea ipsum blanditiis qui assumenda. Natus ducimus aut suscipit ea perspiciatis dolorum est vel.\n \rConsequatur id asperiores ut error autem magnam vitae velit. Praesentium modi ea nihil ratione itaque quo quaerat. Aspernatur incidunt quia voluptatem commodi quos dicta voluptas ut officia. Soluta sit labore consequatur perferendis in quidem. Doloremque ut vel. Quia beatae voluptatibus temporibus qui aut et veniam.\n \rRecusandae reprehenderit aperiam pariatur ipsam est perspiciatis architecto. Consequatur facere veritatis voluptas et est dolores. Nam debitis ea quaerat magnam placeat numquam non. Debitis occaecati eaque similique in in ipsam sunt quis. Deserunt accusantium enim expedita ea ipsum.\n \rIllum praesentium aut optio aut minima qui cumque vero. Fugit fugiat ut non qui quo ut. Tempore sint tempora in quis et.\n \rVitae voluptatem cumque. Rem iure quam voluptatem. Eligendi qui sint fugit.\n \rEum maxime praesentium error consectetur ut aut facilis voluptatem. Aut nobis est aperiam est aperiam quasi rerum vero unde. Corporis consequatur eos adipisci eum eligendi qui. Rerum et expedita modi. Temporibus quaerat eligendi est. Qui iste dolores.\n \rQuia incidunt sed et suscipit. Ducimus consequatur aut dolore et. Nemo ad id tempora similique porro. Expedita harum cum modi id quia harum excepturi.\n \rQui quia id saepe eligendi voluptatem doloribus quas dolores. Corporis saepe nostrum ut rerum eum cupiditate sint deserunt. Voluptas reprehenderit dicta. Ratione ab optio.\n \rSint iusto exercitationem. Mollitia ad aut vel qui blanditiis nostrum deleniti qui. Ex autem sit omnis ad repudiandae dicta.',
-    createdAt: '2017-09-30T19:55:40.084Z'
-  },
+  article3,
   {
     id: '46e7361a-b535-44d3-abb4-5a938c59f64d',
     title: 'omnis-aut-dolores',
