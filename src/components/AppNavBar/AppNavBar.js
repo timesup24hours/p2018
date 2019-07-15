@@ -57,7 +57,8 @@ class AppNavBar extends Component {
   }
 
   handleResize = event => {
-    var screenWidth =
+    if (this.state.isOpen) return;
+    const screenWidth =
       window.innerWidth ||
       document.documentElement.clientWidth ||
       document.body.clientWidth;
