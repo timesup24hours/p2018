@@ -56,7 +56,7 @@ class AppNavBar extends Component {
     });
   };
 
-  CustomhandleOnClick = e => {
+  customhandleOnClick = e => {
     if (getComputedStyle(this.MobileMenuButton.current).display === 'block') {
       this.refNav.current.classList.toggle(styles.navActive);
       this.toggle();
@@ -70,11 +70,11 @@ class AppNavBar extends Component {
         <div>
           <MobileMenuButton
             open={isOpen}
-            CustomhandleOnClick={this.CustomhandleOnClick}
+            customhandleOnClick={this.customhandleOnClick}
             ref={this.MobileMenuButton}
           />
           <Nav
-            CustomhandleOnClick={this.CustomhandleOnClick}
+            customhandleOnClick={this.customhandleOnClick}
             ref={this.refNav}
           />
           <Routes />

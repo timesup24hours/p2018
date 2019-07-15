@@ -1,11 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
-
-import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import styles from './index.module.css';
 import Loading from '../Loading';
@@ -32,8 +28,42 @@ class NoteDetailPage extends React.Component {
     }
   }
 
+  getComponentOnType = ({ key, data }) => {
+    switch (key) {
+      case 'title':
+        return (
+          <div key="title" className={styles.title}>
+            {data.title}
+          </div>
+        );
+
+      case 'subTitle':
+        return (
+          <div key="subTitle" className={styles.subTitle}>
+            {data.subTitle}
+          </div>
+        );
+
+      case 'content':
+        return (
+          <div key="subTitle" className={styles.content}>
+            {data.content}
+          </div>
+        );
+
+      case 'code':
+        return (
+          <div style={{ width: 'auto' }}>
+            <Component data={data.code} />
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
   render() {
-    const { title } = this.state;
     const { currentNote, fetchLoading } = this.props;
     return fetchLoading ? (
       <div className="center">
@@ -41,24 +71,34 @@ class NoteDetailPage extends React.Component {
       </div>
     ) : (
       <div className={styles.container}>
-        {currentNote
-          ? [
-              <div key="title" className={styles.title}>
-                {currentNote.title}
-              </div>,
-              <div key="sub-title" className={styles.subTitle}>
-                {currentNote.subTitle}
-              </div>,
-              <article key="content" className={styles.content}>
-                {currentNote.content}
-              </article>
-            ]
+        {currentNote &&
+        currentNote.hasOwnProperty('article') &&
+        currentNote.article &&
+        Array.isArray(currentNote.article)
+          ? currentNote.article.map(data => {
+              return this.getComponentOnType({
+                key: Object.keys(data)[0],
+                data
+              });
+            })
           : null}
-        {currentNote && currentNote.code && (
-          <div style={{ width: 'auto' }}>
-            {currentNote && <Component data={currentNote.code} />}
-          </div>
-        )}
+        {currentNote &&
+          !currentNote.hasOwnProperty('article') && [
+            <div key="title" className={styles.title}>
+              {currentNote.title}
+            </div>,
+            <div key="sub-title" className={styles.subTitle}>
+              {currentNote.subTitle}
+            </div>,
+            <article key="content" className={styles.content}>
+              {currentNote.content}
+            </article>,
+            <div key="code" style={{ width: 'auto' }}>
+              {currentNote && currentNote.code && (
+                <Component data={currentNote.code} />
+              )}
+            </div>
+          ]}
       </div>
     );
   }
@@ -85,10 +125,17 @@ const Component = ({ data }) => {
     <SyntaxHighlighter
       customStyle={{ width: '100%' }}
       language="javascript"
-      // style={docco}
-      style={prism}
-      // style={dark}
-      showLineNumbers={true}
+      style={atomDark}
+      // atomDark
+      // prism
+      // twilight
+      // tomorrow
+      // solarizedlight
+      // okaidia
+      // funky
+      // dark
+      // coy
+      showLineNumbers={false}
       wrapLines={true}
     >
       {data}

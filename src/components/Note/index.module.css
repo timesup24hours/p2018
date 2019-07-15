@@ -3,7 +3,7 @@
   padding-left: 30px;
   border-left: 14px solid white;
   /* transition: 0.2s; */
-  padding-bottom: 20px;
+  min-height: 100px;
   background: white;
   margin-bottom: 8px;
   text-decoration: none;

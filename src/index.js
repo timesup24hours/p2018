@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -37,8 +37,15 @@ registerServiceWorker();
 render(App);
 
 // Webpack Hot Module Replacement API
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    render(App);
-  });
+// if (module.hot) {
+//   module.hot.accept('./App', () => {
+//     render(App);
+//   });
+// }
+if (process.env.NODE_ENV === 'production') {
+  if (!window.console) window.console = {};
+  var methods = ['log', 'debug', 'warn', 'info'];
+  for (var i = 0; i < methods.length; i++) {
+    console[methods[i]] = function() {};
+  }
 }

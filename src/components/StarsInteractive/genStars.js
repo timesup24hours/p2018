@@ -113,7 +113,6 @@ export const genStars = id => {
       dotsSpeed: 0,
       backgroundSpeed: 0
     };
-  console.log('canvas :', canvas);
   // var gui;
   // gui = new dat.GUI();
   // gui

@@ -12,7 +12,9 @@ export default ({ note }) => {
       }}
       className={styles.container}
     >
-      <div className={styles.wrapper}>
+      <div
+        className={`${styles.wrapper} ${note.subTitle ? '' : 'flex-center'}`}
+      >
         <h1>{note.title}</h1>
         <div>{note.subTitle}</div>
       </div>

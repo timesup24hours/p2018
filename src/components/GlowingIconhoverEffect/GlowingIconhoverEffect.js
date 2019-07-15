@@ -22,9 +22,7 @@ export default () => {
           </Link>
         </li>
       </ul>
-      <div className={styles.desc}>
-        any of three buttons above would take you to other project
-      </div>
+      <div className={styles.desc}>click buttons above to other project</div>
     </div>
   );
 };
