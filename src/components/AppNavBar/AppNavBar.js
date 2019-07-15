@@ -7,6 +7,7 @@ import {
 import { withRouter } from 'react-router';
 
 import styles from './index.module.css';
+import './nav.scss';
 
 import MobileMenuButton from './MobileMenuButton';
 import Nav from './Nav';
@@ -33,22 +34,39 @@ import Routes from './Routes';
 
 class AppNavBar extends Component {
   state = {
-    isOpen: false
+    isOpen: true
     // isMobile: false
   };
   refNav = React.createRef();
   MobileMenuButton = React.createRef();
 
-  // componentDidMount() {
-  //   // console.log(window.innerHeight < 700);
-  //   let testExp = new RegExp(
-  //     'Android|webOS|iPhone|iPad|' +
-  //       'BlackBerry|Windows Phone|' +
-  //       'Opera Mini|IEMobile|Mobile',
-  //     'i'
-  //   );
-  //   this.setState({ isMobile: testExp.test(navigator.userAgent) });
-  // }
+  componentDidMount() {
+    // console.log(window.innerHeight < 700);
+    // let testExp = new RegExp(
+    //   'Android|webOS|iPhone|iPad|' +
+    //     'BlackBerry|Windows Phone|' +
+    //     'Opera Mini|IEMobile|Mobile',
+    //   'i'
+    // );
+    // this.setState({ isMobile: testExp.test(navigator.userAgent) });
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = event => {
+    var screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    if (screenWidth > 660) {
+      this.setState({
+        isOpen: true
+      });
+    }
+  };
 
   toggle = () => {
     this.setState({
@@ -58,7 +76,6 @@ class AppNavBar extends Component {
 
   customhandleOnClick = e => {
     if (getComputedStyle(this.MobileMenuButton.current).display === 'block') {
-      this.refNav.current.classList.toggle(styles.navActive);
       this.toggle();
     }
   };
@@ -73,10 +90,12 @@ class AppNavBar extends Component {
             customhandleOnClick={this.customhandleOnClick}
             ref={this.MobileMenuButton}
           />
-          <Nav
-            customhandleOnClick={this.customhandleOnClick}
-            ref={this.refNav}
-          />
+          {isOpen ? (
+            <Nav
+              customhandleOnClick={this.customhandleOnClick}
+              ref={this.refNav}
+            />
+          ) : null}
           <Routes />
         </div>
       </Router>

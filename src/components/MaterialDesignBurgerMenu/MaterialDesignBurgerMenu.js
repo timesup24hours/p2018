@@ -23,7 +23,7 @@ export default class MaterialDesignBurgerMenu extends React.PureComponent {
   };
 
   handleOnClick = e => {
-    if (this.props.CustomhandleOnClick) this.props.CustomhandleOnClick(e);
+    if (this.props.customhandleOnClick) this.props.customhandleOnClick(e);
     this.spanRef.classList.toggle(styles.trigger);
   };
 

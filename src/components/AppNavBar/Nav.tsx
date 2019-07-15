@@ -8,6 +8,7 @@ interface rectObject {
   left: number;
   top: number;
   width: number;
+  bottom: number;
 }
 
 interface NavProps {
@@ -17,9 +18,14 @@ interface NavProps {
 export default React.forwardRef(
   (props: NavProps, ref?: React.Ref<HTMLDivElement>) => {
     const lineRef = useRef<HTMLDivElement>(null);
-    const [style, setStyle] = useState({ left: 0, width: 0 });
+    const [style, setStyle] = useState({
+      left: 0,
+      width: 0,
+      bottom: 36,
+      top: 0
+    });
     const getRect = (ele: Element | null): ClientRect | rectObject => {
-      if (!ele) return { left: 0, top: 0, width: 0 };
+      if (!ele) return { left: 0, width: 0, bottom: 36, top: 0 };
       const rect = ele.getBoundingClientRect();
       return rect;
     };
@@ -28,12 +34,16 @@ export default React.forwardRef(
       if (!activeNode) return;
       const rect = getRect(activeNode!.children[0]);
       document.documentElement.style.setProperty(
-        '--nav-line-top',
+        '--nav-line-left',
         `${rect.left}px`
       );
       document.documentElement.style.setProperty(
         '--nav-line-width',
         `${rect.width}px`
+      );
+      document.documentElement.style.setProperty(
+        '--nav-line-bottom',
+        `${rect.bottom - 1}px`
       );
     });
     // const handleNavOnClick = (event: React.MouseEvent) => {

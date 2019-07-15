@@ -39,7 +39,6 @@
   background: white;
   position: absolute;
   transition: all 0.6s;
-  /* transform-origin: 50% 50%; */
 }
 
 .stick:before {

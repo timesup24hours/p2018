@@ -5,7 +5,7 @@ import { MaterialDesignBurgerMenu } from '../MaterialDesignBurgerMenu';
 export default React.forwardRef((props, ref) => (
   <div className={styles.menuButton} ref={ref}>
     <MaterialDesignBurgerMenu
-      CustomhandleOnClick={props.CustomhandleOnClick}
+      customhandleOnClick={props.customhandleOnClick}
       open={props.open}
     />
   </div>

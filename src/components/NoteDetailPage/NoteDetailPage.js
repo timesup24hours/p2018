@@ -59,7 +59,7 @@ class NoteDetailPage extends React.Component {
         );
 
       case 'html':
-        return data.html;
+        return ({ index }) => data.html;
 
       case 'code':
         return (
