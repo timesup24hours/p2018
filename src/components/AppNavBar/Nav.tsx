@@ -15,6 +15,30 @@ interface NavProps {
   customhandleOnClick: (event: MouseEvent) => void;
 }
 
+export const getRect = (ele: Element | null): ClientRect | rectObject => {
+  if (!ele) return { left: 0, width: 0, bottom: 36, top: 0 };
+  const rect = ele.getBoundingClientRect();
+  return rect;
+};
+
+export const setActiveNavLine = (ele: string) => {
+  const activeNode: Element | null = document.querySelector(ele);
+  if (!activeNode) return;
+  const rect = getRect(activeNode!.children[0]);
+  document.documentElement.style.setProperty(
+    '--nav-line-left',
+    `${rect.left}px`
+  );
+  document.documentElement.style.setProperty(
+    '--nav-line-width',
+    `${rect.width}px`
+  );
+  document.documentElement.style.setProperty(
+    '--nav-line-bottom',
+    `${rect.bottom - 1}px`
+  );
+};
+
 export default React.forwardRef(
   (props: NavProps, ref?: React.Ref<HTMLDivElement>) => {
     const lineRef = useRef<HTMLDivElement>(null);
@@ -24,27 +48,9 @@ export default React.forwardRef(
       bottom: 36,
       top: 0
     });
-    const getRect = (ele: Element | null): ClientRect | rectObject => {
-      if (!ele) return { left: 0, width: 0, bottom: 36, top: 0 };
-      const rect = ele.getBoundingClientRect();
-      return rect;
-    };
+
     useEffect(() => {
-      const activeNode: Element | null = document.querySelector(`.active`);
-      if (!activeNode) return;
-      const rect = getRect(activeNode!.children[0]);
-      document.documentElement.style.setProperty(
-        '--nav-line-left',
-        `${rect.left}px`
-      );
-      document.documentElement.style.setProperty(
-        '--nav-line-width',
-        `${rect.width}px`
-      );
-      document.documentElement.style.setProperty(
-        '--nav-line-bottom',
-        `${rect.bottom - 1}px`
-      );
+      setActiveNavLine('.active');
     });
     // const handleNavOnClick = (event: React.MouseEvent) => {
     //   const ele = event.currentTarget!;

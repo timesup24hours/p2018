@@ -4,14 +4,15 @@ import {
   HashRouter as Router // for github free host hard reload
 } from 'react-router-dom';
 // import styled from 'styled-components';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
-import styles from './index.module.css';
+// import styles from './index.module.css';
 import './nav.scss';
 
 import MobileMenuButton from './MobileMenuButton';
 import Nav from './Nav';
 import Routes from './Routes';
+import { setActiveNavLine } from './Nav';
 
 // const MenuButtonContainer = styled.div`
 //   display: none;
@@ -57,6 +58,7 @@ class AppNavBar extends Component {
   }
 
   handleResize = event => {
+    setActiveNavLine('.active');
     if (this.state.isOpen) return;
     const screenWidth =
       window.innerWidth ||

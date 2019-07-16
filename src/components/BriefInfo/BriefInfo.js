@@ -13,7 +13,7 @@ const templateData = [
   {
     title: 'Redux',
     desc:
-      'Redux for global state management, Immutable, Redux-thunk or Redux-saga'
+      'Redux for global state management, Immutable, Redux-thunk or Redux-saga / Apollo GraphQL'
   },
   {
     title: 'Javascript',
@@ -22,7 +22,7 @@ const templateData = [
   },
   {
     title: 'NodeJS',
-    desc: 'Building Restful /CRUD API using NodeJS/ExpressJS/Swagger'
+    desc: 'Building Restful CRUD API using NodeJS/ExpressJS/Swagger/Auth0/JWT'
   },
   {
     title: 'MongoDB',
@@ -40,6 +40,23 @@ const templateData = [
   {
     title: 'CS',
     desc: 'Computer science fundamentals and Data structures, MVC, OOP'
+  },
+  {
+    title: 'Agile',
+    desc: 'Trello, Jira, Subject to change'
+  },
+  {
+    title: 'Deployment',
+    desc: `Linux CMD, SSH, Create Instance in cloud provider, Setting nginx/SSL/Let's Encrypt/load balancing in Docker container infront of multi app instances`
+  },
+  {
+    title: 'Test',
+    desc:
+      'e2e with puppeteer. Jest, enzyme, react-testing-library for unit testing'
+  },
+  {
+    title: 'Tools',
+    desc: '@flow, Typescript, ESLint, Prettier, Vim, VSCode, CRA'
   }
 ];
 export default () => {

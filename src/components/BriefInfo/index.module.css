@@ -30,6 +30,7 @@
   padding: 20px 20px 20px 20px;
 }
 .block:nth-child(4),
+.block:nth-child(8),
 .block:last-child {
   border-right: none;
 }
