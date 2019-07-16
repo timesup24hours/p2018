@@ -1,19 +1,13 @@
 import article1 from '../data/001';
 import article2 from '../data/002';
 import article3 from '../data/003';
+import article4 from '../data/004';
 
 export default [
   article1,
   article2,
   article3,
-  {
-    id: '46e7361a-b535-44d3-abb4-5a938c59f64d',
-    title: 'omnis-aut-dolores',
-    subTitle: 'dolores earum eum',
-    content:
-      'Quod eum pariatur. Velit minima incidunt maiores nisi voluptatem. Quia necessitatibus temporibus veritatis et voluptatem repellendus. Est et quia nihil beatae maxime voluptates earum. Saepe eos et. Id et et repellendus sed dolor ratione doloribus.\n \rEt enim aut. Ea aut dignissimos nobis labore minus cupiditate commodi. Aut ratione aliquid.\n \rVoluptatem pariatur culpa sit distinctio consequatur culpa nobis quisquam nemo. Autem quasi dolores possimus saepe debitis et voluptatum. Voluptatem et vero occaecati qui autem sint. Nostrum blanditiis perspiciatis. Perspiciatis omnis est qui facere. Quo vero quia.\n \rQuis enim nostrum natus dolore voluptas repellendus ut. Odio eius rem tempore vero voluptatum. Necessitatibus facilis animi quos aut inventore voluptatem sunt nulla.\n \rEt vitae aut et perspiciatis cum tempore qui. Molestiae est aut maiores maxime sed ipsam voluptatem enim enim. Sit quibusdam sit sequi numquam est.\n \rOccaecati corporis assumenda et. Consequatur nesciunt exercitationem impedit vel eius expedita velit eum. Voluptatem minima consequatur vero.\n \rNihil modi ipsam vel ducimus dolores quasi aut. Occaecati aliquid non. Sunt suscipit ipsa porro aperiam architecto natus voluptatem.\n \rEt enim illo et. Eum magnam nemo natus provident commodi rerum. Nihil repellat libero harum sint. Sit et ea ut deleniti.\n \rOmnis ipsum cum minus nihil facere ratione odit necessitatibus. Quae voluptatem magnam. Minima nesciunt est. Nobis laborum quasi voluptate sequi. Aut maiores asperiores omnis numquam id. Eius sed ut non reprehenderit.\n \rOccaecati voluptatum dolorem. Alias illum mollitia nisi sunt asperiores vitae autem. Facere aut sed. Laudantium vel doloremque. Occaecati commodi ea dolore molestiae.\n \rNihil molestiae eum. Modi est in ut et adipisci facilis nam error cupiditate. Suscipit non fugit aliquam dicta. Doloremque error perferendis eaque quia est perspiciatis repellat et repudiandae.\n \rInventore rerum error aut omnis non provident aut molestias. Nisi ipsam sit cupiditate voluptatum excepturi perspiciatis. Qui magni et dolores. Et enim consequuntur. Ut nulla quos odio ut non. Consequuntur exercitationem incidunt nam ducimus consequuntur quo et.\n \rVoluptatem placeat quos. Dolor omnis cupiditate error sed beatae odio earum sed. Dignissimos modi dolorum hic ad neque nemo blanditiis ad autem. Odit repudiandae quos ducimus et cum nesciunt illo atque. Iste reiciendis impedit quibusdam corporis adipisci corrupti dolor. Fuga impedit illo blanditiis dolores temporibus veniam iste quis.\n \rSequi vitae consequuntur et harum minima. Ut consequuntur dolor beatae quaerat. Ut ab maiores. Tempore qui ducimus aspernatur provident eligendi. Omnis est blanditiis inventore quo.\n \rMaiores iste quos in facere rerum possimus eos. Fugit et reiciendis voluptatibus vitae asperiores adipisci illum quasi vitae. Vitae velit ut non consequatur eum qui sed. Rem molestiae exercitationem aspernatur consectetur et culpa est ea.',
-    createdAt: '2017-10-24T09:53:12.243Z'
-  },
+  article4,
   {
     id: '693b6aaf-4edd-4116-a88a-9e26acad0ab3',
     title: 'eum-dolorum-magni',

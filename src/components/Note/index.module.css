@@ -64,4 +64,8 @@
     /* background: rgba(226, 224, 228, 0.6); */
     border-left: 6px solid rgba(138, 43, 226, 0.8);
   }
+  .subTitle {
+    display: none;
+    height: 0px;
+  }
 }
