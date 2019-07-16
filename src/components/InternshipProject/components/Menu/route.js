@@ -1,12 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './styles.css';
+import Tooltip from '@material-ui/core/Tooltip';
+
+import './styles.scss';
 
 export default () => {
   return (
     <menu className="InternshipProject_menu">
       <div className="menu_switch">
-        <i className="fas fa-bars" />
+        <NavLink exact to="/" className="menu_link">
+          <i className="fas fa-bars" />
+        </NavLink>
       </div>
       <div className="menu_list">
         <NavLink
@@ -15,7 +19,9 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <i className="fas fa-home" />
+          <Tooltip title="Home" placement="left-center">
+            <i className="fas fa-home" />
+          </Tooltip>
         </NavLink>
         <NavLink
           exact
@@ -23,7 +29,9 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <i className="fas fa-wallet" />
+          <Tooltip title="current page UI only" placement="left-center">
+            <i className="fas fa-wallet" />
+          </Tooltip>
         </NavLink>
         <NavLink
           exact
@@ -31,7 +39,9 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <i className="far fa-square" />
+          <Tooltip title="back" placement="left-center">
+            <i className="far fa-square" />
+          </Tooltip>
         </NavLink>
         <NavLink
           exact
@@ -39,7 +49,9 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <i className="far fa-folder" />
+          <Tooltip title="contact" placement="left-center">
+            <i className="fas fa-phone" />
+          </Tooltip>
         </NavLink>
       </div>
     </menu>

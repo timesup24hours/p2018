@@ -8,10 +8,15 @@ class App extends Component {
   componentDidMount() {
     const node = document.querySelector('nav');
     node.style.top = '-200px';
+    document.documentElement.style.setProperty('--nav-line-display', 'none');
   }
   componentWillUnmount() {
     const node = document.querySelector('nav');
     node.style.top = '0px';
+    document.documentElement.style.setProperty(
+      '--nav-line-display',
+      'inline-block'
+    );
   }
   render() {
     return (

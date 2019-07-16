@@ -4,13 +4,15 @@ import './index.css';
 import Period from './Period';
 import Buttons from './Buttons';
 
+const initialState = {
+  targetValue: 50000,
+  initialDepositValue: 20000,
+  monthlyPaymentValue: 2000,
+  yearValue: 7
+};
 export default class Calculator extends React.Component {
-  state = {
-    targetValue: 50000,
-    initialDepositValue: 20000,
-    monthlyPaymentValue: 2000,
-    yearValue: 7
-  };
+  state = initialState;
+
   targetOnchange = value => {
     this.setState({ targetValue: value });
   };
@@ -29,6 +31,11 @@ export default class Calculator extends React.Component {
       if (yearValue <= 1) return;
       this.setState({ yearValue: yearValue - 1 });
     }
+  };
+
+  handleCancel = () => {};
+  handleDefault = () => {
+    this.setState(initialState);
   };
 
   render() {
@@ -69,7 +76,10 @@ export default class Calculator extends React.Component {
             year={this.state.yearValue}
             handleOnClick={this.handleOnClick}
           />
-          <Buttons />
+          <Buttons
+            handleCancel={this.handleCancel}
+            handleDefault={this.handleDefault}
+          />
         </div>
       </div>
     );

@@ -8,6 +8,7 @@
     "https://timesup24hours.github.io/p2018"
   ],
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-preset-react-app": "^3.1.1",

@@ -3,14 +3,11 @@ import './index.css';
 
 export default ({ handleCancel, handleDefault }) => (
   <div className="mainBody_calculator_buttons flex_row_center">
-    <div
-      onClick={() => handleCancel}
-      className="mainBody_calculator_buttons_cancel"
-    >
+    <div onClick={handleCancel} className="mainBody_calculator_buttons_cancel">
       Cancel
     </div>
     <div
-      onClick={() => handleDefault}
+      onClick={handleDefault}
       className="mainBody_calculator_buttons_default flex_center"
     >
       Default

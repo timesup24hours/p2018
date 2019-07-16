@@ -1,5 +1,6 @@
 :root {
   --nav-line-top: 0;
+  --nav-line-display: inline-block;
 }
 .Nav_nav {
   /* border: 1px solid black; */
@@ -154,7 +155,7 @@
     }
   }
   .nav_line {
-    display: inline-block;
+    display: var(--nav-line-display);
     transition: all 0.3s ease-in-out;
     position: absolute;
     background-color: #75489f;

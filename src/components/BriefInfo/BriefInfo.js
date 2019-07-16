@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './index.module.css';
 
@@ -50,7 +51,15 @@ export default () => {
   }, []);
   return (
     <div className={styles.container}>
-      <div className={styles.title}>My Tech Stack</div>
+      <div className={styles.title}>
+        My Tech Stack and
+        <Link
+          to="/my_notes/Resume#00feae1f-b6e4-4e23-ae95-61c486da151e"
+          style={{ marginLeft: '12px' }}
+        >
+          Resume
+        </Link>
+      </div>
       <div className={styles.blockWrapper}>
         {templateData.map((data, i) => (
           <BlockInfo key={i} data={data} />
