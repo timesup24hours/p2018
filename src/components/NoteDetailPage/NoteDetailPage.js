@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import styles from './index.module.css';
 import Loading from '../Loading';
 import { noteGetOne, noteFetchRequested } from '../../actions/notes';
+import CodeHighlighter from './CodeHighlighter';
 
-class NoteDetailPage extends React.Component {
+export class NoteDetailPage extends React.Component {
   state = {
     title: '',
     id: ''
@@ -64,7 +63,7 @@ class NoteDetailPage extends React.Component {
       case 'code':
         return (
           <div key={index} className={styles.code}>
-            <Component data={data.code} />
+            <CodeHighlighter data={data.code} />
           </div>
         );
 
@@ -106,7 +105,7 @@ class NoteDetailPage extends React.Component {
             </article>,
             <div key="code" className={styles.code}>
               {currentNote && currentNote.code && (
-                <Component data={currentNote.code} />
+                <CodeHighlighter data={currentNote.code} />
               )}
             </div>
           ]}
@@ -130,26 +129,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(NoteDetailPage);
-
-const Component = ({ data }) => {
-  return (
-    <SyntaxHighlighter
-      customStyle={{ width: '100%' }}
-      language="javascript"
-      style={atomDark}
-      // atomDark
-      // prism
-      // twilight
-      // tomorrow
-      // solarizedlight
-      // okaidia
-      // funky
-      // dark
-      // coy
-      showLineNumbers={false}
-      wrapLines={true}
-    >
-      {data}
-    </SyntaxHighlighter>
-  );
-};

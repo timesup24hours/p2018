@@ -6,7 +6,7 @@ import { notes } from '../../actions';
 import MyNotes from './MyNotes';
 import fetchingBottomArea from './fetchingBottomArea';
 
-class MyNotesContainer extends Component {
+export class MyNotesContainer extends Component {
   state = {
     scrolled: 0,
     scrollHeight: 0
