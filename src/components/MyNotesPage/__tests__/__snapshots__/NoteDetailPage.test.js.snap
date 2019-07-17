@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteDetailPage should render correctly in "debug" mode 1`] = `
+<ForwardRef
+  debug={true}
+  handleScroll={[Function]}
+  scrolled={0}
+/>
+`;
+
+exports[`NoteDetailPage should render with redux 1`] = `
+<Connect(MyNotesContainer)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MyNotesContainer
+    cursor={0}
+    fetchLoading={false}
+    hasMoreNotesToLoad={true}
+    loadAmount={20}
+    loading={false}
+    message=""
+    notes={Array []}
+    notesFetchCancelled={[Function]}
+    notesFetchRequested={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <ForwardRef
+      cursor={0}
+      fetchLoading={false}
+      handleScroll={[Function]}
+      hasMoreNotesToLoad={true}
+      loadAmount={20}
+      loading={false}
+      message=""
+      notes={Array []}
+      notesFetchCancelled={[Function]}
+      notesFetchRequested={[Function]}
+      scrolled={0}
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+      storeSubscription={
+        Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          },
+          "unsubscribe": [Function],
+        }
+      }
+    >
+      <div
+        className="container"
+        onScroll={[Function]}
+      />
+    </ForwardRef>
+  </MyNotesContainer>
+</Connect(MyNotesContainer)>
+`;
+
+exports[`NoteDetailPage should render without redux 1`] = `
+<MyNotesContainer
+  cursor={0}
+  fetchLoading={false}
+  handleScroll={[MockFunction]}
+  hasMoreNotesToLoad={true}
+  loadAmount={10}
+  loading={false}
+  message=""
+  notes={Array []}
+  notesFetchRequested={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "loadAmount": 20,
+            "start": 0,
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  scrolled={0}
+>
+  <ForwardRef
+    cursor={0}
+    fetchLoading={false}
+    handleScroll={[Function]}
+    hasMoreNotesToLoad={true}
+    loadAmount={10}
+    loading={false}
+    message=""
+    notes={Array []}
+    notesFetchRequested={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "loadAmount": 20,
+              "start": 0,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    scrolled={0}
+  >
+    <div
+      className="container"
+      onScroll={[Function]}
+    />
+  </ForwardRef>
+</MyNotesContainer>
+`;
