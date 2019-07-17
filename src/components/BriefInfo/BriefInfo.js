@@ -52,7 +52,7 @@ const templateData = [
   {
     title: 'Test',
     desc:
-      'e2e with puppeteer. Jest, enzyme, react-testing-library for unit testing'
+      'e2e with puppeteer. Jest, enzyme, react-testing-library for unit testing, Circle CI'
   },
   {
     title: 'Tools',

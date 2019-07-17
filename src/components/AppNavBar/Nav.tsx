@@ -81,6 +81,7 @@ export default React.forwardRef(
           </li>
           <li className="nav_ul_li_2">
             <Link
+              data-testid="my_notes"
               className="a"
               activeClassName="active"
               to="/my_notes"
