@@ -37,7 +37,7 @@
   padding: 40px 30px;
   transition: 0.5s;
   border-left: 6px solid var(--border-left-grey);
-  text-indent: 2rem;
+  /* text-indent: 2rem; */
 }
 .content:hover {
   border-left: 6px solid var(--primary-purple-color);
@@ -48,7 +48,7 @@
   /* line-break: auto; */
   width: 70%;
   padding: 10px 30px;
-  text-indent: 2rem;
+  /* text-indent: 2rem; */
 }
 .code {
   min-width: 70%;

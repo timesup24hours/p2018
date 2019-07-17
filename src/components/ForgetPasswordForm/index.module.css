@@ -72,7 +72,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 10%;
+  bottom: 3%;
   opacity: 0;
 }
 .container:hover .formText {
