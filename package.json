@@ -66,7 +66,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "jest": {},
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "babel": {
     "presets": [
       "react-app"
@@ -76,15 +80,20 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.2",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
     "chalk": "^1.1.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
     "faker": "^4.1.0",
     "gh-pages": "^1.2.0",
     "object-assign": "^4.1.1",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.5.3",
     "whatwg-fetch": "^2.0.3"
   },

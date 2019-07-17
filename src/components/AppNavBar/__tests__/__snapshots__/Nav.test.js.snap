@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should render correctly in "debug" mode 1`] = `
+<nav
+  className="Nav_nav"
+>
+  <ul
+    className="nav_ul"
+  >
+    <li
+      className="nav_ul_li_1"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="a"
+        exact={true}
+        onClick={[Function]}
+        to="/"
+      >
+        <span>
+          HOME
+        </span>
+      </NavLink>
+    </li>
+    <li
+      className="nav_ul_li_2"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="a"
+        data-testid="my_notes"
+        onClick={[Function]}
+        to="/my_notes"
+      >
+        <span>
+          NOTES
+        </span>
+      </NavLink>
+    </li>
+    <li
+      className="nav_ul_li_3"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="a"
+        onClick={[Function]}
+        to="/css_effects"
+      >
+        <span>
+          UI
+        </span>
+      </NavLink>
+    </li>
+    <li
+      className="nav_ul_li_4"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="a"
+        onClick={[Function]}
+        to="/contact_info"
+      >
+        <span>
+          CONTACT
+        </span>
+      </NavLink>
+    </li>
+    <div
+      className="nav_line"
+    />
+  </ul>
+</nav>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppNavBar should render correctly in "debug" mode 1`] = `
+<HashRouter>
+  <div>
+    <ForwardRef
+      customhandleOnClick={[Function]}
+      open={true}
+    />
+    <ForwardRef
+      customhandleOnClick={[Function]}
+    />
+    <_default />
+  </div>
+</HashRouter>
+`;
