@@ -58,7 +58,22 @@
   animation: block 0.7s forwards;
 }
 
+.blockContentAnimationFromTop {
+  animation: blockFromTop 0.7s forwards;
+}
+
 @keyframes block {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blockFromTop {
   0% {
     opacity: 0;
     transform: translateY(-80%);

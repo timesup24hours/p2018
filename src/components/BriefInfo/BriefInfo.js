@@ -8,7 +8,8 @@ import { intersectionObserver } from '../../util';
 const templateData = [
   {
     title: 'ReactJS',
-    desc: 'Render props, HOC, lifecycles, React Hooks, Code Split, Lazy, Suspense, React Router'
+    desc:
+      'Render props, HOC, lifecycles, React Hooks, Code Split, Lazy, Suspense, React Router'
   },
   {
     title: 'Redux',
@@ -62,8 +63,16 @@ const templateData = [
 export default () => {
   useEffect(() => {
     const targets = document.querySelectorAll('#block_info');
-    targets.forEach(ele =>
-      intersectionObserver(ele, 'blockContentAnimation', true)
+    targets.forEach((ele, index) =>
+      intersectionObserver(
+        ele,
+        {
+          fromLeft: 'blockContentAnimation',
+          fromTop: 'blockContentAnimationFromTop'
+        },
+        true,
+        index
+      )
     );
   }, []);
   return (

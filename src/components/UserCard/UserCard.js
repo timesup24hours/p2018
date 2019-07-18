@@ -7,7 +7,9 @@ import { intersectionObserver } from '../../util';
 export default () => {
   useEffect(() => {
     const targets = document.querySelectorAll('#user-card');
-    targets.forEach(ele => intersectionObserver(ele, 'userCardAnimation'));
+    targets.forEach(ele =>
+      intersectionObserver(ele, { fromLeft: 'userCardAnimation' })
+    );
   }, []);
   return (
     <div className={styles.container}>
