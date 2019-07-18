@@ -23,18 +23,8 @@ KloudOne Inc. - Santa Clara, CA January 2019 to Present
 • Communicate technical decisions through design docs, tech talks 
 • Understand the business and the business impact of the code
 
-Projects - (self-taught projects - learning since 2017)
-https://github.com/timesup24hours/p2018
-Tech Stack - React/Redux/Redux-saga, D3.js - (cancel ajax, take latest request when race condition)
-
-https://github.com/timesup24hours/porfolio_react_redux
-Tech Stack - Docker/Docker compose/Nginx/Express.js/Node.js/Passport.js/Tape.js/Mongoose/React/Redux/Strip
-
-https://github.com/timesup24hours/song
-Tech Stack - Vue.js/Vue-apollo/GraphQL/Express.js/GraphQl-server-/express/Sequlize
-
-https://github.com/timesup24hours/post_react_redux
-MERN - passport-facebook/passport-google-oauth/passport-jwt/passport-local/socket.io
+React JS Developer
+Freelancer - Since January 2017
 
 Skills
 • Vim user  - VS Code - ESlint - Prettier
