@@ -8,7 +8,7 @@ import { intersectionObserver } from '../../util';
 const templateData = [
   {
     title: 'ReactJS',
-    desc: 'Render props, HOC, lifecycles, React Hooks'
+    desc: 'Render props, HOC, lifecycles, React Hooks, Code Split, Lazy, Suspense, React Router'
   },
   {
     title: 'Redux',
