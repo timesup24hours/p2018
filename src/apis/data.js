@@ -5,6 +5,7 @@ import article4 from '../data/004';
 import article5 from '../data/005';
 import article6 from '../data/006';
 import article7 from '../data/007';
+import article8 from '../data/008';
 
 export default [
   article1,
@@ -14,14 +15,7 @@ export default [
   article5,
   article6,
   article7,
-  {
-    id: '407f7cec-0420-4123-aeee-a7c3e646fc5e',
-    title: 'ipsam-rerum-cumque',
-    subTitle: 'consectetur at veniam',
-    content:
-      'Sint explicabo dicta excepturi. Ad quod atque voluptas tempora dignissimos alias maxime. Vel laborum ut et quisquam et saepe blanditiis. Cupiditate aperiam omnis iure accusamus. Praesentium rem voluptates quis est rerum. Laborum sed nihil doloremque modi incidunt.\n \rPlaceat voluptate dignissimos consequatur et praesentium commodi maxime. Itaque aspernatur modi temporibus nulla quisquam minus doloribus nesciunt sit. Eum facere omnis inventore voluptates totam alias ab placeat hic. Cumque est blanditiis fugiat expedita et eius. Aliquam porro culpa eaque qui fugit. Consequatur ea enim.\n \rAut et ea illo. Ipsum ut reprehenderit dignissimos dolor voluptatem. Officiis nesciunt laborum quas eum et. Illum mollitia accusamus illo assumenda ducimus necessitatibus consequatur neque.\n \rDolore molestias occaecati laboriosam quae et velit atque veritatis deleniti. Ea optio praesentium asperiores possimus est iusto fugit itaque. Esse est sit ut deleniti ad omnis. Occaecati et voluptates explicabo qui optio veritatis consequatur velit. Non illum autem assumenda esse. Reprehenderit suscipit voluptatem aperiam est nulla.\n \rTempore voluptate neque delectus voluptatem beatae cupiditate voluptatem quasi voluptatem. Sit ab est autem ea aut eos ut. Sint voluptatum est culpa sint illum animi. Quas quo rerum quos debitis cum dignissimos vel. Libero ullam quia quia voluptate.\n \rOdit voluptatem veniam perspiciatis est vel. Sed nulla perferendis atque voluptatem accusantium. Quidem delectus iure tempore.\n \rRerum ea excepturi voluptatum quas sunt provident qui voluptatem. Voluptas quod dolorem. Rerum rerum aut provident fugiat atque perferendis delectus accusantium magni. Quia minima aut fugiat excepturi accusamus.\n \rItaque et cum vel perspiciatis reiciendis voluptatem at commodi. Sit ex occaecati eum sint impedit corporis. Mollitia tenetur culpa.\n \rItaque provident adipisci libero odio unde est quae aspernatur. Fugit qui ea. Quo enim ab qui corporis autem dolor quibusdam labore. Corporis unde accusamus esse accusamus dicta.\n \rEveniet accusamus quia est mollitia quidem aut est molestias dolor. Velit rem quam consequatur ut sapiente quaerat saepe consectetur rem. Aperiam corporis ut cumque eos quo eos. Nihil ut et suscipit. Rem nostrum nostrum tempora. Ex ut sint excepturi quisquam dolore ut non tenetur accusantium.\n \rOccaecati quis enim aut tempore illum necessitatibus rerum. Sed sit quo exercitationem doloribus doloremque soluta harum et. Eos doloremque possimus quia asperiores eum ut aperiam. Nihil asperiores maxime vel recusandae earum cumque. Pariatur aut architecto. Consectetur sunt et sed distinctio corporis quos ut rerum.\n \rIpsam enim hic ullam dicta aliquam excepturi velit sint. Rerum neque neque accusamus ratione omnis quia aperiam id. Impedit rerum ipsam deserunt.\n \rQuia dolores aut sapiente sit quisquam sit itaque. Eos est similique alias voluptates occaecati ut laudantium voluptate qui. Eaque cupiditate quasi quia sunt sed tempore consequatur error. Assumenda soluta sed. Ut dicta excepturi provident. Velit quod in eligendi dolor corporis commodi qui repudiandae.\n \rRatione omnis ut quae reiciendis distinctio ipsam expedita iste eligendi. Veniam dolor consequatur sed sunt aspernatur enim expedita voluptatem numquam. Inventore quaerat quasi. Rerum excepturi incidunt quae aut quia. Et suscipit illum et sed earum totam.\n \rMolestiae ut quos. Quod iure placeat atque qui architecto nihil laboriosam. Dolorum ut molestiae totam mollitia. Deserunt ipsum quod qui officia quaerat quia. Dolorum enim exercitationem corporis. Quas omnis vero fugiat ullam et tempora ea ad.',
-    createdAt: '2017-11-14T21:32:20.175Z'
-  },
+  article8,
   {
     id: '899c8c83-b80a-4b20-9a8f-d2d7570dcd80',
     title: 'minus-sunt-voluptatem',
