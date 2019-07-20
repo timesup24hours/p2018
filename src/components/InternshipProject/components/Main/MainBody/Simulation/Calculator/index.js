@@ -19,35 +19,35 @@ export default class Calculator extends React.Component {
   targetOnchange = value => {
     console.log('targetOnchange : ', value);
     this.setState({ mortage: value });
-    this.monthlyPayment({
-      mortage: value,
-      interestRate: this.state.interestRate,
-      year: this.state.yearValue
-    });
+    // this.monthlyPayment({
+    //   mortage: value,
+    //   interestRate: this.state.interestRate,
+    //   year: this.state.yearValue
+    // });
   };
   initialDepositOnchange = value => {
-    const downPayment = this.state.mortage * value * 0.01;
-    this.setState({ downPayment: value, displayValue: downPayment });
-    this.monthlyPayment({
-      mortage: this.state.mortage,
-      downPayment,
-      interestRate: this.state.interestRate,
-      year: this.state.yearValue
-    });
+    // const downPayment = this.state.mortage * value * 0.01;
+    this.setState({ downPayment: value, displayValue: value });
+    // this.monthlyPayment({
+    //   mortage: this.state.mortage,
+    //   downPayment: value,
+    //   interestRate: this.state.interestRate,
+    //   year: this.state.yearValue
+    // });
   };
   monthlyPaymentOnchange = value => {
     this.setState({ interestRate: value });
-    this.monthlyPayment({
-      mortage: this.state.mortage,
-      interestRate: value,
-      year: this.state.yearValue
-    });
+    // this.monthlyPayment({
+    //   mortage: this.state.mortage,
+    //   interestRate: value,
+    //   year: this.state.yearValue
+    // });
   };
 
   // https://www.wikihow.com/Calculate-Mortgage-Payments
   monthlyPayment = ({ mortage, downPayment, interestRate, year }) => {
     if (downPayment !== 0 && downPayment === undefined) {
-      downPayment = this.state.mortage * this.state.downPayment * 0.01;
+      downPayment = this.state.downPayment;
     }
     const rate = Number(
       convertToPercentage(takeNumberOnly(interestRate), false)
@@ -55,12 +55,14 @@ export default class Calculator extends React.Component {
     const decimalRate = rate / 100;
     const monthlyInterestRate = decimalRate / 12;
     const totalMonths = year * 12;
+    console.log({ decimalRate, monthlyInterestRate, totalMonths, downPayment });
     const upper =
       monthlyInterestRate * Math.pow(monthlyInterestRate + 1, totalMonths);
     const down = Math.pow(monthlyInterestRate + 1, totalMonths) - 1;
 
     const monthlyPayment = (mortage - downPayment) * (upper / down);
     this.setState({ monthlyPayment });
+    console.log({ monthlyPayment, mortage, downPayment, interestRate, year });
     if (this.props.renderProp)
       this.props.renderProp({
         monthlyPayment,
@@ -91,18 +93,18 @@ export default class Calculator extends React.Component {
 
   handleCancel = () => {};
   handleDefault = () => {
-    // this.monthlyPayment({
-    //   mortage: this.state.mortage,
-    //   interestRate: this.state.interestRate,
-    //   year: this.state.yearValue
-    // });
-    this.setState(initialState, () => {
-      this.monthlyPayment({
-        mortage: this.state.mortage,
-        interestRate: this.state.interestRate,
-        year: this.state.yearValue
-      });
+    this.monthlyPayment({
+      mortage: this.state.mortage,
+      interestRate: this.state.interestRate,
+      year: this.state.yearValue
     });
+    // this.setState(initialState, () => {
+    //   this.monthlyPayment({
+    //     mortage: this.state.mortage,
+    //     interestRate: this.state.interestRate,
+    //     year: this.state.yearValue
+    //   });
+    // });
   };
 
   render() {
@@ -112,22 +114,32 @@ export default class Calculator extends React.Component {
           <div className="mainBody_calculator_target">
             <InputRange
               name="Mortgage"
-              value={this.state.mortage}
+              value={this.state.mortage || 0}
               onChange={this.targetOnchange}
               id="target"
-              min={100000}
+              min={0}
               max={1000000}
+              edit={true}
+              mortage={this.state.mortage}
+              downPayment={this.state.downPayment}
             />
           </div>
           <div className="mainBody_calculator_deposit">
             <InputRange
               name="Down Payment"
               displayValue={this.state.displayValue}
-              value={this.state.downPayment}
+              value={this.state.downPayment || 0}
               onChange={this.initialDepositOnchange}
               id="initialDeposit"
-              min={1}
-              max={100}
+              min={0}
+              max={
+                this.state.mortage < this.state.downPayment
+                  ? this.state.downPayment
+                  : this.state.mortage
+              }
+              edit={true}
+              mortage={this.state.mortage}
+              downPayment={this.state.downPayment}
             />
           </div>
           <div className="mainBody_calculator_payment">
@@ -139,6 +151,7 @@ export default class Calculator extends React.Component {
               min={1}
               max={999}
               percent={true}
+              edit={false}
             />
           </div>
           <Period
