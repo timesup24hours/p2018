@@ -19,7 +19,7 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <Tooltip title="Home" placement="left-center">
+          <Tooltip title="Home" placement="left">
             <i className="fas fa-home" />
           </Tooltip>
         </NavLink>
@@ -29,7 +29,7 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <Tooltip title="Current page UI only" placement="left-center">
+          <Tooltip title="Current page UI only" placement="left">
             <i className="fas fa-wallet" />
           </Tooltip>
         </NavLink>
@@ -39,7 +39,7 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <Tooltip title="Back" placement="left-center">
+          <Tooltip title="Back" placement="left">
             <i className="far fa-square" />
           </Tooltip>
         </NavLink>
@@ -49,7 +49,7 @@ export default () => {
           className="menu_link"
           activeClassName="link_active"
         >
-          <Tooltip title="Contact" placement="left-center">
+          <Tooltip title="Contact" placement="left">
             <i className="fas fa-phone" />
           </Tooltip>
         </NavLink>
