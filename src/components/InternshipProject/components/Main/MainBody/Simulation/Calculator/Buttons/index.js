@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
 export default ({ handleCancel, handleDefault }) => (
   <div
@@ -9,11 +9,11 @@ export default ({ handleCancel, handleDefault }) => (
     {/* <div onClick={handleCancel} className="mainBody_calculator_buttons_cancel">
       Cancel
     </div> */}
-    <div
+    <button
       onClick={handleDefault}
       className="mainBody_calculator_buttons_default flex_center"
     >
-      Default
-    </div>
+      Calculate
+    </button>
   </div>
 );
