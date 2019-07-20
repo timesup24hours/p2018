@@ -3,7 +3,7 @@ import InputRange from './InputRange';
 import './index.css';
 import Period from './Period';
 import Buttons from './Buttons';
-import { convertToPercentage, takeNumberOnly } from './InputRange/util';
+import { convertToPercentage, takeNumberOnly } from './util';
 
 const initialState = {
   mortage: 200000,
@@ -17,6 +17,7 @@ export default class Calculator extends React.Component {
   state = initialState;
 
   targetOnchange = value => {
+    console.log('targetOnchange : ', value);
     this.setState({ mortage: value });
     this.monthlyPayment({
       mortage: value,
@@ -43,6 +44,7 @@ export default class Calculator extends React.Component {
     });
   };
 
+  // https://www.wikihow.com/Calculate-Mortgage-Payments
   monthlyPayment = ({ mortage, downPayment, interestRate, year }) => {
     if (downPayment !== 0 && downPayment === undefined) {
       downPayment = this.state.mortage * this.state.downPayment * 0.01;
@@ -50,11 +52,12 @@ export default class Calculator extends React.Component {
     const rate = Number(
       convertToPercentage(takeNumberOnly(interestRate), false)
     );
-    const monthlyInterestRate = (rate * 0.01) / 12;
+    const decimalRate = rate / 100;
+    const monthlyInterestRate = decimalRate / 12;
     const totalMonths = year * 12;
     const upper =
-      monthlyInterestRate * ((monthlyInterestRate + 1) * totalMonths);
-    const down = (monthlyInterestRate + 1) * totalMonths - 1;
+      monthlyInterestRate * Math.pow(monthlyInterestRate + 1, totalMonths);
+    const down = Math.pow(monthlyInterestRate + 1, totalMonths) - 1;
 
     const monthlyPayment = (mortage - downPayment) * (upper / down);
     this.setState({ monthlyPayment });
@@ -88,6 +91,11 @@ export default class Calculator extends React.Component {
 
   handleCancel = () => {};
   handleDefault = () => {
+    // this.monthlyPayment({
+    //   mortage: this.state.mortage,
+    //   interestRate: this.state.interestRate,
+    //   year: this.state.yearValue
+    // });
     this.setState(initialState, () => {
       this.monthlyPayment({
         mortage: this.state.mortage,

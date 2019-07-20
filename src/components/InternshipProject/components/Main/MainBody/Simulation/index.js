@@ -36,7 +36,7 @@ export default () => {
           })
         }
       />
-      <Chart />
+      <Chart data={data} setData={setData} />
     </div>
   );
 };

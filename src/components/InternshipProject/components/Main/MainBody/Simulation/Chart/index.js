@@ -4,7 +4,7 @@ import Performance from './Performance';
 import Rate from './Rate';
 import BarChart from './BarChart';
 
-export default () => (
+export default ({ data, setData }) => (
   <div className="mainBody_chart">
     <div className="mainBody_chart_container">
       <div className="mainBody_chart_left">
@@ -12,7 +12,7 @@ export default () => (
           <div>Projection</div>
           <div className="chart_left_active">Perfomance</div>
         </div>
-        <BarChart />
+        <BarChart data={data} setData={setData} />
         <div className="mainBody_chart_years">
           <div className="mainBody_chart_year_left">10 years</div>
           <div className="mainBody_chart_year_right year_active">20 years</div>

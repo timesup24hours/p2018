@@ -44,7 +44,7 @@ const templateData = [
   },
   {
     title: 'Agile',
-    desc: 'Trello, Jira, Subject to change'
+    desc: 'Trello, Jira, Subject to change, communication tool Slack/Zoom'
   },
   {
     title: 'Deployment',
