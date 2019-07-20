@@ -17,6 +17,7 @@ export default class Calculator extends React.Component {
   state = initialState;
 
   targetOnchange = value => {
+    console.log('targetOnchange : ', value);
     this.setState({ mortage: value });
     // this.monthlyPayment({
     //   mortage: value,
