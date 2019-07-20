@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import InputRange from 'react-input-range';
-import { convertToPercentage, takeNumberOnly } from './util';
+import { convertToPercentage, takeNumberOnly } from '../util';
 
 export default ({ name, value, displayValue, onChange, min, max, percent }) => {
   const [inputValue, setInputvalue] = useState(
@@ -29,7 +29,7 @@ export default ({ name, value, displayValue, onChange, min, max, percent }) => {
         <div className="inputrange_name">{name}</div>
         <div
           className="inputrange_number"
-          style={{ position: 'absolute', right: '0px' }}
+          style={{ position: 'absolute', right: '3px' }}
         >
           {percent
             ? convertToPercentage(inputValue)
@@ -45,7 +45,10 @@ export default ({ name, value, displayValue, onChange, min, max, percent }) => {
             outline: 'none',
             width: '100px',
             marginRight: '2px',
-            opacity: '0',
+            // opacity: '0',
+            color: 'rgba(0,0,0,0)',
+            backgroundColor: 'rgba(0,0,0,0)',
+            // caretColor: 'grey',
             zIndex: '99'
           }}
           onChange={e => {
