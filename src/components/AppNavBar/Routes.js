@@ -28,8 +28,8 @@ const ContactInfoPage = Loadable({
   loader: () => import('../ContactInfoPage'),
   loading: MyLoadingComponent
 });
-const InternshipProject = Loadable({
-  loader: () => import('../InternshipProject'),
+const MortageDashboard = Loadable({
+  loader: () => import('../MortageDashboard'),
   loading: MyLoadingComponent
 });
 const StarsInteractive = Loadable({
@@ -42,7 +42,7 @@ export default () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/my_notes" component={MyNotesPage} />
-      <Route exact path="/dashboard_ui" component={InternshipProject} />
+      <Route exact path="/dashboard_ui" component={MortageDashboard} />
       <Route exact path="/my_notes/:title" component={MyNotesDetailPage} />
       <Route path="/css_effects" component={CssEffectsPage} />
       <Route path="/contact_info" component={ContactInfoPage} />

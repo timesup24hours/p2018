@@ -27,7 +27,9 @@ export default {
         },
         ticks: {
           callback: function(value, index, values) {
+            // const newValue = Number(value / 1000);
             return `$${value}k        `;
+            // return `$${value}        `;
           },
           display: true,
           stacked: true,
@@ -35,7 +37,6 @@ export default {
           // min: 10,
           max: 30,
           steps: 10,
-
           stepSize: 10,
           major: {
             fontColor: '#666',

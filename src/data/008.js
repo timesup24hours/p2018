@@ -18,10 +18,10 @@ Copy: O(1)
 
 export default {
   id: '407f7cec-0420-4123-aeee-a7c3e646fc5e',
-  title: 'Bad of immutable.js',
+  title: 'The Bad of immutable.js',
   subTitle: '',
   article: [
-    { title: 'Bad of immutable.js' },
+    { title: 'The Bad of immutable.js' },
     {
       content:
         'A mutable single-linked list has the following time complexities (worst-case, assuming front, back and insertion nodes are known):'

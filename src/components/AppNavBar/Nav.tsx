@@ -4,7 +4,7 @@ import { NavLink as Link } from 'react-router-dom';
 // import styles from './index.module.css';
 import './nav.scss';
 
-interface rectObject {
+interface RectObject {
   left: number;
   top: number;
   width: number;
@@ -15,13 +15,13 @@ interface NavProps {
   customhandleOnClick: (event: MouseEvent) => void;
 }
 
-export const getRect = (ele: Element | null): ClientRect | rectObject => {
+export const getRect = (ele: Element | null): ClientRect | RectObject => {
   if (!ele) return { left: 0, width: 0, bottom: 36, top: 0 };
   const rect = ele.getBoundingClientRect();
   return rect;
 };
 
-export const setActiveNavLine = (ele: string) => {
+export const setActiveNavLine = (ele: string): void => {
   const activeNode: Element | null = document.querySelector(ele);
   if (!activeNode) return;
   const rect = getRect(activeNode!.children[0]);
@@ -40,7 +40,7 @@ export const setActiveNavLine = (ele: string) => {
 };
 
 export default React.forwardRef(
-  (props: NavProps, ref?: React.Ref<HTMLDivElement>) => {
+  (props: NavProps, ref?: React.Ref<HTMLDivElement>): JSX.Element => {
     const lineRef = useRef<HTMLDivElement>(null);
     const [style, setStyle] = useState({
       left: 0,
@@ -49,7 +49,7 @@ export default React.forwardRef(
       top: 0
     });
 
-    useEffect(() => {
+    useEffect((): void => {
       setActiveNavLine('.active');
     });
     // const handleNavOnClick = (event: React.MouseEvent) => {
@@ -70,7 +70,7 @@ export default React.forwardRef(
               exact
               className="a"
               activeClassName="active"
-              onClick={event => {
+              onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
               }}
@@ -85,7 +85,7 @@ export default React.forwardRef(
               className="a"
               activeClassName="active"
               to="/my_notes"
-              onClick={event => {
+              onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
               }}
@@ -98,7 +98,7 @@ export default React.forwardRef(
               className="a"
               activeClassName="active"
               to="/css_effects"
-              onClick={event => {
+              onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
               }}
@@ -111,7 +111,7 @@ export default React.forwardRef(
               className="a"
               activeClassName="active"
               to="/contact_info"
-              onClick={event => {
+              onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
               }}

@@ -44,7 +44,8 @@ const templateData = [
   },
   {
     title: 'Agile',
-    desc: 'Trello, Jira, Subject to change, communication tool Slack/Zoom'
+    desc:
+      'Trello, Jira, Subject to change, communication tool Slack/Zoom, Write Documentation/Commentting code'
   },
   {
     title: 'Deployment',
@@ -60,10 +61,10 @@ const templateData = [
     desc: '@flow, Typescript, ESLint, Prettier, Vim, VSCode, CRA'
   }
 ];
-export default () => {
-  useEffect(() => {
+const BriefInfo = (): JSX.Element => {
+  useEffect((): void => {
     const targets = document.querySelectorAll('#block_info');
-    targets.forEach((ele, index) =>
+    targets.forEach((ele, index): void =>
       intersectionObserver(
         ele,
         {
@@ -87,15 +88,23 @@ export default () => {
         </Link>
       </div>
       <div className={styles.blockWrapper}>
-        {templateData.map((data, i) => (
-          <BlockInfo key={i} data={data} />
-        ))}
+        {templateData.map(
+          (data, i): JSX.Element => (
+            <BlockInfo key={i} data={data} />
+          )
+        )}
       </div>
     </div>
   );
 };
+export default BriefInfo;
 
-const BlockInfo = ({ data }) => {
+interface BlockInfoProps {
+  key: number;
+  data: { title: string; desc: string };
+}
+
+const BlockInfo = ({ data }: BlockInfoProps): JSX.Element => {
   return (
     <div id="block_info" className={styles.block}>
       <div className={styles.blockTitle}>{data.title}</div>
