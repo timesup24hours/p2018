@@ -1,7 +1,7 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
-export default ({ monthlyPayment }) => (
+const Score = ({ monthlyPayment }: any): JSX.Element => (
   <div className="mainBody_score flex_center">
     <div className="mainBody_score_body flex_center">
       <i className="fas fa-user" />
@@ -11,3 +11,4 @@ export default ({ monthlyPayment }) => (
     </div>
   </div>
 );
+export default Score;

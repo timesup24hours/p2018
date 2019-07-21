@@ -9,9 +9,14 @@ import BarChart from './BarChart';
 
 import options from './BarChart/options';
 import settingDataSets from './BarChart/settingDataSets';
-import { calcInterest, calcNewPrincipal } from '../Calculator/util';
+import {
+  calcInterest,
+  calcNewPrincipal,
+  convertToDollarFormat
+} from '../Calculator/util';
+import { getSummaryData } from './util';
 
-interface PaymentArray {
+export interface PaymentArray {
   loanBalance: number;
   principlePaid: number;
   interestPaid: number;
@@ -83,9 +88,9 @@ const Chart = ({ data, setData }: Props): JSX.Element => {
 
   // console.log('data: ', data);
   const paymentDataArray: PaymentArray[] = [];
-  let monthlyInterestArray = [];
-  let monthlyPrincipleArray = [];
-  let monthlyNewBlanceArray = [];
+  const monthlyInterestArray = [];
+  const monthlyPrincipleArray = [];
+  const monthlyNewBlanceArray = [];
   if (data.year)
     for (let i = 0; i < data.year * 12; i++) {
       const interestPaidMonthly = calcInterest({
@@ -121,28 +126,31 @@ const Chart = ({ data, setData }: Props): JSX.Element => {
       };
       paymentDataArray.push(paymentData);
     }
-  monthlyInterestArray = monthlyInterestArray.filter((data, index) =>
-    getFirstHalfYearOrLatterHalf(index, selectedIndex, isFirstSixMonths)
+  const currentSelectedMonthlyInterestArray = monthlyInterestArray.filter(
+    (data, index): boolean =>
+      getFirstHalfYearOrLatterHalf(index, selectedIndex, isFirstSixMonths)
   );
-  monthlyPrincipleArray = monthlyPrincipleArray.filter((data, index) =>
-    getFirstHalfYearOrLatterHalf(index, selectedIndex, isFirstSixMonths)
+  const currentSelectedMonthlyPrincipleArray = monthlyPrincipleArray.filter(
+    (data, index): boolean =>
+      getFirstHalfYearOrLatterHalf(index, selectedIndex, isFirstSixMonths)
   );
-  monthlyNewBlanceArray = monthlyNewBlanceArray.filter((data, index) =>
-    getFirstHalfYearOrLatterHalf(index, selectedIndex, isFirstSixMonths)
+  const currentSelectedMonthlyNewBlanceArray = monthlyNewBlanceArray.filter(
+    (data, index): boolean =>
+      getFirstHalfYearOrLatterHalf(index, selectedIndex, isFirstSixMonths)
   );
 
-  console.log('monthlyInterestArray: ', monthlyInterestArray);
-  console.log('monthlyPrincipleArray: ', monthlyPrincipleArray);
-  console.log('monthlyNewBlanceAbalancerray: ', monthlyNewBlanceArray);
+  // console.log('monthlyInterestArray: ', monthlyInterestArray);
+  // console.log('monthlyPrincipleArray: ', monthlyPrincipleArray);
+  // console.log('monthlyNewBlanceAbalancerray: ', monthlyNewBlanceArray);
 
   const paymentBarChartData = [
-    { label: 'Principle($)', data: monthlyPrincipleArray },
-    { label: 'Interest($)', data: monthlyInterestArray }
+    { label: 'Principle($)', data: currentSelectedMonthlyPrincipleArray },
+    { label: 'Interest($)', data: currentSelectedMonthlyInterestArray }
   ];
   // console.log(paymentBarChartData);
 
-  const biggestInterest = Math.max(...monthlyInterestArray);
-  const biggestPrinciple = Math.max(...monthlyPrincipleArray);
+  const biggestInterest = Math.max(...currentSelectedMonthlyInterestArray);
+  const biggestPrinciple = Math.max(...currentSelectedMonthlyPrincipleArray);
 
   if (paymentDataArray.length) {
     let yAxis = Math.max(biggestInterest, biggestPrinciple);
@@ -159,17 +167,19 @@ const Chart = ({ data, setData }: Props): JSX.Element => {
       return `$${value}        `;
     };
   }
+  const firstHalf = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  const latterHalf = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const barData = {
-    labels: [
-      '1st Month',
-      '2nd Month',
-      '3rd Month',
-      '4th Month',
-      '5th Month',
-      '6th Month'
-    ],
+    labels: isFirstSixMonths ? firstHalf : latterHalf,
     datasets: settingDataSets(paymentBarChartData, true)
   };
+
+  const summaryData = getSummaryData({ paymentDataArray });
+  // console.log('summaryData: ', summaryData);
+
+  // calc total from array
+  const totalInterestPaid = monthlyInterestArray.reduce((a, c) => a + c, 0);
+  const totalPrinciplePaid = monthlyPrincipleArray.reduce((a, c) => a + c, 0);
 
   return (
     <div className="mainBody_chart">
@@ -230,22 +240,42 @@ const Chart = ({ data, setData }: Props): JSX.Element => {
           </div>
         </div>
         <div className="mainBody_chart_right">
-          <div className="mainBody_chart_history">HISTORY</div>
+          <div className="mainBody_chart_history">SUMMARY</div>
           <div className="mainBody_chart_info">
             <Performance
-              name="Average performance"
-              year="20y"
-              percent="+35.2"
+              name="Total interest paid"
+              year={`${data.year || 15}y`}
+              percent={
+                totalInterestPaid
+                  ? `${convertToDollarFormat(totalInterestPaid)}`
+                  : '+35.2%'
+              }
+              color="red"
             />
             <Performance
-              name="The best performance"
-              year="2013"
-              percent="+65.2"
+              name="Total principal paid"
+              year={`${data.year || 15}y`}
+              percent={
+                totalPrinciplePaid
+                  ? `${convertToDollarFormat(data.mortage - data.downPayment)}`
+                  : '+65.2%'
+              }
             />
             <Performance
-              name="The worst performance"
-              year="2016"
-              percent="-20.2"
+              name="Interest + Principal"
+              year={
+                data.year
+                  ? `Paid off by ${data.year + new Date().getFullYear()}`
+                  : new Date().getFullYear()
+              }
+              percent={
+                totalPrinciplePaid
+                  ? `${convertToDollarFormat(
+                      data.mortage - data.downPayment + totalInterestPaid
+                    )}`
+                  : '-20.2'
+              }
+              color="black"
             />
             <Rate percent={33} />
           </div>

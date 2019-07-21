@@ -11,7 +11,7 @@ export default class MainHeader extends React.Component {
       { label: '', checked: true, current: false, step: 1, last: false },
       { label: '', checked: true, current: false, step: 2, last: false },
       {
-        label: 'Simulation',
+        label: 'Calculator',
         checked: false,
         current: true,
         step: 3,

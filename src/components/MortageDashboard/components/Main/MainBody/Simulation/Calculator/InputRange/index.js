@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import InputRange from 'react-input-range';
-import { convertToPercentage, takeNumberOnly } from '../util';
+import {
+  convertToPercentage,
+  takeNumberOnly,
+  convertToDollarFormat
+} from '../util';
 
 const InputRangeComponent = ({
   id,
@@ -26,16 +30,6 @@ const InputRangeComponent = ({
     setMaxValue(max);
   }, [value, displayValue, max]);
 
-  const convertToDollarFormat = value => {
-    let formatted = `${Number(~~value).toLocaleString('en')}`;
-    if (percent) {
-      formatted = formatted + '%';
-    } else {
-      formatted = '$' + formatted;
-    }
-    return formatted;
-  };
-
   return (
     <div className="inputrange_container">
       <div className="inputrange_header" style={{ position: 'relative' }}>
@@ -48,7 +42,7 @@ const InputRangeComponent = ({
         >
           {percent
             ? convertToPercentage(inputValue)
-            : convertToDollarFormat(inputValue)}
+            : convertToDollarFormat(inputValue, percent)}
         </div>
         <input
           id={id}

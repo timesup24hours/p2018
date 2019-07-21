@@ -8,12 +8,12 @@ export default ({ value, handleOnClick }) => {
         value.active ? 'active' : ''
       }`}
       id={value.label}
-      onClick={e => handleOnClick(e)}
+      onClick={e => handleOnClick(e, value)}
     >
-      <div id={value.label} onClick={e => handleOnClick(e)} />
+      <div id={value.label} onClick={e => handleOnClick(e, value)} />
       <span
         id={value.label}
-        onClick={e => handleOnClick(e)}
+        onClick={e => handleOnClick(e, value)}
         className="main_body_black_font"
       >
         {value.label}
