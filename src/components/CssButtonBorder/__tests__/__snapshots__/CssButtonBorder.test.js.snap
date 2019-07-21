@@ -13,7 +13,7 @@ exports[`MyNotes.test should render correctly in "debug" mode 1`] = `
     <span
       className="span"
     />
-    Click Me
+    Mortgage
   </div>
   <div
     className="desc"

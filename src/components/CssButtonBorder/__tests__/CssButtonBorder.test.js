@@ -12,7 +12,7 @@ describe('MyNotes.test', () => {
 
   it('should be rendered Looding component', () => {
     const wrapper = shallow(<CssButtonBorder />);
-    expect(wrapper.contains('Click Me')).toBeTruthy();
+    expect(wrapper.contains('Mortgage')).toBeTruthy();
   });
 
   it('should be click the button', () => {
