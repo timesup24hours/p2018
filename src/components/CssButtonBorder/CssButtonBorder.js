@@ -17,7 +17,7 @@ export const CssButtonBorder = ({ history }) => {
         onClick={handleOnClick}
       >
         <span className={styles.span} />
-        Click Me
+        Mortage
       </div>
       <div className={styles.desc}>
         click above button to another UI only project

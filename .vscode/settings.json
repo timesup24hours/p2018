@@ -11,5 +11,13 @@
     "npm-debug.log*": "explorerExcludedFiles",
     "yarn-debug.log*": "explorerExcludedFiles",
     "yarn-error.log*": "explorerExcludedFiles"
-  }
+  },
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    { "language": "typescript", "autoFix": true }
+  ]
 }

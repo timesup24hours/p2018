@@ -1,7 +1,14 @@
 import React from 'react';
 import './index.scss';
 
-export default ({ handleCancel, handleDefault }) => (
+interface ButtonsProps {
+  handleCancel: () => void;
+  handleDefault: () => void;
+}
+const Buttons = ({
+  handleCancel,
+  handleDefault
+}: ButtonsProps): JSX.Element => (
   <div
     className="mainBody_calculator_buttons flex_row_center"
     style={{ justifyContent: 'flex-end' }}
@@ -17,3 +24,4 @@ export default ({ handleCancel, handleDefault }) => (
     </button>
   </div>
 );
+export default Buttons;

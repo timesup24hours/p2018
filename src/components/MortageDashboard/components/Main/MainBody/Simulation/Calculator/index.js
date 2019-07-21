@@ -17,31 +17,14 @@ export default class Calculator extends React.Component {
   state = initialState;
 
   targetOnchange = value => {
-    console.log('targetOnchange : ', value);
     this.setState({ mortage: value });
-    // this.monthlyPayment({
-    //   mortage: value,
-    //   interestRate: this.state.interestRate,
-    //   year: this.state.yearValue
-    // });
   };
   initialDepositOnchange = value => {
     // const downPayment = this.state.mortage * value * 0.01;
     this.setState({ downPayment: value, displayValue: value });
-    // this.monthlyPayment({
-    //   mortage: this.state.mortage,
-    //   downPayment: value,
-    //   interestRate: this.state.interestRate,
-    //   year: this.state.yearValue
-    // });
   };
   monthlyPaymentOnchange = value => {
     this.setState({ interestRate: value });
-    // this.monthlyPayment({
-    //   mortage: this.state.mortage,
-    //   interestRate: value,
-    //   year: this.state.yearValue
-    // });
   };
 
   // https://www.wikihow.com/Calculate-Mortgage-Payments
@@ -49,20 +32,19 @@ export default class Calculator extends React.Component {
     if (downPayment !== 0 && downPayment === undefined) {
       downPayment = this.state.downPayment;
     }
-    const rate = Number(
-      convertToPercentage(takeNumberOnly(interestRate), false)
-    );
-    const decimalRate = rate / 100;
+    const rate = takeNumberOnly(interestRate, false);
+
+    const decimalRate = rate / 10000;
     const monthlyInterestRate = decimalRate / 12;
     const totalMonths = year * 12;
-    console.log({ decimalRate, monthlyInterestRate, totalMonths, downPayment });
+    // console.log({ decimalRate, monthlyInterestRate, totalMonths, downPayment });
     const upper =
       monthlyInterestRate * Math.pow(monthlyInterestRate + 1, totalMonths);
     const down = Math.pow(monthlyInterestRate + 1, totalMonths) - 1;
 
     const monthlyPayment = (mortage - downPayment) * (upper / down);
     this.setState({ monthlyPayment });
-    console.log({ monthlyPayment, mortage, downPayment, interestRate, year });
+    // console.log({ monthlyPayment, mortage, downPayment, interestRate, year });
     if (this.props.renderProp)
       this.props.renderProp({
         monthlyPayment,
@@ -76,11 +58,11 @@ export default class Calculator extends React.Component {
   handleOnClick = e => {
     let { yearValue } = this.state;
     if (e.target.id === 'increase') {
-      yearValue = yearValue + 5;
+      yearValue = yearValue + 15;
       if (yearValue > 30) return;
       this.setState({ yearValue });
     } else {
-      yearValue = yearValue - 5;
+      yearValue = yearValue - 15;
       if (yearValue < 5) return;
       this.setState({ yearValue });
     }

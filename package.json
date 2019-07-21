@@ -25,7 +25,6 @@
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "7.4.0",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
@@ -72,14 +71,6 @@
       "enzyme-to-json/serializer"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "devDependencies": {
     "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.15",
@@ -96,6 +87,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
     "faker": "^4.1.0",
     "gh-pages": "^1.2.0",
     "object-assign": "^4.1.1",
