@@ -7,7 +7,7 @@ export default class Level extends React.Component {
     levels: [
       { label: 'Conservative', id: 1, active: false },
       { label: 'Balanced', id: 2, active: false },
-      { label: 'Mortage', id: 3, active: true },
+      { label: 'Mortgage', id: 3, active: true },
       { label: 'Extreme', id: 4, active: false }
     ]
   };

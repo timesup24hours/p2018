@@ -1,9 +1,12 @@
-export const addPercentageSign = value => {
+export const addPercentageSign = (value: string | number): string => {
   if (typeof value === 'number') value = value.toString();
   return value + '%';
 };
 
-export const convertToPercentage = (value, addSign = true) => {
+export const convertToPercentage = (
+  value: string | number,
+  addSign: null | boolean = true
+): string => {
   let formatted = `${Number(~~value)}`;
   let tempArray = formatted.split('');
   if (tempArray.length === 1) {
@@ -17,30 +20,46 @@ export const convertToPercentage = (value, addSign = true) => {
   return tempArray.join('');
 };
 
-export const takeNumberOnly = value => {
+export const takeNumberOnly = (value: string | number): number => {
   if (typeof value === 'number') value = value.toString();
   return ~~value.replace(/[^0-9]/g, '');
 };
 
 // Divide your interest rate by the number of payments you’ll make in the year (interest rates are expressed annually). So, for example, if you’re making monthly payments, divide by 12.
 // https://mozo.com.au/interest-rates/guides/calculate-interest-on-loan
+interface CalcInterestProps {
+  rate: number | string;
+  loanPrincipal: number;
+  numberOfPayments?: number;
+}
 export const calcInterest = ({
   rate,
   loanPrincipal,
   numberOfPayments = 12
-}) => {
-  const getFloatRate = parseFloat(
-    convertToPercentage(rate, false) * 0.01
-  ).toFixed(4);
+}: CalcInterestProps): number => {
+  const decimalNumber = parseFloat(convertToPercentage(rate, false)) * 0.01;
+  const getFloatRate = parseFloat(decimalNumber.toFixed(4));
   return (getFloatRate / numberOfPayments) * loanPrincipal;
 };
 
 // new balance
-export const calcNewPrincipal = ({ loanPrincipal, repayment, interest }) => {
+interface CalcNewPrincipalProps {
+  loanPrincipal: number;
+  repayment: number;
+  interest: number;
+}
+export const calcNewPrincipal = ({
+  loanPrincipal,
+  repayment,
+  interest
+}: CalcNewPrincipalProps): number => {
   return loanPrincipal - (repayment - interest);
 };
 
-export const convertToDollarFormat = (value, percent) => {
+export const convertToDollarFormat = (
+  value: number | string,
+  percent?: boolean
+): string => {
   let formatted = `${Number(~~value).toLocaleString('en')}`;
   if (percent) {
     formatted = formatted + '%';
