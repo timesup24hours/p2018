@@ -58,11 +58,11 @@ export default class Calculator extends React.Component {
   handleOnClick = e => {
     let { yearValue } = this.state;
     if (e.target.id === 'increase') {
-      yearValue = yearValue + 5;
+      yearValue = yearValue + 15;
       if (yearValue > 30) return;
       this.setState({ yearValue });
     } else {
-      yearValue = yearValue - 5;
+      yearValue = yearValue - 15;
       if (yearValue < 5) return;
       this.setState({ yearValue });
     }

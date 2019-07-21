@@ -93,6 +93,7 @@
 
 .mainBody_chart_year_left,
 .mainBody_chart_year_right {
+  // transition: all 0.1s linear;
   color: rgba(31, 30, 30, 0.7);
   font-size: 10px;
   font-weight: 600;
@@ -105,6 +106,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .mainBody_chart_year_left {
   border-top-left-radius: 2px;
