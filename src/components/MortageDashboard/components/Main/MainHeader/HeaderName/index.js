@@ -12,6 +12,6 @@ const styles = {
 
 export default ({ stepName }) => (
   <div className="main_header_name main_header_font" style={styles.container}>
-    {stepName ? stepName : 'Simulation'}
+    {stepName ? stepName : 'Mortage Calculator'}
   </div>
 );

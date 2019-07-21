@@ -39,3 +39,13 @@ export const calcInterest = ({
 export const calcNewPrincipal = ({ loanPrincipal, repayment, interest }) => {
   return loanPrincipal - (repayment - interest);
 };
+
+export const convertToDollarFormat = (value, percent) => {
+  let formatted = `${Number(~~value).toLocaleString('en')}`;
+  if (percent) {
+    formatted = formatted + '%';
+  } else {
+    formatted = '$' + formatted;
+  }
+  return formatted;
+};

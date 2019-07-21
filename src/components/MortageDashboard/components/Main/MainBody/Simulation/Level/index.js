@@ -7,12 +7,13 @@ export default class Level extends React.Component {
     levels: [
       { label: 'Conservative', id: 1, active: false },
       { label: 'Balanced', id: 2, active: false },
-      { label: 'Aggresive', id: 3, active: true },
+      { label: 'Mortage', id: 3, active: true },
       { label: 'Extreme', id: 4, active: false }
     ]
   };
 
-  handleOnClick = e => {
+  handleOnClick = (e, value) => {
+    if (value.id !== 3) return;
     const { levels } = this.state;
     levels.forEach(d => {
       d.active = false;
