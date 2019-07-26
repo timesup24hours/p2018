@@ -1,10 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import marked from 'marked';
 
 import styles from './index.module.css';
 import Loading from '../Loading';
 import { noteGetOne, noteFetchRequested } from '../../actions/notes';
 import CodeHighlighter from './CodeHighlighter';
+
+// marked.setOptions({
+//   renderer: new marked.Renderer(),
+//   highlight: function(code) {
+//     return require('highlight.js').highlightAuto(code).value;
+//   },
+//   pedantic: false,
+//   gfm: true,
+//   breaks: false,
+//   sanitize: false,
+//   smartLists: true,
+//   smartypants: false,
+//   xhtml: false
+// });
 
 export class NoteDetailPage extends React.Component {
   state = {
@@ -67,9 +82,20 @@ export class NoteDetailPage extends React.Component {
           </div>
         );
 
+      case 'markdown':
+        return (
+          <div
+            key={index}
+            dangerouslySetInnerHTML={this.createMarkup(data.markdown)}
+          ></div>
+        );
+
       default:
         return null;
     }
+  };
+  createMarkup = markdown => {
+    return { __html: marked(markdown) };
   };
 
   render() {

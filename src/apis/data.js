@@ -6,6 +6,7 @@ import article5 from '../data/005';
 import article6 from '../data/006';
 import article7 from '../data/007';
 import article8 from '../data/008';
+import article9 from '../data/009';
 
 export default [
   article1,
@@ -16,14 +17,7 @@ export default [
   article6,
   article7,
   article8,
-  {
-    id: '899c8c83-b80a-4b20-9a8f-d2d7570dcd80',
-    title: 'minus-sunt-voluptatem',
-    subTitle: 'beatae nesciunt optio',
-    content:
-      'Qui expedita dolores sunt. Quia sequi distinctio consectetur. In et ut rerum at. Voluptatum dolore et et quisquam impedit est aut quo. Eveniet omnis soluta necessitatibus dignissimos et sit mollitia. Maiores doloremque eveniet quae.\n \rFugiat quia natus voluptas ipsum esse occaecati et. Adipisci labore nemo optio. Et necessitatibus non. Nulla eos vel aut sit officiis quisquam illum ut. Autem beatae vitae modi eum beatae numquam delectus. Commodi quos ratione atque sequi.\n \rQuia fugit quam eos deserunt consectetur qui. Aperiam laudantium voluptas eos. Molestias tempore esse unde suscipit officia beatae ratione. Sed ea vel facilis quidem iusto voluptates. Et facilis natus. Nulla velit laborum et aut voluptate culpa sunt distinctio.\n \rQuaerat culpa veniam. Ut laboriosam temporibus libero libero ea omnis quaerat accusamus. Sed cum ex cumque a adipisci deleniti dicta dolore modi. Quaerat sint ut odio nulla et consequatur dolores. Facilis nostrum et corrupti.\n \rNeque sed qui qui enim quidem enim quae. Magnam numquam debitis quia minus minima ipsum adipisci aut dolor. Quae iusto ut animi.\n \rEa numquam quibusdam quis. Aspernatur et reprehenderit illo velit. Quasi et inventore adipisci aliquid voluptas excepturi. Aut natus in saepe et voluptatem.\n \rNobis tenetur aut. Odio sequi corporis iste ea. Ad qui incidunt debitis mollitia enim quia sit soluta. Voluptas et at veritatis ipsum consectetur dignissimos nisi nisi quas. Natus occaecati est aliquid asperiores maiores voluptates aliquid. Provident deleniti consequatur vitae quia.\n \rEt ipsum id animi expedita quos provident eos ipsam rerum. Et dolores beatae nostrum reprehenderit voluptatem cupiditate earum. Amet soluta quia et fugit temporibus quo fuga. Error nemo eos. Vero sit ipsa. Perspiciatis consequatur neque totam fugit.\n \rEt voluptas et et animi dolor. Id aut ad explicabo dolores. Autem dolorem eos atque et omnis reiciendis.\n \rDolorum et velit qui et fuga autem quo. Minus qui quae esse. Ipsum laboriosam quibusdam numquam molestiae. Neque et et ad dolor eos atque debitis quia eum. Dolor ut aspernatur fuga sint laboriosam.\n \rReprehenderit ducimus quae fugiat. Neque ea enim error voluptas tempora labore. Inventore dolor quia totam reiciendis fuga sapiente velit aut repellendus.\n \rVel velit tempora nihil ad ut eos modi voluptate nihil. Sit aut doloribus nam nisi optio. Reiciendis fuga quod suscipit consequatur totam fuga recusandae blanditiis amet. Ducimus temporibus nisi ut illum eos dolore quisquam culpa vel.\n \rDignissimos repudiandae voluptas dolor. Facere sit et. Hic aut alias odio amet voluptatem. Minima laudantium blanditiis quo est. Et veniam dolores hic perspiciatis dignissimos labore vel nesciunt omnis.\n \rAut id quia quia voluptate eaque. Recusandae aliquam nam quidem voluptatem voluptatum sapiente aliquam neque deleniti. Autem sit neque nemo quo. Sed architecto magnam veritatis quo quos eveniet. Et in minima vel vitae non. Ipsam minus ut consequatur quidem voluptatem ullam assumenda.\n \rUnde a qui suscipit. Sit ea voluptatum enim. Repudiandae aliquam amet necessitatibus.',
-    createdAt: '2017-11-22T09:54:07.635Z'
-  },
+  article9,
   {
     id: '100dca0e-b578-4977-a8fd-8e318a810be0',
     title: 'voluptatem-atque-temporibus',

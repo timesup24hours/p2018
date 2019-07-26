@@ -9,7 +9,7 @@ const initialState = {
   mortage: 200000,
   downPayment: 0,
   displayValue: 0,
-  interestRate: 3,
+  interestRate: 30,
   yearValue: 15,
   monthlyPayment: 0
 };
