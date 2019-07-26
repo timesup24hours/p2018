@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MobileMenuButton should render correctly in "debug" mode 1`] = `
+<div
+  className="wrapper"
+  onClick={[Function]}
+>
+  <div
+    className="spanWrapper"
+  >
+    <span
+      className="stick"
+    />
+  </div>
+</div>
+`;
