@@ -12,20 +12,22 @@ import ForgetPasswordForm from '../ForgetPasswordForm';
 import PulseAnimationEffects from '../PulseAnimationEffects';
 import D3ChartBar from '../D3ChartBar';
 import SVGFilterEffects from '../SVGFilterEffects';
+import ReactChartJS2 from '../ReactChartJS2';
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
     {[
       <D3ChartBar />,
       <GlowingIconhoverEffect />,
-      <PulseAnimationEffects />,
+      <ReactChartJS2 />,
       <CssButtonBorder />,
       <CSS3HamburgerMenuIconTransition />,
       <CSS3CubeShape />,
       <GlowingLoaderRing />,
       <FormWrapper />,
       <ForgetPasswordForm />,
-      <SVGFilterEffects />
+      <SVGFilterEffects />,
+      <PulseAnimationEffects />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}
