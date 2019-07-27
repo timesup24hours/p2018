@@ -37,7 +37,17 @@ const StarsInteractive = Loadable({
   loading: MyLoadingComponent
 });
 
-export default () => (
+const AGGrid = Loadable({
+  loader: () => import('../AGGrid'),
+  loading: MyLoadingComponent
+});
+
+// const DynamicChart = Loadable({
+//   loader: () => import('../AGGrid/DynamicChart'),
+//   loading: MyLoadingComponent
+// });
+
+const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
       <Route exact path="/" component={Home} />
@@ -47,8 +57,12 @@ export default () => (
       <Route path="/css_effects" component={CssEffectsPage} />
       <Route path="/contact_info" component={ContactInfoPage} />
       <Route path="/stars_interactive" component={StarsInteractive} />
+      <Route path="/ag_grid" component={AGGrid} />
+      {/* <Route path="/dynamic_chart" component={DynamicChart} /> */}
       <Redirect from="/" to="/" />
       <Route path="*" component={Home} />
     </Switch>
   </div>
 );
+
+export default Routes;

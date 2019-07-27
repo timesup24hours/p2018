@@ -10,9 +10,10 @@ import FormWrapper from '../FormikForm';
 import GlowingLoaderRing from '../GlowingLoaderRing';
 import ForgetPasswordForm from '../ForgetPasswordForm';
 import PulseAnimationEffects from '../PulseAnimationEffects';
-import D3ChartBar from '../D3ChartBar'
+import D3ChartBar from '../D3ChartBar';
+import SVGFilterEffects from '../SVGFilterEffects';
 
-export default () => (
+const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
     {[
       <D3ChartBar />,
@@ -23,9 +24,12 @@ export default () => (
       <CSS3CubeShape />,
       <GlowingLoaderRing />,
       <FormWrapper />,
-      <ForgetPasswordForm />
+      <ForgetPasswordForm />,
+      <SVGFilterEffects />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}
   </div>
 );
+
+export default CssEffectsPage;
