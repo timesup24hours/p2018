@@ -6,6 +6,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 // import 'ag-grid-community/dist/styles/ag-theme-dark.css';
 // import 'ag-grid-community/dist/styles/ag-theme-material.css';
+import './index.scss';
 
 function suppressEnter(params: any): boolean {
   let KEY_ENTER = 13;
