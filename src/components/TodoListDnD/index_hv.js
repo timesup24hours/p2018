@@ -11,7 +11,7 @@ class TodoList extends React.Component {
   state = {
     todos: getItems(10),
     completed: getItems(5, 10),
-    item: [{ id: uuid() }, { id: uuid() }],
+    item: [{ id: uuid(), type: 'todos' }, { id: uuid(), type: 'completed' }],
     isDraggingContainer: false
   };
 
@@ -34,13 +34,13 @@ class TodoList extends React.Component {
     if (!destination) {
       return;
     }
-    if (source.droppableId === 'container') {
-      console.log(source, destination);
+    if (result.type === 'container' || source.droppableId === 'container') {
       const item = reorder(
         this.state.item,
         result.source.index,
         result.destination.index
       );
+      console.log(source.index, destination.index, item);
 
       this.setState({
         item
@@ -48,6 +48,7 @@ class TodoList extends React.Component {
 
       return;
     }
+
     if (
       source &&
       source.droppableId !== 'container' &&
@@ -120,6 +121,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className="TodoListDnD-Container">
+        <div className="desc">Drag from 💪Todo to ✅Completed</div>
         <DragDropContext
           onDragEnd={this.onDragEnd}
           onDragStart={this.onDragStart}
@@ -128,7 +130,7 @@ class TodoList extends React.Component {
           <Droppable
             droppableId="container"
             direction="horizontal"
-            // isDropDisabled={this.state.isDraggingContainer}
+            type="container"
           >
             {(provided, snapshot) => (
               <div
@@ -136,46 +138,33 @@ class TodoList extends React.Component {
                 {...provided.droppableProps}
                 className="TodoListDnD"
               >
-                <Draggable
-                  key={this.state.item[0].id}
-                  draggableId={this.state.item[0].id}
-                  index={0}
-                  onDragStart={event => {
-                    console.log('onDragStart: event : ', event);
-                  }}
-                >
-                  {(provided, snapshot) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <Todos
-                        todos={this.state.todos}
-                        isDropDisabled={this.state.isDraggingContainer}
-                      />
-                    </div>
-                  )}
-                </Draggable>
-                <Draggable
-                  key={this.state.item[1].id}
-                  draggableId={this.state.item[1].id}
-                  index={1}
-                >
-                  {(provided, snapshot) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <Completed
-                        completed={this.state.completed}
-                        isDropDisabled={this.state.isDraggingContainer}
-                      />
-                    </div>
-                  )}
-                </Draggable>
-
+                {this.state.item.map((container, index) => (
+                  <Draggable
+                    key={container.id}
+                    draggableId={container.id}
+                    index={index}
+                  >
+                    {(provided, snapshot) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        {container.type === 'todos' ? (
+                          <Todos
+                            todos={this.state.todos}
+                            isDropDisabled={this.state.isDraggingContainer}
+                          />
+                        ) : (
+                          <Completed
+                            completed={this.state.completed}
+                            isDropDisabled={this.state.isDraggingContainer}
+                          />
+                        )}
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
                 {provided.placeholder}
               </div>
             )}

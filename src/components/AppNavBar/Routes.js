@@ -43,7 +43,7 @@ const AGGrid = Loadable({
 });
 
 const TodoListDnD = Loadable({
-  loader: () => import('../TodoListDnD'),
+  loader: () => import('../TodoListDnD/index_hv'),
   loading: MyLoadingComponent
 });
 

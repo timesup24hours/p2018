@@ -5,7 +5,7 @@ import { getListStyle, getItemStyle } from './util';
 
 const Completed = ({ completed }) => {
   return (
-    <Droppable droppableId="completed">
+    <Droppable droppableId="completed" type="child">
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}

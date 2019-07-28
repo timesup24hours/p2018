@@ -1,7 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import barStyle from './barStyle';
-import Text from './Text';
+// import barStyle from './barStyle';
+// import Text from './Text';
+
+const Rect = styled.rect`
+  @keyframes rectAnimate {
+    0% {
+      y: var(--maxVal);
+    }
+    100% {
+      y: var(--y);
+    }
+  }
+
+  animation-name: rectAnimate;
+  transition: 1s;
+  animation-duration: var(--delay);
+  animation-timing-function: cubic-bezier(1, -1.07, 0, 1.42);
+  animation-fill-mode: forwards;
+  z-index: 10;
+  opacity: 0.7;
+  cursor: pointer;
+`;
 
 export default props => {
   const { data, height, maxVal, scale, handleOnClick } = props;
@@ -17,15 +38,13 @@ export default props => {
 
     return (
       <g key={i}>
-        <rect
+        <Rect
           onMouseEnter={handleMouseenter}
           onMouseDown={handleMouseenter}
           onClick={e => handleOnClick(e, i)}
           onMouseOut={handleMouseout}
           fill={`#42${i}6f4`}
           style={{
-            opacity: '0.7',
-            cursor: 'pointer',
             '--y': `${y(d.value)}`,
             '--delay': `${delay}s`,
             '--maxVal': `${maxVal * 9}`
@@ -35,9 +54,14 @@ export default props => {
           x={xScale}
           y={y(d.value)}
         >
-          <style jsx="true">{barStyle}</style>
-        </rect>
-        {/* <Text xScale={xScale} height={height} value={d.value} /> */}
+          {/* <style jsx="true">{barStyle}</style> */}
+        </Rect>
+        {/* <Text
+          xScale={xScale}
+          barWith={x.bandwidth()}
+          height={height}
+          value={d.value}
+        /> */}
       </g>
     );
   });

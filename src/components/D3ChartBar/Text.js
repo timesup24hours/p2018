@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default ({ xScale, height, value }) => (
+export default ({ xScale, height, value, barWith }) => (
   <text
     id="Bar-text"
     x={xScale}
     // y={y(d.value)}
     y={height}
-    dx="24"
+    dx={barWith / 2}
     dy="-4"
     textAnchor="middle"
     fontSize="12"
@@ -19,7 +19,6 @@ export default ({ xScale, height, value }) => (
         z-index: 5;
         user-select: none;
         fill: white;
-        text-align: center;
       }
     `}</style>
   </text>

@@ -20,10 +20,8 @@ const PulseAnimationEffects = () => {
     <div className={`PulseAnimationEffects`}>
       <div className={`PulseAnimationEffects-inner ${show ? 'show' : ''}`}>
         <div className="PulseAnimationEffects-front">
-          <div className={styles.container}>
-            <div className={styles.pulse} onClick={pulseOnClick}>
-              {/* <span /> */}
-            </div>
+          <div className={styles.container} onClick={pulseOnClick}>
+            <div className={styles.pulse}>{/* <span /> */}</div>
           </div>
         </div>
         <div className="PulseAnimationEffects-back">
