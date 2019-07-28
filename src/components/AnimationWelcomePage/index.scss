@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+.AnimationWelcomePage-Nav_nav {
+  opacity: 0;
+  width: 90%;
+  right: 0;
+  animation: aniNav 1s linear forwards;
+}
+@keyframes aniNav {
+  from {
+    opacity: 0;
+    display: grid;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.AnimationWelcomePage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  .waterfall {
+    position: absolute;
+    top: 0;
+    left: 14%;
+    width: 50%;
+    height: 0;
+    // transition: height 2s linear;
+    animation: aniWaterfall 1s cubic-bezier(0.71, 1.29, 0.49, 0.07) forwards;
+    background-color: rgba(87, 45, 125, 0.8);
+  }
+
+  .name {
+    position: absolute;
+    background-color: white;
+    height: 50px;
+    min-width: 200px;
+    z-index: 999999999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    opacity: 0;
+    animation: aniOpacity 1s linear 2s forwards;
+    width: 10%;
+
+    .text {
+      font-family: 'Heebo', sans-serif;
+      font-weight: bold;
+      color: rgba(87, 45, 125, 1);
+      // background-color: rgba(87, 45, 125, 0.1);
+      // border: 4px solid rgba(87, 45, 125, 1);
+    }
+  }
+  @keyframes aniOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .center-text {
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    transform: translate(0, -50%);
+    width: 40%;
+    min-height: 300px;
+    height: 300px;
+    overflow: hidden;
+    .center-text-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .text-container,
+  .h3-container {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .h1 {
+    font-family: 'Heebo', sans-serif;
+
+    position: absolute;
+    transform: translateY(100%);
+    font-size: 5rem;
+    animation: aniText 0.5s ease-in-out 1s forwards;
+  }
+
+  .line {
+    position: absolute;
+    width: 0%;
+    left: 34%;
+    opacity: 0;
+    top: 60%;
+    border: 2px solid rgb(247, 92, 247);
+    height: 4px;
+    animation: aniLine 0.5s ease-in-out 1.5s forwards;
+  }
+
+  @keyframes aniLine {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+    100% {
+      width: 40%;
+      opacity: 1;
+    }
+  }
+
+  .h2 {
+    font-family: 'Heebo', sans-serif;
+    position: absolute;
+    transform: translateY(100%);
+    animation: aniText 0.5s ease-in-out 1.2s forwards;
+    font-size: 4rem;
+    color: rgb(247, 92, 247);
+  }
+
+  .h3-container {
+    height: 50px;
+  }
+  .h3 {
+    font-family: 'Heebo', sans-serif;
+    position: absolute;
+    transform: translateY(100%);
+    animation: aniText 0.5s ease-in-out 1.8s forwards;
+    font-size: 2rem;
+  }
+
+  @keyframes aniText {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes aniWaterfall {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+
+  // user card
+  .card {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(0, -50%);
+    height: 400px;
+    width: 300px;
+    overflow: hidden;
+
+    .card-holder {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      animation: aniCard 0.5s ease-in-out 2s forwards;
+      transform: translate(100%, -50%);
+
+      #user-card {
+        opacity: 1;
+        transform: translateX(0);
+        top: 50%;
+        left: 0;
+        box-shadow: none;
+      }
+    }
+  }
+
+  @keyframes aniCard {
+    from {
+      transform: translate(100%, -50%);
+    }
+    to {
+      transform: translate(0, -50%);
+    }
+  }
+}
