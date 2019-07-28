@@ -12,7 +12,7 @@ export default payload =>
         return response;
       })
       .then(json => {
-        console.log(json);
+        // console.log(json);
       });
     const buffer = data.filter(note => note.id === payload)[0];
 
