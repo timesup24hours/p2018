@@ -51,6 +51,19 @@ class AppNavBar extends Component {
     // );
     // this.setState({ isMobile: testExp.test(navigator.userAgent) });
     window.addEventListener('resize', this.handleResize);
+    if (window.location.hash === '#/call') {
+      this.refNav.current.style.display = 'none';
+    }
+  }
+
+  componentDidUpdate() {
+    if (window.location.hash === '#/call') {
+      if (this.refNav.current.style.display !== 'none')
+        this.refNav.current.style.display = 'none';
+    } else {
+      if (this.refNav.current.style.display === 'none')
+        this.refNav.current.style.display = 'grid';
+    }
   }
 
   componentWillUnmount() {

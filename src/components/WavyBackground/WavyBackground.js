@@ -21,7 +21,7 @@ export default ({ children }) => {
 
       <BriefInfo />
       <section className={styles.wave1}>
-        <UserCard />
+        <UserCard hasAnimation={true} />
         <Wavy2Content />
       </section>
     </div>

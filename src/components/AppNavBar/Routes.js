@@ -47,6 +47,11 @@ const TodoListDnD = Loadable({
   loading: MyLoadingComponent
 });
 
+const AnimationWelcomePage = Loadable({
+  loader: () => import('../AnimationWelcomePage'),
+  loading: MyLoadingComponent
+});
+
 const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
@@ -59,6 +64,7 @@ const Routes = () => (
       <Route path="/stars_interactive" component={StarsInteractive} />
       <Route path="/ag_grid" component={AGGrid} />
       <Route path="/todo" component={TodoListDnD} />
+      <Route path="/call" component={AnimationWelcomePage} />
       <Redirect from="/" to="/" />
       <Route path="*" component={Home} />
     </Switch>
