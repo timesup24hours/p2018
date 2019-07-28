@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import snarkdown from 'snarkdown';
 
 import styles from './index.module.css';
 import Loading from '../Loading';
 import { noteGetOne, noteFetchRequested } from '../../actions/notes';
 import CodeHighlighter from './CodeHighlighter';
+import Markdown from './Markdown';
+
+import './index.scss';
 
 export class NoteDetailPage extends React.Component {
   state = {
@@ -69,12 +71,7 @@ export class NoteDetailPage extends React.Component {
         );
 
       case 'markdown':
-        return (
-          <div
-            key={index}
-            dangerouslySetInnerHTML={{ __html: snarkdown(data.markdown) }}
-          ></div>
-        );
+        return <Markdown key={index} url={data.markdown} />;
 
       default:
         return null;
@@ -88,7 +85,7 @@ export class NoteDetailPage extends React.Component {
         <Loading />
       </div>
     ) : (
-      <div className={styles.container}>
+      <div className={`${styles.container}`}>
         {currentNote &&
         currentNote.hasOwnProperty('article') &&
         currentNote.article &&

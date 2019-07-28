@@ -3,8 +3,10 @@ import './index.scss';
 
 import Logo from './Logo';
 import UserCard from '../UserCard';
+import SVGLine from './SVGLine';
+import { withRouter } from 'react-router';
 
-const AnimationWelcomePage = () => {
+const AnimationWelcomePage = withRouter(({ history }) => {
   useEffect(() => {
     const node = document.querySelector('.Nav_nav');
     const timer = setTimeout(() => {
@@ -43,8 +45,21 @@ const AnimationWelcomePage = () => {
           <UserCard />
         </div>
       </div>
+
+      <div className="svg-line">
+        <SVGLine />
+      </div>
+
+      <div className="strong" onClick={() => history.push('/css_effects')}>
+        <div className="strong-rel">
+          <div className="text-conatiner">
+            <div className="text">Always Learning</div>
+            <div className="click">See more demo</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+});
 
 export default AnimationWelcomePage;

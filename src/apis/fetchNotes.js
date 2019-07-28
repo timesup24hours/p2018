@@ -6,7 +6,7 @@ import sleep from './sleep';
 // const data = JSON.parse()
 // console.log(data)
 
-export default payload =>
+const fetchMore = payload =>
   sleep(2000).then(async () => {
     // let response = await fetch('http://localhost/api/item/all');
     // let response = await fetch('/src/apis/dataj.json');
@@ -20,3 +20,5 @@ export default payload =>
 
     return buffer;
   });
+
+export default fetchMore;
