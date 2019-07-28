@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './index.module.css';
+import './index.scss';
 
 export default () => {
   return (
