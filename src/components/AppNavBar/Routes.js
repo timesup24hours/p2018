@@ -42,10 +42,10 @@ const AGGrid = Loadable({
   loading: MyLoadingComponent
 });
 
-// const DynamicChart = Loadable({
-//   loader: () => import('../AGGrid/DynamicChart'),
-//   loading: MyLoadingComponent
-// });
+const TodoListDnD = Loadable({
+  loader: () => import('../TodoListDnD'),
+  loading: MyLoadingComponent
+});
 
 const Routes = () => (
   <div className={styles.pageWrapper}>
@@ -58,7 +58,7 @@ const Routes = () => (
       <Route path="/contact_info" component={ContactInfoPage} />
       <Route path="/stars_interactive" component={StarsInteractive} />
       <Route path="/ag_grid" component={AGGrid} />
-      {/* <Route path="/dynamic_chart" component={DynamicChart} /> */}
+      <Route path="/todo" component={TodoListDnD} />
       <Redirect from="/" to="/" />
       <Route path="*" component={Home} />
     </Switch>

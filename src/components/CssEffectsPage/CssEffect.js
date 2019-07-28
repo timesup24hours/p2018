@@ -8,7 +8,7 @@ import GlowingIconhoverEffect from '../GlowingIconhoverEffect';
 import CSS3CubeShape from '../CSS3CubeShape';
 import FormWrapper from '../FormikForm';
 import GlowingLoaderRing from '../GlowingLoaderRing';
-import ForgetPasswordForm from '../ForgetPasswordForm';
+// import ForgetPasswordForm from '../ForgetPasswordForm';
 import PulseAnimationEffects from '../PulseAnimationEffects';
 import D3ChartBar from '../D3ChartBar';
 import SVGFilterEffects from '../SVGFilterEffects';
@@ -25,9 +25,8 @@ const CssEffectsPage = () => (
       <CSS3CubeShape />,
       <GlowingLoaderRing />,
       <FormWrapper />,
-      <ForgetPasswordForm />,
-      <SVGFilterEffects />,
-      <ReactChartJS2 />
+      <ReactChartJS2 />,
+      <SVGFilterEffects />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}

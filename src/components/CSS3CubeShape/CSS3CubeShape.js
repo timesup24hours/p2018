@@ -1,8 +1,9 @@
 import React from 'react';
 
 import styles from './index.module.css';
+import { withRouter } from 'react-router';
 
-export default () => {
+export default withRouter(({ history }) => {
   const handleOnClick = e => {
     e.currentTarget.childNodes[0].childNodes[0].classList.toggle(styles.hover);
   };
@@ -12,9 +13,14 @@ export default () => {
         <div className={styles.cube}>
           <span />
           <span />
-          <span />
+          <span
+            className={styles.click}
+            onClick={() => {
+              history.push('/todo');
+            }}
+          />
         </div>
       </div>
     </div>
   );
-};
+});

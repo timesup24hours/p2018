@@ -8,7 +8,8 @@ export default ({
   errors,
   type,
   name,
-  placeholder
+  placeholder,
+  label
 }) => (
   <div style={styles.field}>
     <Field
@@ -20,13 +21,14 @@ export default ({
       aria-invalid={errors[name] ? true : false}
       aria-describedby={`${name}-error`}
       aria-required={true}
+      aria-label={label}
     />
     {touched[name] && errors[name] && (
       <p
         id={`${name}-error`}
-        for={name}
+        htmlFor={name}
         style={styles.error}
-        ariaLabel={errors[name]}
+        aria-label={errors[name]}
       >
         {errors[name]}
       </p>

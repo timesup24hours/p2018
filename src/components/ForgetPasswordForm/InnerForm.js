@@ -26,9 +26,11 @@ const InnerForm = ({ values, errors, touched, isSubmitting }) => {
             cssStyle={cssStyle}
             touched={touched}
             errors={errors}
+            id="email"
             type="email"
-            name="login"
+            name="email"
             placeholder="your email"
+            label="send reset password link to this email"
           />
           <FormFooter
             styles={styles}

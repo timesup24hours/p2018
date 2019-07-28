@@ -1,0 +1,52 @@
+.TodoListDnD {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  .TodoListDnD-Title {
+    padding: 10px 10px;
+    // background-color: rgba(211, 211, 211, 0.575);
+  }
+
+  .TodoListDnD-Container {
+    margin: 20px;
+    padding: 20px 14px !important;
+    // background-color: rgba(211, 211, 211, 0.575) !important;
+    background-color: white !important;
+    box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .TodoListDnD-List {
+    width: auto;
+    padding: 10px;
+    border-left: 14px solid white;
+    background-color: white !important;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: black;
+    border-left: 14px solid rgba(138, 43, 226, 0.7);
+    &:hover {
+      border-left: 14px solid rgba(138, 43, 226, 1);
+    }
+  }
+
+  .TodoListDnD-Complete {
+    border-left: 14px solid rgba(43, 226, 125, 0.7);
+    display: flex;
+    flex-direction: row;
+    &:hover {
+      border-left: 14px solid rgba(43, 226, 125, 1);
+    }
+
+    .text {
+      text-decoration: line-through;
+      padding-left: 10px;
+    }
+  }
+}
