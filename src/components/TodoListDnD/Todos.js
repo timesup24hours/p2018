@@ -12,7 +12,7 @@ const Todos = ({ todos }) => {
           style={getListStyle(snapshot.isDraggingOver)}
           className="TodoListDnD-Container"
         >
-          <h3 className="TodoListDnD-Title">Todo:</h3>
+          <h3 className="TodoListDnD-Title">Todo(s):</h3>
           {todos.map((item, index) => (
             <Draggable key={item.id} draggableId={item.id} index={index}>
               {(provided, snapshot) => (

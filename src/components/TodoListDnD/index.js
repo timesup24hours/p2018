@@ -66,6 +66,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className="TodoListDnD">
+        <div className="desc">Drag from 💪Todo to ✅Completed</div>
         <DragDropContext onDragEnd={this.onDragEnd}>
           <div>
             <Todos todos={this.state.todos} />
