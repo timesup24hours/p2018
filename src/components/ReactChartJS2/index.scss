@@ -6,4 +6,18 @@
   align-items: center;
   position: relative;
   background-color: #e8fbff;
+
+  .open {
+    display: none;
+    animation: showUp 0.1s linear 1s forwards;
+  }
+
+  @keyframes showUp {
+    0% {
+      display: none;
+    }
+    100% {
+      display: block;
+    }
+  }
 }

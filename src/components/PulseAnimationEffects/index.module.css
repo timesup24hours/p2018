@@ -27,6 +27,7 @@
 }
 .pulse {
   position: absolute;
+  cursor: pointer;
 
   width: 7px;
   height: 1px;

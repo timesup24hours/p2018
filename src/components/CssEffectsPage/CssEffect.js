@@ -19,7 +19,7 @@ const CssEffectsPage = () => (
     {[
       <D3ChartBar />,
       <GlowingIconhoverEffect />,
-      <ReactChartJS2 />,
+      <PulseAnimationEffects />,
       <CssButtonBorder />,
       <CSS3HamburgerMenuIconTransition />,
       <CSS3CubeShape />,
@@ -27,7 +27,7 @@ const CssEffectsPage = () => (
       <FormWrapper />,
       <ForgetPasswordForm />,
       <SVGFilterEffects />,
-      <PulseAnimationEffects />
+      <ReactChartJS2 />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}
