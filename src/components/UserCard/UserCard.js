@@ -4,12 +4,14 @@ import styles from './index.module.css';
 
 import { intersectionObserver } from '../../util';
 
-export default () => {
+export default ({ hasAnimation }) => {
   useEffect(() => {
-    const targets = document.querySelectorAll('#user-card');
-    targets.forEach(ele =>
-      intersectionObserver(ele, { fromLeft: 'userCardAnimation' })
-    );
+    if (hasAnimation) {
+      const targets = document.querySelectorAll('#user-card');
+      targets.forEach(ele =>
+        intersectionObserver(ele, { fromLeft: 'userCardAnimation' })
+      );
+    }
   }, []);
   return (
     <div className={styles.container}>
