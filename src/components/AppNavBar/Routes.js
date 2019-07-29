@@ -57,6 +57,11 @@ const Blue = Loadable({
   loading: MyLoadingComponent
 });
 
+// const SmokeText = Loadable({
+//   loader: () => import('../SmokeText'),
+//   loading: MyLoadingComponent
+// });
+
 const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
@@ -72,6 +77,7 @@ const Routes = () => (
       <Route path="/todo" component={TodoListDnD} />
       <Route path="/call" component={AnimationWelcomePage} />
       <Route path="/blue" component={Blue} />
+      {/* <Route path="/smoke" component={SmokeText} /> */}
 
       <Redirect from="/" to="/" />
       <Route path="*" component={Home} />

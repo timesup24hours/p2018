@@ -13,7 +13,7 @@ import PulseAnimationEffects from '../PulseAnimationEffects';
 import D3ChartBar from '../D3ChartBar';
 import SVGFilterEffects from '../SVGFilterEffects';
 import ReactChartJS2 from '../ReactChartJS2';
-import SmokeText from '../SmokeText'
+import SmokeText from '../SmokeText';
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
