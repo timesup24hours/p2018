@@ -6,9 +6,6 @@
   // left: 200px;
   background-color: transparent;
   animation: aniNav 1s linear forwards;
-  li {
-    background-color: var(--color-light-white);
-  }
 }
 @keyframes aniNav {
   from {
@@ -48,15 +45,18 @@
     background: rgba(255, 255, 255, 0.9);
     height: 50px;
     min-width: 200px;
+    width: 100%;
     z-index: 999999999999;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 20px;
     opacity: 0;
     animation: aniOpacity 1s linear 2s forwards;
 
     .text {
+      margin-left: 10px;
+      margin-top: 1px;
       font-family: 'Heebo', sans-serif;
       font-weight: bold;
       color: rgba(87, 45, 125, 1);
