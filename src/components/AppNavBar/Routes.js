@@ -60,7 +60,8 @@ const Routes = () => (
       <Route exact path="/dashboard_ui" component={MortageDashboard} />
       <Route exact path="/my_notes/:title" component={MyNotesDetailPage} />
       <Route path="/css_effects" component={CssEffectsPage} />
-      <Route path="/contact_info" component={ContactInfoPage} />
+      {/* <Route path="/contact_info" component={ContactInfoPage} /> */}
+      <Route path="/contact_info" component={AnimationWelcomePage} />
       <Route path="/stars_interactive" component={StarsInteractive} />
       <Route path="/ag_grid" component={AGGrid} />
       <Route path="/todo" component={TodoListDnD} />

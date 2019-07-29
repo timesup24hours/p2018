@@ -4,7 +4,8 @@ import styles from './index.module.css';
 
 import { intersectionObserver } from '../../util';
 
-export default ({ hasAnimation }) => {
+const defaultInfo = `I am a self-taught full-stack developer, since 2017`;
+export default ({ hasAnimation, info = defaultInfo, phone }) => {
   useEffect(() => {
     if (hasAnimation) {
       const targets = document.querySelectorAll('#user-card');
@@ -28,7 +29,16 @@ export default ({ hasAnimation }) => {
             <div className={styles.name}>Huanlin Huang </div>
             <span>Vim user</span>
           </h2>
-          <p>I am a self-taught full-stack developer, since 2017</p>
+          <p>
+            {info}{' '}
+            {phone && (
+              <>
+                <br />
+                {phone}
+              </>
+            )}
+          </p>
+
           <ul>
             <li>
               <a

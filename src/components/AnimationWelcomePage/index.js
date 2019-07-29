@@ -9,6 +9,8 @@ import { withRouter } from 'react-router';
 const AnimationWelcomePage = withRouter(({ history }) => {
   useEffect(() => {
     const node = document.querySelector('.Nav_nav');
+    const navLine = document.querySelector('.nav_line');
+
     const timer = setTimeout(() => {
       node.style.display = 'grid';
       node.classList.add('AnimationWelcomePage-Nav_nav');
@@ -16,6 +18,7 @@ const AnimationWelcomePage = withRouter(({ history }) => {
     return () => {
       node.classList.remove('AnimationWelcomePage-Nav_nav');
       node.style.display = 'grid';
+      navLine.style.display = 'var(--nav-line-display)';
       clearTimeout(timer);
     };
   });
@@ -42,7 +45,7 @@ const AnimationWelcomePage = withRouter(({ history }) => {
 
       <div className="card">
         <div className="card-holder">
-          <UserCard />
+          <UserCard info="huanlinhuang@gmail.com" phone="415-361-9522" />
         </div>
       </div>
 

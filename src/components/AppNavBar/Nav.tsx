@@ -112,6 +112,12 @@ export default React.forwardRef(
               activeClassName="active"
               to="/contact_info"
               onClick={(event: React.MouseEvent): void => {
+                const node = document.querySelector('.Nav_nav') as HTMLElement;
+                const navLine = document.querySelector(
+                  '.nav_line'
+                ) as HTMLElement;
+                if (node && node.style) node!.style.display = 'none';
+                if (navLine && navLine.style) navLine!.style.display = 'none';
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
               }}

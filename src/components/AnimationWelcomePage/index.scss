@@ -264,8 +264,10 @@
     height: 64px;
     z-index: 9;
     // transition: all 0.5s linear;
-    animation: aniStrong 0.3s ease-in-out 8.3s forwards,
-      aniStrongLeft 0.4s ease-in-out 8s forwards;
+    // animation: aniStrong 0.3s ease-in-out 8.3s forwards,
+    //   aniStrongLeft 0.4s ease-in-out 8s forwards;
+
+    animation: aniStrongLeft 0.4s ease-in-out 8s forwards;
 
     .strong-rel {
       position: relative;
