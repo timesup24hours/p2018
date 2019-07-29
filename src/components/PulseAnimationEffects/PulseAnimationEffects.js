@@ -13,14 +13,14 @@ const PulseAnimationEffects = () => {
     e.preventDefault();
     const node = document.querySelector('.ReactChartJS2');
     node.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    pulseOnClick();
+    // pulseOnClick();
   };
 
   return (
     <div className={`PulseAnimationEffects`}>
       <div className={`PulseAnimationEffects-inner ${show ? 'show' : ''}`}>
         <div className="PulseAnimationEffects-front">
-          <div className={styles.container} onClick={pulseOnClick}>
+          <div className={styles.container} onClick={scrollDown}>
             <div className={styles.pulse}>{/* <span /> */}</div>
           </div>
         </div>

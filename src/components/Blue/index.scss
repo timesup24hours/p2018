@@ -1,0 +1,137 @@
+.Blue {
+  font-family: Raleway, Helvetica, Arial, Sans-Serif;
+  color: black;
+  position: fixed;
+  height: calc(100vh - 50px);
+  top: 50px;
+
+  header {
+    position: relative;
+    width: 100vw;
+    height: calc(41.125vw + 5em);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .bg-img {
+    width: 100%;
+  }
+
+  #header-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+  }
+
+  #title {
+    margin: 0;
+    font-size: 2.2em;
+  }
+
+  #motto {
+    color: rgba(90, 110, 150, 0.8);
+    margin-top: 0.5em;
+  }
+
+  .title-char {
+    display: inline-block;
+  }
+
+  .nav {
+    min-height: calc(100vh - 41.125vw - 6.5em);
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-entry {
+    margin-top: 3vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    height: 1.5em;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75em;
+  }
+
+  .nav-entry a {
+    display: inline-block;
+    font-size: larger;
+    padding: 10px;
+    position: relative;
+  }
+
+  .nav-entry a::before,
+  .nav-entry a::after {
+    position: relative;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  .nav-entry a::before {
+    top: 0;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  .nav-entry a::after {
+    bottom: 0;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  .nav-entry a:hover::before,
+  .nav-entry a:focus::before,
+  .nav-entry a:hover::after,
+  .nav-entry a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  @media only screen and (min-width: 600px) {
+    /* For desktop */
+    header {
+      height: 41.125vw;
+    }
+
+    #header-text {
+      bottom: 4vh;
+    }
+
+    nav {
+      flex-direction: row;
+      min-height: calc(100vh - 41.125vw - 1.5em);
+      justify-content: center;
+    }
+
+    .nav-entry:not(:last-child) {
+      margin-right: 3vw;
+    }
+
+    .nav-entry {
+      margin-top: 3vh;
+      width: auto;
+    }
+  }
+}

@@ -7,7 +7,7 @@ export default () => {
     <div className={styles.container}>
       <ul className={styles.ul}>
         <li className={styles.li}>
-          <Link to="/stars_interactive">
+          <Link to="/blue">
             <i className="fas fa-birthday-cake" />
           </Link>
         </li>
@@ -22,7 +22,7 @@ export default () => {
           </Link>
         </li>
       </ul>
-      <div className={styles.desc}>click buttons above to other project</div>
+      <div className={styles.desc}>click buttons above to other projects</div>
     </div>
   );
 };

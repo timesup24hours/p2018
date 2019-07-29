@@ -12,6 +12,7 @@
     "ag-grid-community": "^21.1.0",
     "ag-grid-enterprise": "^21.1.0",
     "ag-grid-react": "^21.1.0",
+    "animejs": "^3.1.0",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-preset-react-app": "^3.1.1",
