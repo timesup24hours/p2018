@@ -26,7 +26,8 @@ const AnimationWelcomePage = withRouter(({ history }) => {
     <div className="AnimationWelcomePage">
       <div className="waterfall"></div>
       <div className="name">
-        <Logo /> <h3 className="text">Huanlin Huang </h3>
+        <Logo />
+        <h3 className="text">Huanlin Huang </h3>
       </div>
       <div className="center-text">
         <div className="center-text-container">
