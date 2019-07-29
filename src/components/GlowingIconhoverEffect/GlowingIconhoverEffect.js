@@ -17,7 +17,7 @@ export default () => {
           </Link>
         </li>
         <li className={styles.li}>
-          <Link to="/stars_interactive">
+          <Link to="/wavy">
             <i className="fas fa-bug" />
           </Link>
         </li>

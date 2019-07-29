@@ -14,7 +14,7 @@ import D3ChartBar from '../D3ChartBar';
 import SVGFilterEffects from '../SVGFilterEffects';
 import ReactChartJS2 from '../ReactChartJS2';
 import SmokeText from '../SmokeText';
-import WavyCircle from '../WavyCircle';
+// import WavyCircle from '../WavyCircle';
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
@@ -29,8 +29,8 @@ const CssEffectsPage = () => (
       <FormWrapper />,
       <ReactChartJS2 />,
       <SVGFilterEffects />,
-      <SmokeText />,
-      <WavyCircle />
+      <SmokeText />
+      // <WavyCircle />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}
