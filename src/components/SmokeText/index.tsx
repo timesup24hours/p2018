@@ -3,8 +3,9 @@ import './index.scss';
 
 interface SmokeTextProps {
   text: string;
+  onClick: Function;
 }
-const SmokeText = ({ text }: SmokeTextProps): JSX.Element => {
+const SmokeText = ({ text, onClick }: SmokeTextProps): JSX.Element => {
   const [show, setShow] = useState(false);
   let videoRef: React.RefObject<HTMLVideoElement> | null = useRef(null);
 
@@ -24,8 +25,9 @@ const SmokeText = ({ text }: SmokeTextProps): JSX.Element => {
   };
 
   const handleShow = (event: Event) => {
-    if (show) setShow(false);
+    // if (show) setShow(false);
     if (!show) setShow(true);
+    if (show && onClick) onClick();
   };
 
   return (
