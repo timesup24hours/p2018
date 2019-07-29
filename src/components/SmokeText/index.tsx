@@ -1,33 +1,31 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, SyntheticEvent } from 'react';
 import './index.scss';
 
 interface SmokeTextProps {
   text: string;
 }
 const SmokeText = ({ text }: SmokeTextProps): JSX.Element => {
-  const [currentTime, setCurrentTime] = useState(0);
   const [show, setShow] = useState(false);
   let videoRef: React.RefObject<HTMLVideoElement> | null = useRef(null);
-  let id: any = undefined;
 
   useEffect((): any => {
-    videoObject();
+    let node: HTMLVideoElement | null;
+    while (!node) {
+      node = document.getElementById('video') as HTMLVideoElement;
+      videoObject(node);
+    }
     return (): void => {
-      clearInterval(id);
+      node && node.removeEventListener('canplay', handleShow);
     };
   });
 
-  const videoObject = (): void => {
-    if (!videoRef || !videoRef.current) return;
-    if (id) return;
-    id = setInterval((): void => {
-      let sec = videoRef!.current.currentTime;
-      if (sec > 7 && show) {
-        setShow(false);
-      } else if (sec > 0 && sec < 1 && !show) {
-        setShow(true);
-      }
-    }, 500);
+  const videoObject = (node: HTMLVideoElement): void => {
+    node.addEventListener('canplay', handleShow);
+  };
+
+  const handleShow = (event: Event) => {
+    if (show) setShow(false);
+    if (!show) setShow(true);
   };
 
   return (
