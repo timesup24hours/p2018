@@ -13,6 +13,7 @@ import PulseAnimationEffects from '../PulseAnimationEffects';
 import D3ChartBar from '../D3ChartBar';
 import SVGFilterEffects from '../SVGFilterEffects';
 import ReactChartJS2 from '../ReactChartJS2';
+import SmokeText from '../SmokeText'
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
@@ -26,7 +27,8 @@ const CssEffectsPage = () => (
       <GlowingLoaderRing />,
       <FormWrapper />,
       <ReactChartJS2 />,
-      <SVGFilterEffects />
+      <SVGFilterEffects />,
+      <SmokeText />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
     ))}
