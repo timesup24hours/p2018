@@ -64,6 +64,7 @@
       // border: 4px solid rgba(87, 45, 125, 1);
     }
   }
+
   @keyframes aniOpacity {
     0% {
       opacity: 0;
@@ -168,6 +169,7 @@
   }
 
   // user card
+
   .card {
     position: absolute;
     top: 50%;
@@ -365,6 +367,60 @@
     }
     100% {
       left: calc(14% - 14px);
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    .strong {
+      left: calc(10% - 14px);
+      animation: none;
+      display: none;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .waterfall {
+      width: 80%;
+      left: 10%;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .name {
+      position: fixed;
+      top: 220px;
+      left: 10%;
+      display: none;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .center-text {
+      top: 24%;
+      right: 20%;
+      width: 70%;
+      animation: none;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .card {
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      animation: none;
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    .AnimationWelcomePage {
+      overflow-y: auto;
+      position: relative;
+      height: auto;
+    }
+    .AnimationWelcomePage-Nav_nav {
+      display: none;
+      animation: none;
+      & * {
+        display: none;
+      }
     }
   }
 }

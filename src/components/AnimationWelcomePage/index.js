@@ -12,13 +12,16 @@ const AnimationWelcomePage = withRouter(({ history }) => {
     const navLine = document.querySelector('.nav_line');
 
     const timer = setTimeout(() => {
-      node.style.display = 'grid';
-      node.classList.add('AnimationWelcomePage-Nav_nav');
+      if (node && node.style) node.style.display = 'grid';
+      if (node && node.classList)
+        node.classList.add('AnimationWelcomePage-Nav_nav');
     }, 3000);
     return () => {
-      node.classList.remove('AnimationWelcomePage-Nav_nav');
-      node.style.display = 'grid';
-      navLine.style.display = 'var(--nav-line-display)';
+      if (node && node.classList)
+        node.classList.remove('AnimationWelcomePage-Nav_nav');
+      if (node && node.style) node.style.display = 'grid';
+      if (navLine && navLine.style)
+        navLine.style.display = 'var(--nav-line-display)';
       clearTimeout(timer);
     };
   });
