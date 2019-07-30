@@ -1,0 +1,21 @@
+.SwingLeft-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(152, 190, 200);
+
+  .SwingLeft {
+    font-weight: 200;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+  }
+
+  .SwingLeft .letter {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    line-height: 1em;
+  }
+}

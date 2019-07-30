@@ -20,6 +20,9 @@ import FadeIn from '../MovingLetters/FadeIn';
 import PopOut from '../MovingLetters/PopOut';
 import OneByOne from '../MovingLetters/OneByOne';
 import JumpUp from '../MovingLetters/JumpUp';
+import TextInCircle from '../MovingLetters/TextInCircle';
+import SwingLeft from '../MovingLetters/SwingLeft';
+import Sunday from '../MovingLetters/Sunday';
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
@@ -38,7 +41,10 @@ const CssEffectsPage = () => (
       <FadeIn />,
       <PopOut />,
       <OneByOne />,
-      <JumpUp />
+      <JumpUp />,
+      <TextInCircle />,
+      <SwingLeft />,
+      <Sunday />
       // <WavyCircle />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
