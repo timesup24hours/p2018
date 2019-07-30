@@ -205,7 +205,7 @@ class AGGrid extends Component<any, any> {
           height: '100vh',
           width: '100vw',
           position: 'relative',
-          backgroundColor: '#000000bf'
+          backgroundColor: 'rgba(128, 0, 128, 0.5)'
         }}
       >
         <div
