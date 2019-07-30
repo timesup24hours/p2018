@@ -1,0 +1,30 @@
+.JumpUp-root {
+  background-color: rgb(193, 96, 92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .JumpUp {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+  }
+
+  .JumpUp .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+
+  .JumpUp .letter {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    line-height: 1em;
+  }
+}

@@ -15,6 +15,11 @@ import SVGFilterEffects from '../SVGFilterEffects';
 import ReactChartJS2 from '../ReactChartJS2';
 // import SmokeText from '../SmokeText';
 // import WavyCircle from '../WavyCircle';
+import DoubleLine from '../MovingLetters/DoubleLine';
+import FadeIn from '../MovingLetters/FadeIn';
+import PopOut from '../MovingLetters/PopOut';
+import OneByOne from '../MovingLetters/OneByOne';
+import JumpUp from '../MovingLetters/JumpUp';
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
@@ -28,7 +33,12 @@ const CssEffectsPage = () => (
       <GlowingLoaderRing />,
       <FormWrapper />,
       <ReactChartJS2 />,
-      <SVGFilterEffects />
+      <SVGFilterEffects />,
+      <DoubleLine />,
+      <FadeIn />,
+      <PopOut />,
+      <OneByOne />,
+      <JumpUp />
       // <WavyCircle />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>

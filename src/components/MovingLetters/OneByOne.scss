@@ -1,0 +1,20 @@
+.OneByOne-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(232, 195, 185);
+
+  .OneByOne {
+    font-weight: 900;
+    font-size: 3.5em;
+  }
+
+  .OneByOne .letter {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    line-height: 1em;
+  }
+}

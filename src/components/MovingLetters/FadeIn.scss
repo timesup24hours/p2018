@@ -1,0 +1,17 @@
+.FadeIn {
+  background-color: rgb(34, 74, 84);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  h1 {
+    span {
+      font-family: 'Open Sans', sans-serif;
+
+      font-weight: 800;
+      font-size: 2em;
+      color: white;
+    }
+  }
+}
