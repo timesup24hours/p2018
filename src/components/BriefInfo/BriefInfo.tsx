@@ -81,6 +81,7 @@ const BriefInfo = (): JSX.Element => {
       <div className={styles.title}>
         My Tech Stack and
         <Link
+          data-heap-track-id="homepage-resume-link"
           to="/my_notes/Resume#00feae1f-b6e4-4e23-ae95-61c486da151e"
           style={{ marginLeft: '12px' }}
         >

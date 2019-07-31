@@ -20,7 +20,9 @@ const SVGFilterEffects = withRouter(({ history }) => {
           <feDisplacementMap in="SourceGraphic" scale="50"></feDisplacementMap>
         </filter>
       </svg>
-      <h2 onClick={handleOnClick}>Table</h2>
+      <h2 data-heap-track-id="ui-page-svg-table" onClick={handleOnClick}>
+        Table
+      </h2>
     </div>
   );
 });
