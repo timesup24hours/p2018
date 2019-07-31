@@ -23,6 +23,7 @@ import JumpUp from '../MovingLetters/JumpUp';
 import TextInCircle from '../MovingLetters/TextInCircle';
 import SwingLeft from '../MovingLetters/SwingLeft';
 import Sunday from '../MovingLetters/Sunday';
+import CursorLeftToRight from '../MovingLetters/CursorLeftToRight';
 
 const CssEffectsPage = () => (
   <div className={`${styles.container}`}>
@@ -44,7 +45,8 @@ const CssEffectsPage = () => (
       <JumpUp />,
       <TextInCircle />,
       <SwingLeft />,
-      <Sunday />
+      <Sunday />,
+      <CursorLeftToRight />
       // <WavyCircle />
     ].map((c, i) => (
       <CssEffect key={i}>{c}</CssEffect>
