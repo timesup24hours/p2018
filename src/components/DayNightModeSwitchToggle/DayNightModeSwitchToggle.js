@@ -17,7 +17,11 @@ export default ({ onClick }) => {
   };
   return (
     <div className={styles.container}>
-      <div className={styles.toggle} onClick={handler} />
+      <div
+        className={styles.toggle}
+        data-heap-track-id="homepage-toggle-night-switch"
+        onClick={handler}
+      />
     </div>
   );
 };

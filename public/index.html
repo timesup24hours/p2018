@@ -111,4 +111,14 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    var rootElement = document.getElementById('root');
+    rootElement.addEventListener('click', e => {
+      if (e.target.attributes['data-heap-track-id']) {
+        heap.track('click', {
+          button: e.target.getAttribute('data-heap-track-id')
+        });
+      }
+    });
+  </script>
 </html>
