@@ -70,6 +70,7 @@ export default React.forwardRef(
               exact
               className="a"
               activeClassName="active"
+              data-heap-track-id="nav-home"
               onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
@@ -85,6 +86,7 @@ export default React.forwardRef(
               className="a"
               activeClassName="active"
               to="/my_notes"
+              data-heap-track-id="nav-notes"
               onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
@@ -98,6 +100,7 @@ export default React.forwardRef(
               className="a"
               activeClassName="active"
               to="/css_effects"
+              data-heap-track-id="nav-ui"
               onClick={(event: React.MouseEvent): void => {
                 props.customhandleOnClick(event);
                 // handleNavOnClick(event);
@@ -111,6 +114,7 @@ export default React.forwardRef(
               className="a"
               activeClassName="active"
               to="/contact_info"
+              data-heap-track-id="nav-contact"
               onClick={(event: React.MouseEvent): void => {
                 const node = document.querySelector('.Nav_nav') as HTMLElement;
                 const navLine = document.querySelector(

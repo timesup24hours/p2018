@@ -20,7 +20,11 @@ const PulseAnimationEffects = () => {
     <div className={`PulseAnimationEffects`}>
       <div className={`PulseAnimationEffects-inner ${show ? 'show' : ''}`}>
         <div className="PulseAnimationEffects-front">
-          <div className={styles.container} onClick={scrollDown}>
+          <div
+            className={styles.container}
+            data-heap-track-id="ui-page-more-down-there"
+            onClick={scrollDown}
+          >
             <div className={styles.pulse}>{/* <span /> */}</div>
           </div>
         </div>

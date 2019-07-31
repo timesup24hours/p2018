@@ -15,6 +15,7 @@ export default withRouter(({ history }) => {
           <span />
           <span
             className={styles.click}
+            data-heap-track-id="ui-page-cube-shape"
             onClick={() => {
               history.push('/todo');
             }}
