@@ -67,6 +67,11 @@ const WavyCircle = Loadable({
   loading: MyLoadingComponent
 });
 
+const SwipeCarousel = Loadable({
+  loader: () => import('../SwipeCarousel'),
+  loading: MyLoadingComponent
+});
+
 const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
@@ -83,6 +88,7 @@ const Routes = () => (
       <Route path="/call" component={AnimationWelcomePage} />
       <Route path="/blue" component={Blue} />
       <Route path="/wavy" component={WavyCircle} />
+      <Route path="/swipe" component={SwipeCarousel} />
       {/* <Route path="/smoke" component={SmokeText} /> */}
 
       <Redirect from="/" to="/" />
