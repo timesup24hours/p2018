@@ -11,6 +11,7 @@ export default ({ CustomhandleOnClick }) => {
   return (
     <div onClick={handleOnClick} className={`${styles.toggle}`}>
       <span />
+      <div className="desc"></div>
     </div>
   );
 };
