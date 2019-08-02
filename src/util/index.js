@@ -8,13 +8,16 @@ export const intersectionObserver = (
 ) => {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry, i) => {
-      const className = index < 4 ? classNames.fromTop : classNames.fromLeft;
+      let className = undefined;
+      if (classNames) {
+        className = index < 4 ? classNames.fromTop : classNames.fromLeft;
+      }
       if (entry.isIntersecting) {
         if (callback) {
           callback();
           return;
         }
-        if (!entry.target.classList.contains(className))
+        if (className && !entry.target.classList.contains(className))
           entry.target.classList.add(className);
         if (disconnect) observer.disconnect();
       } else {
@@ -22,7 +25,7 @@ export const intersectionObserver = (
           calcelCallBack();
           return;
         }
-        if (entry.target.classList.contains(className))
+        if (className && entry.target.classList.contains(className))
           entry.target.classList.remove(className);
       }
     });

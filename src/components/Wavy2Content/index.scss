@@ -1,0 +1,15 @@
+.Wavy2Content {
+  .char {
+    opacity: 0;
+    animation: anima 0.4s linear forwards;
+    animation-delay: calc(0.02s * var(--char-index));
+  }
+}
+@keyframes anima {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
