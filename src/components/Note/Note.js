@@ -4,10 +4,9 @@ import SwipeableViews from 'react-swipeable-views';
 import { TweenMax, Power2 } from 'gsap/all';
 import CSSPlugin from 'gsap/CSSPlugin';
 
-const C = CSSPlugin; // here is the gotcha....
-
 import styles from './index.module.css';
 import './index.scss';
+const C = CSSPlugin; // here is the gotcha....
 
 const Note = ({ note }) => {
   const [isDelete, setIsDelete] = useState(false);
