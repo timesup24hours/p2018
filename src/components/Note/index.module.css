@@ -8,6 +8,7 @@
   margin-bottom: 8px;
   text-decoration: none;
   color: black;
+  overflow: hidden;
 }
 .container:visited {
   color: none;
@@ -15,6 +16,7 @@
 }
 
 .wrapper {
+  overflow: hidden;
   position: relative;
   display: flex;
   padding-left: 30px;

@@ -1,7 +1,16 @@
+.Note-root {
+  overflow: hidden;
+}
 .Note {
+  overflow: hidden;
   max-height: 100px;
   transition: all 200ms linear;
-  -webkit-transition: all 200ms linear;
+  -webkit-transition: all 200ms;
+  -webkit-transition: -webkit-all 200ms;
+  -webkit-transition: -webkit-height 200ms;
+  -webkit-transition: height 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
 
   .react-swipeable-view-container {
     height: 100%;
@@ -42,7 +51,7 @@
 
 .isDelete {
   opacity: 1;
-  animation: aniIsDelete 0.5s linear forwards;
+  animation: aniIsDelete 0.7s linear forwards;
 }
 .goAway {
   opacity: 1;
@@ -53,6 +62,11 @@
   -webkit-transition: all 200ms linear;
   animation: aniGoAway 0.2s linear 0.5s forwards;
   -webkit-animation: aniGoAway 0.2s linear 0.5s forwards;
+  -webkit-transition: all 200ms;
+  -webkit-transition: -webkit-height 200ms;
+  -webkit-transition: height 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
   // -webkit-transform: translateZ(0);
 }
 
@@ -65,7 +79,6 @@
   }
   100% {
     opacity: 1;
-    display: none;
   }
 }
 @-webkit-keyframes aniGoAway {
@@ -75,11 +88,18 @@
     min-height: 100px;
     margin-bottom: 8px;
   }
+  99% {
+    opacity: 0;
+    height: 0px;
+    min-height: 0px;
+    margin-bottom: 0px;
+  }
   100% {
     opacity: 0;
     height: 0px;
     min-height: 0px;
     margin-bottom: 0px;
+    display: none;
   }
 }
 
@@ -90,10 +110,17 @@
     min-height: 100px;
     margin-bottom: 8px;
   }
+  99% {
+    opacity: 0;
+    height: 0px;
+    min-height: 0px;
+    margin-bottom: 0px;
+  }
   100% {
     opacity: 0;
     height: 0px;
     min-height: 0px;
     margin-bottom: 0px;
+    display: none;
   }
 }

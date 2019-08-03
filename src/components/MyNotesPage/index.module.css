@@ -9,7 +9,9 @@
   top: var(--nav-height);
   height: calc(100vh - var(--nav-height));
   padding-top: 20px;
-
+  transition: all 200ms linear;
+  -webkit-transition: all 200ms;
+  -webkit-transition: -webkit-height 200ms;
   /* padding-bottom: 50px; */
 
   background: rgba(169, 169, 169, 0.1);

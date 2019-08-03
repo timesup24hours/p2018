@@ -1,6 +1,7 @@
 import React from 'react';
 
-import styles from './index.module.css';
+// import styles from './index.module.css';
+import './index.scss';
 
 import Loading from '../Loading';
 import ScrollIndicator from '../ScrollIndicator';
@@ -21,18 +22,22 @@ const MyNotes = (props, ref) => {
       <Loading />
     </div>
   ) : (
-    <div className={styles.container} onScroll={handleScroll} ref={ref}>
+    <div
+      className={`MyNotesContainer-container`}
+      onScroll={handleScroll}
+      ref={ref}
+    >
       {scrolled ? <ScrollIndicator scrolled={scrolled} /> : null}
       {notes.length
-        ? notes.map((note, i) => <Note key={i} note={note} />)
+        ? notes.map((note, i) => <Note key={i} note={note} index={i} />)
         : null}
       {fetchLoading ? (
-        <div className={styles.loading}>
+        <div className={`MyNotesContainer-loading`}>
           <Loading />
         </div>
       ) : null}
       {hasMoreNotesToLoad ? null : (
-        <div className={styles.lastNote}>Last Note</div>
+        <div className={`MyNotesContainer-lastNote`}>Last Note</div>
       )}
     </div>
   );

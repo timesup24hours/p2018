@@ -1,3 +1,72 @@
+.MyNotesContainer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  padding-top: 20px;
+  transition: all 200ms linear;
+  -webkit-transition: height 200ms;
+  -webkit-transition: -webkit-height 200ms;
+  /* padding-bottom: 50px; */
+
+  background: rgba(169, 169, 169, 0.1);
+}
+.MyNotesContainer-container::-webkit-scrollbar {
+  display: none;
+}
+
+.MyNotesContainer-loading {
+  position: relative;
+  display: flex;
+  /* top: 44px; */
+  width: 80%;
+  padding-bottom: 80px;
+  margin-bottom: 20px;
+  /* background: white; */
+}
+
+.MyNotesContainer-lastNote {
+  margin: 0 auto;
+  /* background: white; */
+  position: relative;
+  width: 80%;
+  line-height: 80px;
+  text-align: center;
+  /* border: 1px solid red; */
+  /* position: absolute; */
+  /* bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%); */
+}
+
+@media screen and (max-width: 660px) {
+  .MyNotesContainer-container {
+    height: 100vh;
+    top: 0;
+    width: 100%;
+    /* margin: var(--nav-height-660px) auto 0px; */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    padding-bottom: 10px;
+  }
+  .MyNotesContainer-loading {
+    padding-bottom: 40px;
+    margin-bottom: 10px;
+    top: 20px;
+    /* border: 1px solid red; */
+  }
+  .MyNotesContainer-lastNote {
+    /* border: 1px solid red; */
+  }
+}
+
 .MyNotesContainer-desc {
   position: fixed;
   bottom: 0px;
