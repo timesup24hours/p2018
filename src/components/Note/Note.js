@@ -26,7 +26,7 @@ const Note = ({ note }) => {
         animationTimer = setTimeout(() => {
           setIsDelete(true);
           clearTimeout(animationTimer);
-        }, 1000);
+        }, 100);
       } else {
         setIsDelete(true);
       }
@@ -48,7 +48,7 @@ const Note = ({ note }) => {
         animationTimer = setTimeout(() => {
           setIsDelete(true);
           clearTimeout(animationTimer);
-        }, 1000);
+        }, 100);
       } else {
         setIsDelete(true);
       }
