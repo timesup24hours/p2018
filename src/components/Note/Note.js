@@ -10,37 +10,48 @@ const Note = ({ note }) => {
   const [isDelete, setIsDelete] = useState(false);
   const [umMount, setUnMount] = useState(false);
   const rootRef = useRef(null);
+  let animationTimer = undefined;
   const onChangeIndex = (index, indexLatest, meta) => {
     const refNode = rootRef.current;
     if (index === 2) {
-      if (!refNode) return;
-      TweenLite.to(refNode, 0.5, {
-        height: '0',
-        minHeight: '0',
-        opacity: 0,
-        display: 'none',
-        marginBottom: '0px',
-        ease: Power2.easeInOut
-      });
-
-      // setIsDelete(true);
+      if (refNode) {
+        TweenLite.to(refNode, 0.5, {
+          height: '0',
+          minHeight: '0',
+          opacity: 0,
+          marginBottom: '0px',
+          display: 'none',
+          ease: Power2.easeInOut
+        });
+        animationTimer = setTimeout(() => {
+          setIsDelete(true);
+          clearTimeout(animationTimer);
+        }, 1000);
+      } else {
+        setIsDelete(true);
+      }
       // const timerEvent = setTimeout(() => {
       //   setUnMount(true);
       //   // node.style.WebkitAnimation = 'aniGoAway 0.2s linear 0.5s forwards';
       //   clearTimeout(timerEvent);
       // }, 1000);
     } else if (index === 0) {
-      if (!refNode) return;
-      TweenLite.to(refNode, 0.5, {
-        height: '0',
-        minHeight: '0',
-        opacity: 0,
-        display: 'none',
-        marginBottom: '0px',
-        ease: Power2.easeInOut
-      });
-
-      // setIsDelete(true);
+      if (refNode) {
+        TweenLite.to(refNode, 0.5, {
+          height: '0',
+          minHeight: '0',
+          opacity: 0,
+          marginBottom: '0px',
+          display: 'none',
+          ease: Power2.easeInOut
+        });
+        animationTimer = setTimeout(() => {
+          setIsDelete(true);
+          clearTimeout(animationTimer);
+        }, 1000);
+      } else {
+        setIsDelete(true);
+      }
 
       // const timerEvent = setTimeout(() => {
       //   setUnMount(true);
