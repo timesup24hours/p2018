@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
-import { TweenLite, Power2 } from 'gsap/all';
+import { TweenMax, Power2 } from 'gsap/all';
+import CSSPlugin from 'gsap/CSSPlugin';
+
+const C = CSSPlugin; // here is the gotcha....
 
 import styles from './index.module.css';
 import './index.scss';
@@ -15,7 +18,7 @@ const Note = ({ note }) => {
     const refNode = rootRef.current;
     if (index === 2) {
       if (refNode) {
-        TweenLite.to(refNode, 0.5, {
+        TweenMax.to(refNode, 0.5, {
           height: '0',
           minHeight: '0',
           opacity: 0,
@@ -23,10 +26,10 @@ const Note = ({ note }) => {
           display: 'none',
           ease: Power2.easeInOut
         });
-        animationTimer = setTimeout(() => {
-          setIsDelete(true);
-          clearTimeout(animationTimer);
-        }, 100);
+        // animationTimer = setTimeout(() => {
+        //   setIsDelete(true);
+        //   clearTimeout(animationTimer);
+        // }, 500);
       } else {
         setIsDelete(true);
       }
@@ -37,7 +40,7 @@ const Note = ({ note }) => {
       // }, 1000);
     } else if (index === 0) {
       if (refNode) {
-        TweenLite.to(refNode, 0.5, {
+        TweenMax.to(refNode, 0.5, {
           height: '0',
           minHeight: '0',
           opacity: 0,
@@ -45,10 +48,10 @@ const Note = ({ note }) => {
           display: 'none',
           ease: Power2.easeInOut
         });
-        animationTimer = setTimeout(() => {
-          setIsDelete(true);
-          clearTimeout(animationTimer);
-        }, 100);
+        // animationTimer = setTimeout(() => {
+        //   setIsDelete(true);
+        //   clearTimeout(animationTimer);
+        // }, 500);
       } else {
         setIsDelete(true);
       }
