@@ -1,9 +1,11 @@
 .Note-root {
   overflow: hidden;
+  position: relative;
 }
 .Note {
   overflow: hidden;
   max-height: 100px;
+  position: relative;
   transition: all 200ms linear;
   -webkit-transition: all 200ms;
   -webkit-transition: -webkit-all 200ms;

@@ -23,7 +23,7 @@ const Note = ({ note }) => {
           opacity: 0,
           marginBottom: '0px',
           display: 'none',
-          ease: Power2.easeInOut
+          ease: Power2.easeIn
         });
         // animationTimer = setTimeout(() => {
         //   setIsDelete(true);
