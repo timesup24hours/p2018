@@ -6,7 +6,7 @@ import Loading from '../Loading';
 import ScrollIndicator from '../ScrollIndicator';
 import Note from '../Note';
 
-export default React.forwardRef((props, ref) => {
+const MyNotes = (props, ref) => {
   const {
     notes,
     hasMoreNotesToLoad,
@@ -36,4 +36,6 @@ export default React.forwardRef((props, ref) => {
       )}
     </div>
   );
-});
+};
+
+export default React.forwardRef(MyNotes);

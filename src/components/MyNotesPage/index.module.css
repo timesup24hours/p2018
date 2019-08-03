@@ -9,6 +9,7 @@
   top: var(--nav-height);
   height: calc(100vh - var(--nav-height));
   padding-top: 20px;
+
   /* padding-bottom: 50px; */
 
   background: rgba(169, 169, 169, 0.1);

@@ -43,13 +43,19 @@ class AppNavBar extends Component {
 
   componentDidMount() {
     // console.log(window.innerHeight < 700);
-    // let testExp = new RegExp(
-    //   'Android|webOS|iPhone|iPad|' +
-    //     'BlackBerry|Windows Phone|' +
-    //     'Opera Mini|IEMobile|Mobile',
-    //   'i'
-    // );
+    let testExp = new RegExp(
+      'Android|webOS|iPhone|iPad|' +
+        'BlackBerry|Windows Phone|' +
+        'Opera Mini|IEMobile|Mobile',
+      'i'
+    );
     // this.setState({ isMobile: testExp.test(navigator.userAgent) });
+    let isMobile = testExp.test(navigator.userAgent);
+    if (isMobile) {
+      this.setState({
+        isOpen: false
+      });
+    }
     window.addEventListener('resize', this.handleResize);
   }
 

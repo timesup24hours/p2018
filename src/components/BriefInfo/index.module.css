@@ -5,6 +5,7 @@
   /* background: rgba(224, 194, 194, 0.3); */
   padding: 180px 40px;
   width: 100%;
+  overflow: hidden;
 }
 .title {
   font-size: 30px;

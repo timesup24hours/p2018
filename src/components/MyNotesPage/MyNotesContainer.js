@@ -6,6 +6,8 @@ import { notes } from '../../actions';
 import MyNotes from './MyNotes';
 import fetchingBottomArea from './fetchingBottomArea';
 
+import './index.scss';
+
 export class MyNotesContainer extends Component {
   state = {
     scrolled: 0,
@@ -68,12 +70,15 @@ export class MyNotesContainer extends Component {
     const { scrolled } = this.state;
 
     return (
-      <MyNotes
-        {...this.props}
-        ref={this.scrollerDiv}
-        scrolled={scrolled}
-        handleScroll={this.handleScroll}
-      />
+      <>
+        <MyNotes
+          {...this.props}
+          ref={this.scrollerDiv}
+          scrolled={scrolled}
+          handleScroll={this.handleScroll}
+        />
+        <div className="MyNotesContainer-desc">Swipe 👈 or 👉</div>
+      </>
     );
   }
 

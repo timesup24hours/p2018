@@ -1,9 +1,9 @@
 .container {
   width: 80%;
-  padding-left: 30px;
-  border-left: 14px solid white;
+  transition: all 0.3s linear;
   /* transition: 0.2s; */
   min-height: 100px;
+  height: 100%;
   background: white;
   margin-bottom: 8px;
   text-decoration: none;
@@ -15,24 +15,41 @@
 }
 
 .wrapper {
+  position: relative;
   display: flex;
+  padding-left: 30px;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-left: 14px solid white;
+  height: 100%;
+  width: auto;
   /* border: 1px solid red; */
 }
 .wrapper h1 {
+  width: auto;
+  height: 100%;
   /* border: 1px solid red; */
   /* line-height: 40px; */
   line-height: 60px;
 }
+.wrapper a,
+.wrapper h1 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .wrapper div {
   height: 20px;
+  width: auto;
+
   /* border: 1px solid red; */
   /* line-height: 40px; */
 }
 
-.container:hover {
+.wrapper:hover {
   box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
   /* color: rgba(0, 0, 0, 0.3); */
   /* color: white;
   background: rgba(138, 43, 226, 0.6);
@@ -51,12 +68,16 @@
 @media screen and (max-width: 660px) {
   .container {
     width: 100%;
-    padding-left: 8px;
-    padding-right: 6px;
-    border-left: 6px solid white;
     /* transition: 0.2s; */
   }
-  .container:hover {
+  .wrapper {
+    /* padding-left: 14px; */
+    /* padding-right: 6px; */
+    white-space: nowrap;
+    overflow: hidden;
+    border-left: 6px solid rgba(138, 43, 226, 0.8);
+  }
+  .wrapper:hover {
     /* color: white;
     background: rgba(138, 43, 226, 0.6);
     border-left: 6px solid black; */
@@ -68,6 +89,12 @@
     display: none;
     height: 0px;
   }
+  .wrapper a,
+  .wrapper h1 {
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+  }
   .row {
     flex-direction: row;
     min-height: 100%;
@@ -76,5 +103,6 @@
     min-height: 100%;
     display: flex;
     align-items: center;
+    font-size: 1.5rem;
   }
 }
