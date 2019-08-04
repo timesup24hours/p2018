@@ -72,6 +72,21 @@ const SwipeCarousel = Loadable({
   loading: MyLoadingComponent
 });
 
+const MobileDatePicker = Loadable({
+  loader: () => import('../MobileDatePicker'),
+  loading: MyLoadingComponent
+});
+
+const SwipeUpDismiss = Loadable({
+  loader: () => import('../SwipeUpDismiss'),
+  loading: MyLoadingComponent
+});
+
+const MaterialGrid = Loadable({
+  loader: () => import('../MaterialGrid'),
+  loading: MyLoadingComponent
+});
+
 const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
@@ -89,6 +104,9 @@ const Routes = () => (
       <Route path="/blue" component={Blue} />
       <Route path="/wavy" component={WavyCircle} />
       <Route path="/swipe" component={SwipeCarousel} />
+      <Route path="/date" component={MobileDatePicker} />
+      <Route path="/up" component={SwipeUpDismiss} />
+      <Route path="/mgrid" component={MaterialGrid} />
       {/* <Route path="/smoke" component={SmokeText} /> */}
 
       <Redirect from="/" to="/" />
