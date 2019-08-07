@@ -1,0 +1,29 @@
+.SelfMakeChart {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: purple;
+
+  .chart {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    height: auto;
+    min-height: 100px;
+    width: auto;
+
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translateX(-50%);
+
+    & > div {
+      // transition: all 0.5s linear;
+    }
+  }
+}

@@ -87,6 +87,11 @@ const MaterialGrid = Loadable({
   loading: MyLoadingComponent
 });
 
+const SelfMakeChart = Loadable({
+  loader: () => import('../SelfMakeChart'),
+  loading: MyLoadingComponent
+});
+
 const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
@@ -107,6 +112,8 @@ const Routes = () => (
       <Route path="/date" component={MobileDatePicker} />
       <Route path="/up" component={SwipeUpDismiss} />
       <Route path="/mgrid" component={MaterialGrid} />
+      <Route path="/schart" component={SelfMakeChart} />
+
       {/* <Route path="/smoke" component={SmokeText} /> */}
 
       <Redirect from="/" to="/" />

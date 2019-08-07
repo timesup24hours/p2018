@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ xScale, height, value, barWith }) => (
+const Text = ({ xScale, height, value, barWith }) => (
   <text
     id="Bar-text"
     x={xScale}
@@ -23,3 +23,5 @@ export default ({ xScale, height, value, barWith }) => (
     `}</style>
   </text>
 );
+
+export default Text;

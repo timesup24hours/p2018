@@ -24,7 +24,7 @@ const Rect = styled.rect`
   cursor: pointer;
 `;
 
-export default props => {
+ const Bar = props => {
   const { data, height, maxVal, scale, handleOnClick } = props;
   const { x, y } = scale;
 
@@ -68,3 +68,5 @@ export default props => {
 
   return <React.Fragment>{bars}</React.Fragment>;
 };
+
+export default Bar
