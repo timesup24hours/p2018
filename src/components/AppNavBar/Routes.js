@@ -106,6 +106,10 @@ const Cube3D = Loadable({
   loader: () => import('../Cube3D'),
   loading: MyLoadingComponent
 });
+const MouseTracking = Loadable({
+  loader: () => import('../MouseTracking'),
+  loading: MyLoadingComponent
+});
 
 const Routes = () => (
   <div className={styles.pageWrapper}>
@@ -131,6 +135,8 @@ const Routes = () => (
       <Route path="/three" component={FirstThreeJS} />
       <Route path="/mpixi" component={MouseClickPixi} />
       <Route path="/cube3d" component={Cube3D} />
+
+      <Route path="/mtrack" component={MouseTracking} />
 
       {/* <Route path="/smoke" component={SmokeText} /> */}
 
