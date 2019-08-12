@@ -1,0 +1,1 @@
+{"version":3,"sources":["/Users/kk/Desktop/p2018/src/components/FirstThreeJS/index.scss"],"names":[],"mappings":"AAAA,cACE,cAAe,CACf,KAAM,CACN,OAAQ,CACR,QAAS,CACT,MAAO","file":"181.ccf1b5a5.chunk.css","sourcesContent":[".FirstThreeJS {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n}\n"]}

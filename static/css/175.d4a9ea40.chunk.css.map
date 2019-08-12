@@ -1,0 +1,1 @@
+{"version":3,"sources":["/Users/kk/Desktop/p2018/src/components/MouseTracking/index.scss"],"names":[],"mappings":"AAAA,eACE,YAAa,CACb,WAAY,CACZ,YAAa,CACb,sBAAuB,CACvB,kBAAmB","file":"175.d4a9ea40.chunk.css","sourcesContent":[".MouseTracking {\n  height: 100vh;\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n"]}

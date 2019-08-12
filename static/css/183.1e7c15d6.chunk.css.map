@@ -1,0 +1,1 @@
+{"version":3,"sources":["/Users/kk/Desktop/p2018/src/components/MouseClickPixi/index.scss"],"names":[],"mappings":"AAAA,gBACE,WAAY,CACZ,UAAW,CACX,wBAAyB","file":"183.1e7c15d6.chunk.css","sourcesContent":[".MouseClickPixi {\n  height: 100%;\n  width: 100%;\n  background-color: #201d35;\n}\n"]}
