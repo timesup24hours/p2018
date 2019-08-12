@@ -92,6 +92,21 @@ const SelfMakeChart = Loadable({
   loading: MyLoadingComponent
 });
 
+const FirstThreeJS = Loadable({
+  loader: () => import('../FirstThreeJS'),
+  loading: MyLoadingComponent
+});
+
+const MouseClickPixi = Loadable({
+  loader: () => import('../MouseClickPixi'),
+  loading: MyLoadingComponent
+});
+
+const Cube3D = Loadable({
+  loader: () => import('../Cube3D'),
+  loading: MyLoadingComponent
+});
+
 const Routes = () => (
   <div className={styles.pageWrapper}>
     <Switch>
@@ -113,6 +128,9 @@ const Routes = () => (
       <Route path="/up" component={SwipeUpDismiss} />
       <Route path="/mgrid" component={MaterialGrid} />
       <Route path="/schart" component={SelfMakeChart} />
+      <Route path="/three" component={FirstThreeJS} />
+      <Route path="/mpixi" component={MouseClickPixi} />
+      <Route path="/cube3d" component={Cube3D} />
 
       {/* <Route path="/smoke" component={SmokeText} /> */}
 
