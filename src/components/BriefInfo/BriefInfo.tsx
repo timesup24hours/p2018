@@ -45,16 +45,16 @@ const templateData = [
   {
     title: 'Agile',
     desc:
-      'Trello, Jira, Subject to change, communication tool Slack/Zoom, Write Documentation/Commentting code'
+      'Trello, Jira, InVision, Zeplin, Subject to change, communication tool Slack/Zoom, Write Documentation/Commentting code'
   },
   {
     title: 'Deployment',
-    desc: `Linux CMD, SSH, Create Instance in cloud provider, Setting nginx/SSL/Let's Encrypt/load balancing in Docker container infront of multi app instances`
+    desc: `Linux CMD, SSH, Create Instance in cloud provider, Setting nginx/SSL/Let's Encrypt/load balancing in Docker container infront of multi app instances. Circle CI`
   },
   {
     title: 'Test',
     desc:
-      'e2e with puppeteer. Jest, enzyme, react-testing-library for unit testing, Circle CI'
+      'e2e Puppeteer/Cypress. Jest, Unit testing Enzyme, react-testing-library'
   },
   {
     title: 'Tools',
