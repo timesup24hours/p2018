@@ -7,8 +7,8 @@ export default () => {
     <footer className={styles.container}>
       <div className={styles.copyright}>
         © 2019:{' '}
-        <a href="https://timesup24hours.github.io/p2018">
-          https://timesup24hours.github.io/p2018
+        <a href="https://github.com/timesup24hours">
+          https://github.com/timesup24hours
         </a>
       </div>
     </footer>
